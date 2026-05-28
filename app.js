@@ -1252,42 +1252,266 @@ function generateSimulatedAIResponse(query, info, wasFile) {
   const isEn = currentAppLanguage === 'en';
   
   if (wasFile) {
-    if (isEn) {
-      return `What a wonderful document or image you have uploaded! I have reviewed your file carefully. This question belongs to the <b>${info.subject}</b> syllabus (Grade ${info.grade}) of the Karachi Board. Below is the comprehensive step-by-step solution:
+    const isMathSubj = info.subject.includes("ریاضی") || info.subject.toLowerCase().includes("math") || info.subject.includes("حساب");
+    const isPhysicsSubj = info.subject.includes("طبیعیات") || info.subject.toLowerCase().includes("physic");
+    const isChemistrySubj = info.subject.includes("کیمیا") || info.subject.toLowerCase().includes("chemist");
+    const isBiologySubj = info.subject.includes("حیاتیات") || info.subject.toLowerCase().includes("biolog") || info.subject.includes("سائنس");
+    const isLanguageOrArts = !isMathSubj && !isPhysicsSubj && !isChemistrySubj && !isBiologySubj;
+
+    if (isLanguageOrArts) {
+      if (isEn) {
+        return `Assalam-o-Alaikum Beta! I have reviewed your uploaded document/image for <b>${info.subject}</b> (Grade ${info.grade}) very closely. 
+        <br><br>
+        In humanities and language papers, BIEK/BSEK examiners pay absolute attention to presentation, neatness, and heading structure! Your uploaded sheet displays outstanding effort, but let's review the step-by-step assessment of your answer sheet:
         
-        <div class="step-container">
-          <div class="step-card">
-            <div class="step-number">Step 1: Baseline Analysis</div>
-            To solve the handwritten problem in the document, we first identify the corresponding mathematical formula.
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 1: Heading Culture & Structure</div>
+            Make sure to use a dark blue/black marker for main headings (like <i>"Tareef"</i>, <i>"Khulasa"</i>, <i>"Tashreeh"</i>). Your paper presents clear objective alignments, which is highly appreciated by the board examiner!
           </div>
-          <div class="step-card">
-            <div class="step-number">Step 2: Formula Application</div>
-            Substituting the given variables into the equation validates that both LHS and RHS balance perfectly.
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 2: Grammar & Spelling Flow</div>
+            Your written paragraph has been evaluated. The spelling alignment and phrasing are excellent, displaying a strong command of <b>${info.subject}</b> grammar rules. Keep your writing clear of over-writing or cutting!
           </div>
-          <div class="step-card">
-            <div class="step-number">Step 3: Conclusion</div>
-            Therefore, your plotted graph and solution are 100% verified and correct.
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 3: Presentation & Margin Check</div>
+            Your paper margins and clean line spacing are perfect. In the board exam, keeping neat spacing between answers guarantees full presentation marks!
           </div>
         </div>
-        Do you have any questions or want to review any specific step further?`;
-    } else {
-      return `بڑے ہی شاندار نوٹس یا تصویر اپ لوڈ کی ہے آپ نے! میں نے آپ کی دستاویز کا باریک بینی سے جائزہ لے لیا ہے۔ یہ سوال کراچی بورڈ کے <b>${info.subject}</b> (جماعت ${info.grade}) کے نصاب سے تعلق رکھتا ہے۔ ذیل میں اس کا مکمل اور جامع حل پیشِ خدمت ہے:
         
-        <div class="step-container">
-          <div class="step-card">
-            <div class="step-number">مرحلہ ۱: بنیادی خاکہ (Basic Concept)</div>
-            ہمیں اپ لوڈ کردہ دستاویز میں دیے گئے سوال کو حل کرنے کے لیے سب سے پہلے اس کا فارمولا متعین کرنا ہوگا۔
+        <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          🛑 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>
+          • <b>Heading Highlight</b>: Always use standard headings in languages. For example, in Sindhi/Urdu prose, write poet/author names under separate sub-headings!<br>
+          • <b>Line Spacing</b>: Leave exactly one line blank between consecutive paragraphs to make your answer highly readable.
+        </div>
+        
+        <div style="font-size: 0.95rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.5; margin-top: 1rem; border-left: 3px solid var(--accent-cyan); padding-left: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Beta, your handwriting and structure are absolutely lovely. Don't stress under exam pressure; you have prepared incredibly well and you definitely have what it takes to ace this!
+        </div>`;
+      } else {
+        return `<h2 style="font-size: 1.4rem; color: var(--text-white); border-bottom: 2px solid var(--accent-cyan); padding-bottom: 0.5rem; margin-bottom: 1rem;">${info.subject} (جماعت ${info.grade}) - دستاویز کا جائزہ</h2>
+        
+        Assalam-o-Alaikum Beta! میں نے آپ کی اپ لوڈ کردہ <b>${info.subject}</b> (جماعت ${info.grade}) کی دستاویز/تصویر کا نہایت باریک بینی سے جائزہ لیا ہے۔
+        <br><br>
+        کراچی بورڈ (BSEK/BIEK) کے امتحانات میں آرٹس، ہیومینیٹیز اور زبان کے پیپرز میں سب سے زیادہ نمبرز <b>پریزنٹیشن، صاف لکھائی اور ہیڈنگ کلچر</b> کے ہوتے ہیں! آپ کی تحریر میں یہ خوبیاں واضح ہیں، لیکن مزید بہتری کے لیے ذیل میں قدم بہ قدم تجزیہ پیشِ خدمت ہے:
+        
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۱: ہیڈنگ کلچر اور ذیلی سرخیاں (Headings)</div>
+            اہم سرخیاں (جیسے شاعر کا نام، اقتباس کی تشریح یا خلاصہ) ہمیشہ کٹ مارکر سے لکھیں۔ آپ نے مارکر کا استعمال بہت اچھے طریقے سے کیا ہے جو کہ ممتحن (examiner) کو متاثر کرے گا!
           </div>
-          <div class="step-card">
-            <div class="step-number">مرحلہ ۲: فارمولے کا اطلاق (Application)</div>
-            مساوات میں قیمتوں کا اندراج کرنے پر ہمیں معلوم ہوتا ہے کہ جواب متوازن ہے اور دائیں بائیں مساوی آ رہے ہیں۔
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۲: املا اور جملوں کی بناوٹ (Grammar & Spelling)</div>
+            آپ کے پیپر کی املا (spelling) اور جملوں کا ربط بہت شاندار ہے۔ <b>${info.subject}</b> کے قواعد کے مطابق تحریر بالکل درست ہے۔ یاد رکھیں، پیپر میں کٹنگ اور اوور رائٹنگ سے گریز کرنا ہے۔
           </div>
-          <div class="step-card">
-            <div class="step-number">مرحلہ ۳: حتمی نتیجہ (Conclusion)</div>
-            لہٰذا، اس حساب سے آپ کا تیار کردہ گراف اور جواب 100 فیصد درست ثابت ہوتا ہے۔
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۳: حاشیہ (Margins) اور فاصلہ</div>
+            لائنوں کے درمیان مناسب فاصلہ اور صاف ستھرے حاشیے پیپر کی خوبصورتی کو بڑھا رہے ہیں۔ بورڈ امتحانات میں یہ پریزنٹیشن آپ کو پورے مارکس دلوانے میں مدد کرے گی!
           </div>
         </div>
-        کیا آپ کو اس میں کوئی اور الجھن ہے یا کوئی مخصوص نکتہ دوبارہ سمجھنا چاہتے ہیں؟`;
+        
+        <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          🛑 <b>بورڈ امتحان کی اہم ٹپس (Marks Kaise Lene Hain?)</b>:<br>
+          • <b>ذیلی سرخیاں</b>: نثر یا شاعری کے خلاصے میں مصنف یا شاعر کے تعارف کی الگ سے ذیلی سرخی ضرور بنائیں۔<br>
+          • <b>انڈر لائننگ</b>: جواب مکمل ہونے پر نیچے مارکر اور اسکیل کی مدد سے ایک سیدھی لائن کھینچیں تاکہ ممتحن کو پتہ چل سکے کہ جواب یہاں ختم ہو گیا ہے۔
+        </div>
+        
+        <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.6; margin-top: 1rem; border-right: 3px solid var(--accent-cyan); padding-right: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Beta, آپ کی لکھائی اور پیپر پیش کرنے کا انداز واقعی بہت پیارا ہے۔ بورڈ کے پریشر کو اپنے سر پر سوار نہ کریں، آپ کی تیاری بہترین ہے اور آپ یقیناً بورڈ امتحانات میں ٹاپ کریں گے!
+        </div>`;
+      }
+    }
+
+    if (isMathSubj) {
+      if (isEn) {
+        return `Assalam-o-Alaikum Beta! I have reviewed your uploaded Mathematics sheet for <b>${info.subject}</b> (Grade ${info.grade}) very closely. 
+        <br><br>
+        Solving mathematical problems requires absolute step-by-step logic, correct formula application, and verifying the final solutions. Your uploaded sheet looks highly structured! Let's do the step-by-step assessment of your math solution:
+        
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 1: Formula Recognition</div>
+            To solve the handwritten problem in the document, we first identify the corresponding mathematical formulas/identities. Your choice of formulas is 100% correct!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 2: Substitution & Logic</div>
+            Substituting the given variables into the equation validates that both LHS and RHS balance perfectly. Your step-by-step calculation shows perfect algebraic flow!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 3: Verification & Final Answer</div>
+            Therefore, your final result is verified and correct. Plotted values, equations, or factors are beautifully presented.
+          </div>
+        </div>
+        
+        <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          🛑 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>
+          • <b>State Identities</b>: Always write formulas on the side in a neat box to score full method marks.<br>
+          • <b>Double-Check Signs</b>: Watch out for negative sign changes when moving terms across the '=' sign.
+        </div>
+        
+        <div style="font-size: 0.95rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.5; margin-top: 1rem; border-left: 3px solid var(--accent-cyan); padding-left: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Beta, you have solved this perfectly. Mathematics requires practice, and you have clearly put in the hard work. You are ready to ace the exam!
+        </div>`;
+      } else {
+        return `<h2 style="font-size: 1.4rem; color: var(--text-white); border-bottom: 2px solid var(--accent-cyan); padding-bottom: 0.5rem; margin-bottom: 1rem;">${info.subject} (جماعت ${info.grade}) - سوال کا جائزہ</h2>
+        
+        Assalam-o-Alaikum Beta! میں نے آپ کی اپ لوڈ کردہ <b>${info.subject}</b> (جماعت ${info.grade}) کی ریاضی کی شیٹ کا نہایت باریک بینی سے جائزہ لیا ہے۔
+        <br><br>
+        ریاضی کا کوئی بھی سوال حل کرنے کے لیے مرحلہ وار منطق، فارمولے کا درست استعمال اور حتمی تصدیق بے حد اہم ہوتی ہے۔ آپ کے پیپر کا حل بہت منظم ہے! ذیل میں قدم بہ قدم جائزہ پیشِ خدمت ہے:
+        
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۱: فارمولے کی پہچان (Formula Identification)</div>
+            سوال کو حل کرنے کے لیے آپ نے متعلقہ فارمولوں کا بالکل درست انتخاب کیا ہے۔ فارمولوں کی یہ پہچان سوال کو 100% آسان بنا دیتی ہے!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۲: مساوات میں قیمتوں کا اندراج (Substitution)</div>
+            مساوات میں دی گئی قیمتوں کا اندراج اور الجبرک مراحل کا بہاؤ بالکل درست ہے۔ دائیں بائیں اطراف (LHS aur RHS) بالکل متوازن آ رہے ہیں۔
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۳: حتمی جواب کی تصدیق (Verification)</div>
+            لہٰذا، آپ کا نکالا ہوا فیکٹر، گراف یا حاصل کردہ جواب بالکل درست اور تصدیق شدہ ہے۔ ممتحن اسے دیکھتے ہی پورے نمبر دے گا!
+          </div>
+        </div>
+        
+        <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          🛑 <b>ریاضی بورڈ امتحان کی اہم ٹپس (Marks Kaise Lene Hain?)</b>:<br>
+          • <b>فارمولا بلاک</b>: پیپر میں فارمولا لکھنے کے لیے مارکر سے الگ سے بلاک بنائیں، بورڈ میں ہر اسٹیپ کے نمبر ہوتے ہیں!<br>
+          • <b>حتمی نتیجہ</b>: فائنل جواب کو ہمیشہ اسکیل کی مدد سے ڈبل انڈر لائن یا باکس میں بند کریں۔
+        </div>
+        
+        <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.6; margin-top: 1rem; border-right: 3px solid var(--accent-cyan); padding-right: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Beta, آپ نے سوال کو بہت خوبصورتی سے حل کیا ہے۔ ریاضی صرف مشق (practice) مانگتی ہے، اور آپ کی محنت صاف نظر آ رہی ہے۔ شاباش!
+        </div>`;
+      }
+    }
+
+    if (isBiologySubj) {
+      if (isEn) {
+        return `Assalam-o-Alaikum Beta! I have reviewed your uploaded Biology worksheet/diagram for <b>${info.subject}</b> (Grade ${info.grade}) very closely. 
+        <br><br>
+        Biology is a visual science, and board examiners pay special attention to precise labeled diagrams, step-by-step biological workflows, and standard terminologies! Your uploaded sheet displays great observation skills:
+        
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 1: Diagrammatic & Structural Precision</div>
+            Your uploaded diagram shows high accuracy in cell structure/anatomical outlines. Board examiners love clean, neat sketches drawn with pencil!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 2: Correct Labeling of Parts</div>
+            All scientific labels (such as mitochondria, chloroplasts, nucleus, etc.) are accurately placed. Writing labels horizontally on one side of the diagram is an excellent practice!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 3: Biological Logic & Flow</div>
+            Your step-by-step description of the biological process is outstanding, aligning perfectly with BSEK/BIEK curriculum standards.
+          </div>
+        </div>
+        
+        <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          🛑 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>
+          • <b>Always use a Pencil</b>: Never draw Biology diagrams with a pen! Always sketch with a sharp pencil and write labels with a marker or pen.<br>
+          • <b>Horizontal Labeling</b>: Align your labeling lines neatly to the right side of the drawing using a ruler.
+        </div>
+        
+        <div style="font-size: 0.95rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.5; margin-top: 1rem; border-left: 3px solid var(--accent-cyan); padding-left: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Beta, you have drawn and explained this beautifully. Keep up this standard of work and you will surely secure the highest marks in Biology!
+        </div>`;
+      } else {
+        return `<h2 style="font-size: 1.4rem; color: var(--text-white); border-bottom: 2px solid var(--accent-cyan); padding-bottom: 0.5rem; margin-bottom: 1rem;">${info.subject} (جماعت ${info.grade}) - سائنسی خاکہ</h2>
+        
+        Assalam-o-Alaikum Beta! میں نے آپ کے اپ لوڈ کردہ <b>${info.subject}</b> (جماعت ${info.grade}) کے خاکے/ورک شیٹ کا نہایت باریک بینی سے جائزہ لیا ہے۔
+        <br><br>
+        بیالوجی ایک بصری (visual) سائنس ہے، اور بورڈ کے امتحانات میں ممتحن <b>صاف ستھرے لیبل والے خاکے (diagrams) اور سائنسی اصطلاحات</b> پر خصوصی توجہ دیتے ہیں! آپ کے کام کا خاکہ بہت شاندار ہے، ذیل میں قدم بہ قدم جائزہ پیشِ خدمت ہے:
+        
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۱: خاکہ نگاری اور ظاہری خدوخال (Diagram Precision)</div>
+            آپ کا تیار کردہ خاکہ سائنسی لحاظ سے بالکل درست اور واضح ہے۔ بورڈ میں پنسل سے بنے ہوئے صاف خاکے ممتحن کو بہت پسند آتے ہیں!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۲: حصوں کی درست نشان دہی (Labeling Check)</div>
+            خاکے کے مختلف حصوں (جیسے مائٹوکونڈریا، کلوروپلاسٹ، یا نیوکلیئس) کی نشان دہی بالکل درست ہے۔ لیبل کی گئی تحریریں بالکل سیدھی اور واضح ہیں۔
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۳: حیاتیاتی عمل کی وضاحت (Process Flow)</div>
+            خاکے کے ساتھ دیا گیا حیاتیاتی عمل کا بہاؤ اور سائنسی وضاحت کراچی بورڈ کے سلیبس کے معیار کے مطابق بالکل درست ہے!
+          </div>
+        </div>
+        
+        <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          🛑 <b>بیالوجی بورڈ امتحان کی اہم ٹپس (Marks Kaise Lene Hain?)</b>:<br>
+          • <b>صرف پنسل استعمال کریں</b>: ڈائیگرام کبھی بھی پین یا مارکر سے نہ بنائیں! ہمیشہ تیز نوک والی پنسل سے خاکہ بنائیں اور لیبلنگ پین سے کریں۔<br>
+          • <b>ایک طرف لیبلنگ</b>: کوشش کریں کہ خاکے کے تمام حصوں کی نشان دہی (labeling) دائیں جانب ایک ہی سیدھ میں اسکیل رکھ کر کی جائے۔
+        </div>
+        
+        <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.6; margin-top: 1rem; border-right: 3px solid var(--accent-cyan); padding-right: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Beta, آپ نے خاکہ بہت ہی پیارا اور صاف بنایا ہے۔ بیالوجی میں آپ کی دلچسپی اور محنت قابلِ تعریف ہے۔ مجھے یقین ہے آپ بہترین نمبر حاصل کریں گے!
+        </div>`;
+      }
+    }
+
+    if (isPhysicsSubj || isChemistrySubj) {
+      if (isEn) {
+        return `Assalam-o-Alaikum Beta! I have reviewed your uploaded Physics/Chemistry worksheet for <b>${info.subject}</b> (Grade ${info.grade}) very closely. 
+        <br><br>
+        Physical sciences require exact formulas, chemical reaction balancing, systematic derivations, and stating proper SI units! Your uploaded document is highly commendable:
+        
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 1: Formula Recognition & Equations</div>
+            To solve the handwritten problem, we identify the physical formulas or chemical reaction equations. Your baseline equation setups are highly accurate!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 2: Derivation / Balance Verification</div>
+            Substituting the given parameters shows an outstanding derivation flow. For Chemistry, the chemical equations are perfectly balanced on both reactant and product sides!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--accent-cyan); padding:1rem; border-radius:8px;">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">Step 3: SI Units & Conclusion</div>
+            All final calculated values have accurate SI units (e.g. Joules, Newton, Kelvin) or standard state symbols. Excellent presentation!
+          </div>
+        </div>
+        
+        <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          🛑 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>
+          • <b>SI Units are Mandatory</b>: In Physics numericals, always write the SI unit at the end. Skipping it costs 0.5 marks!<br>
+          • <b>Balance Every Equation</b>: In Chemistry, a chemical reaction is incomplete without balancing. Check both sides twice!
+        </div>
+        
+        <div style="font-size: 0.95rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.5; margin-top: 1rem; border-left: 3px solid var(--accent-cyan); padding-left: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Beta, you have solved this with great scientific precision. Keep this clear analytical mind, and you will score maximum marks in your science exams!
+        </div>`;
+      } else {
+        return `<h2 style="font-size: 1.4rem; color: var(--text-white); border-bottom: 2px solid var(--accent-cyan); padding-bottom: 0.5rem; margin-bottom: 1rem;">${info.subject} (جماعت ${info.grade}) - سائنسی حل</h2>
+        
+        Assalam-o-Alaikum Beta! میں نے آپ کی اپ لوڈ کردہ <b>${info.subject}</b> (جماعت ${info.grade}) کی شیٹ کا نہایت باریک بینی سے جائزہ لیا ہے۔
+        <br><br>
+        طبیعی علوم (Physical Sciences) میں درست فارمولے، کیمیائی مساوات کی برابری (balancing)، مرحلہ وار اخذ (derivation) اور SI اکائیاں (units) لکھنا بے حد ضروری ہوتا ہے! آپ کا حل بہت ہی معیاری ہے، ذیل میں قدم بہ قدم جائزہ پیشِ خدمت ہے:
+        
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۱: قانون اور فارمولے کی پہچان (Formula Setup)</div>
+            سوال کو حل کرنے کے لیے آپ نے متعلقہ سائنسی قوانین اور فارمولوں کا بالکل درست اور اصولی استعمال کیا ہے۔
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۲: اخذ کرنے کا عمل / مساوات کی برابری (Derivation Flow)</div>
+            مراحل کا بہاؤ بہت شاندار ہے۔ کیمسٹری کے لحاظ سے کیمیائی مساواتیں (chemical equations) ری ایکٹنٹس اور پروڈکٹس دونوں طرف بالکل برابر اور متوازن ہیں!
+          </div>
+          <div class="step-card" style="background:var(--bg-dark); border-right:4px solid var(--accent-cyan); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+            <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem;">مرحلہ ۳: اکائیاں (SI Units) اور حتمی نتیجہ</div>
+            حساب کتاب کے بعد حاصل ہونے والی قیمت کے ساتھ درست SI اکائیاں (مثلاً Joules, Newton, Kelvin) لکھی گئی ہیں جو کہ کامل سائنسی طریقہ ہے!
+          </div>
+        </div>
+        
+        <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          🛑 <b>سائنس بورڈ امتحان کی اہم ٹپس (Marks Kaise Lene Hain?)</b>:<br>
+          • <b>SI Units کا التزام</b>: طبیعیات کے حسابی سوالات (Physics numericals) میں فائنل جواب کے ساتھ اکائی لکھنا لازمی ہے، ورنہ آدھا نمبر کٹ جاتا ہے!<br>
+          • <b>مساوات کی برابری</b>: کیمیا میں مساوات کو متوازن (balance) کر کے لکھیں اور ری ایکٹنٹس/پروڈکٹس کی حالتیں (solid, gas, aq) بھی ظاہر کریں۔
+        </div>
+        
+        <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.6; margin-top: 1rem; border-right: 3px solid var(--accent-cyan); padding-right: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> Beta, آپ نے سائنسی اصولوں کے مطابق سوال بہت اچھے سے حل کیا ہے۔ کیپ اٹ اپ! امتحان میں آپ کو پورے نمبر ملیں گے!
+        </div>`;
+      }
     }
   }
   
@@ -1494,6 +1718,217 @@ function generateSimulatedAIResponse(query, info, wasFile) {
   // Fallback dynamic topic analyzer and generator matching exactly user custom GEMS specifications
   const topic = extractTopic(query);
   
+  // Custom curriculum look-up database to provide extremely high-quality, actual educational content for common concepts
+  const curriculumDictionary = {
+    "graph": {
+      title: "Graphs and Coordinate Geometry (گراف)",
+      def: "A graph is a visual diagram or mathematical representation that plots the relationship between different numbers or algebraic equations on perpendicular axes: the horizontal <b>X-axis</b> and vertical <b>Y-axis</b>. Instead of reading dry tables, a graph lets us \'see\' equations as straight lines, curves, or points!",
+      objective: "To plot algebraic equations, identify coordinate sets $(x, y)$, and visually resolve equations into intersecting curves or lines.",
+      formula: "Standard Equation of a Line: <code>y = mx + c</code> (where <i>m</i> is the slope/gradient, and <i>c</i> is the y-intercept). Distance between points: <code>d = √[(x₂ - x₁)² + (y₂ - y₁)²]</code>.",
+      example: "Let\'s plot the equation <code>y = 2x + 1</code> step-by-step:<br>• Step 1: Create coordinates by putting values for $x$.<br>&nbsp;&nbsp;- If $x = 0$: $y = 2(0) + 1 = 1$ &rarr; Coordinate is <b>(0, 1)</b><br>&nbsp;&nbsp;- If $x = 1$: $y = 2(1) + 1 = 3$ &rarr; Coordinate is <b>(1, 3)</b><br>&nbsp;&nbsp;- If $x = 2$: $y = 2(2) + 1 = 5$ &rarr; Coordinate is <b>(2, 5)</b><br>• Step 2: Draw the horizontal X-axis and vertical Y-axis on graph paper, crossing at origin <b>(0,0)</b>.<br>• Step 3: Plot the points (0,1), (1,3), and (2,5) onto the grid using coordinate signs.<br>• Step 4: Join the points with a ruler to get a neat, straight line graph!",
+      significance: "Graphs are extremely powerful in real life. They are used in Google Maps/GPS coordinate tracking, structural planning, business analytics, and building coordinate spaces in 3D game engines (like Unity or Roblox).",
+      tips: "Always draw coordinates and axes with a sharp pencil and a steel scale. Write standard labels like X, X\', Y, Y\', and mark coordinate numbers clearly. Presentation guarantees full marks!"
+    },
+    "vector": {
+      title: "Vectors and Physical Quantities (ویکٹر)",
+      def: "A vector is a physical or mathematical quantity that has <b>both magnitude (size/value) and a specific direction</b>. Examples include displacement, velocity, acceleration, and force. Without direction, a vector is meaningless! Think of it like someone telling you: <i>\'Baghpat 5 kilometers door hai\'</i> (scalar - speed/distance) vs. <i>\'Baghpat 5 kilometers North-West mein hai\'</i> (vector).",
+      objective: "To resolve physical vectors into rectangular components, calculate vector magnitudes, and determine resultant vectors.",
+      formula: "Vector Form: <code>A⃗ = Ax î + Ay ĵ + Az k̂</code> (where î, ĵ, k̂ are unit vectors along X, Y, Z axes). Magnitude: <code>|A⃗| = √(Ax² + Ay² + Az²)</code>. Direction angle: <code>θ = tan⁻¹(Ay / Ax)</code>.",
+      example: "Let\'s calculate the magnitude of the force vector <code>F⃗ = 3î + 4ĵ</code> Newtons:<br>• Step 1: Identify rectangular components: $Fx = 3$, $Fy = 4$.<br>• Step 2: State magnitude formula: $|F⃗| = √(Fx² + Fy²)$.<br>• Step 3: Substitute components: $|F⃗| = √(3² + 4²) = √(9 + 16)$.<br>• Step 4: Simplify square root: $|F⃗| = √25 = 5$ Newtons. The absolute size of force is 5N!",
+      significance: "Vectors are the foundation of space flight calculations, aviation routes, maritime navigation, estimating wind thrust on bridges, and programming realistic movements/physics inside gaming software.",
+      tips: "Always write an arrow over the vector symbol (like <code>A⃗</code>, <code>v⃗</code>, <code>F⃗</code>) in your exam copy. Skip writing the arrow and BIEK examiners will treat it as a scalar, leading to marks deduction!"
+    },
+    "force": {
+      title: "Force and Laws of Motion (قوت)",
+      def: "Force is a push or pull exerted on an object resulting from its interaction with another object. Force can change a body\'s state of rest, speed up or slow down its motion, or alter its physical shape.",
+      objective: "To calculate net forces, solve dynamic equations of motion, and understand force interactions in classical mechanics.",
+      formula: "Newton\'s Second Law: <code>F = m × a</code> (Force in Newtons, $m$ is mass in kg, $a$ is acceleration in m/s²).",
+      example: "Let\'s find the force needed to accelerate a 5 kg mass at 3 m/s²:<br>• Step 1: List given parameters: mass $m = 5$ kg, acceleration $a = 3$ m/s².<br>• Step 2: State formula: $F = m \\times a$.<br>• Step 3: Substitute values: $F = 5 \\times 3$.<br>• Step 4: Calculate final value: $F = 15$ Newtons (N).",
+      significance: "Force calculations are vital for automotive crash engineering, architectural bridge stabilities, space rocket thrusts, and general machinery designs.",
+      tips: "Always write \'Newtons (N)\' as the unit for your final calculated force. Board examiners specifically look for standard SI units!"
+    },
+    "atom": {
+      title: "Atomic Structures and Particles (ایٹم)",
+      def: "An atom is the smallest, indivisible unit of a chemical element that retains all its chemical properties. It consists of a dense central <b>Nucleus</b> containing positive Protons and neutral Neutrons, surrounded by a cloud of orbiting negative Electrons.",
+      objective: "To write electronic configurations of elements, determine valency, and calculate atomic mass or numbers.",
+      formula: "Mass Number: <code>A = Z + N</code> (Protons + Neutrons). Electron Capacity per Shell: <code>2n²</code> (where <i>n</i> is shell number K, L, M, N).",
+      example: "Let\'s find the electronic configuration of Sodium (Atomic Number Z = 11):<br>• Step 1: Sodium has 11 electrons to distribute.<br>• Step 2: 1st Shell (K, n=1) holds max $2(1)² = 2$ electrons.<br>• Step 3: 2nd Shell (L, n=2) holds max $2(2)² = 8$ electrons.<br>• Step 4: Remaining 1 electron goes to the 3rd Shell (M, n=3).<br>• Electronic Configuration: <b>2, 8, 1</b>.",
+      significance: "Atomic models allow scientists to engineer new alloys, design chemical pharmaceuticals, and understand nuclear fusion/fission reactions.",
+      tips: "Draw neat concentric circles to show K, L, M shells, and place dots or crosses to represent electrons clearly to secure full marks."
+    },
+    "cell": {
+      title: "The Cell: Basic Unit of Life (خلیہ)",
+      def: "A cell is the structural, functional, and biological unit of all living organisms. Every living thing (from single-celled bacteria to massive humans) is made of cells. Cells carry genetic blueprints and perform thousands of biochemical reactions every second!",
+      objective: "To compare plant and animal cells, identify cellular organelles (Mitochondria, Nucleus), and describe their structural features.",
+      formula: "Organelle Breakdown: Nucleus (Control Room) &rarr; Mitochondria (Powerhouse) &rarr; Ribosomes (Protein Factory) &rarr; Cell Membrane (Security Gate).",
+      example: "Let\'s compare Plant Cells and Animal Cells:<br>• Step 1: Plant cells have a rigid outer **Cell Wall**; animal cells only have a Cell Membrane.<br>• Step 2: Plant cells contain green **Chloroplasts** for photosynthesis; animal cells do not.<br>• Step 3: Plant cells have one large central **Vacuole**; animal cells have multiple small vacuoles.<br>• Step 4: The plant cell nucleus is pushed to the side; the animal cell nucleus is in the center.",
+      significance: "Cell biology is critical for medical pathology, manufacturing vaccines, genetic cloning, and curing genetic disorders.",
+      tips: "Always draw a double rectangular border for plant cells to represent the rigid cell wall, and use a neat ruler to point labeling lines to the right side of the diagram."
+    },
+    "logarithm": {
+      title: "Logarithms and Exponents (لوگارتھم)",
+      def: "A logarithm is the inverse mathematical operation of exponentiation. In simple terms, a log tells you how many times a base number must be multiplied by itself to get another specific number (e.g. since $10^2 = 100$, $\\log_{10}(100) = 2$).",
+      objective: "To resolve algebraic logarithmic expressions, find characteristics/mantissa, and apply logarithmic laws.",
+      formula: "Base Law: <code>log_b(xy) = log_b(x) + log_b(y)</code>. Division Law: <code>log_b(x/y) = log_b(x) - log_b(y)</code>. Power Law: <code>log_b(x^y) = y log_b(x)</code>.",
+      example: "Let\'s simplify <code>log(6)</code> using log values log(2) = 0.3010 and log(3) = 0.4771:<br>• Step 1: Rewrite 6 as a product of prime factors: $6 = 2 \\times 3$.<br>• Step 2: Apply the multiplication log law: $\\log(2 \\times 3) = \\log(2) + \\log(3)$.<br>• Step 3: Substitute the given values: $\\log(6) = 0.3010 + 0.4771$.<br>• Step 4: Add the values: $\\log(6) = 0.7781$.",
+      significance: "Logarithmic scales are used in real-world measurements like Earthquake intensities (Richter Scale), measuring sound decibels, and calculating chemical pH values.",
+      tips: "Always show characteristics (whole number part) and mantissa (decimal part) separately when using log tables to score full board marks."
+    },
+    "mitosis": {
+      title: "Mitosis: Cell Division for Growth (مائٹوسس)",
+      def: "Mitosis is a biological cell division process where a single somatic (body) cell divides into two identical daughter cells, each maintaining the exact same number and kind of chromosomes as the parent nucleus. It is the reason why our wounds heal and how we grow in size!",
+      objective: "To explain the stages of cell division and understand chromosome movements.",
+      formula: "Division Stages: Prophase &rarr; Metaphase &rarr; Anaphase &rarr; Telophase &rarr; Cytokinesis.",
+      example: "Let\'s break down the 4 key stages:<br>• Step 1: **Prophase**: Chromosomes condense and spindle fibers begin to form.<br>• Step 2: **Metaphase**: Chromosomes line up perfectly along the middle (equatorial) plate.<br>• Step 3: **Anaphase**: Sister chromatids are pulled apart to opposite poles of the cell.<br>• Step 4: **Telophase**: Nuclear membranes reform around two new identical nuclei.",
+      significance: "Mitosis is essential for growth, tissue repair, skin regeneration, and asexual reproduction in single-celled organisms.",
+      tips: "In Biology papers, always draw a neat circle for each stage, highlighting the spindle fibers pulling chromosomes apart in Metaphase/Anaphase."
+    },
+    "meiosis": {
+      title: "Meiosis: Cell Division for Reproduction (میوسس)",
+      def: "Meiosis is a specialized type of cell division that occurs in germ cells, reducing the chromosome number by half to create four non-identical haploid gametes (sperm and egg cells). It introduces genetic variation through crossing over, which is why children look different from parents!",
+      objective: "To explain reduction division and understand genetic recombination.",
+      formula: "Chromosomal Change: Diploid ($2n$) &rarr; Haploid ($n$). Division Rounds: Meiosis I and Meiosis II.",
+      example: "Let\'s break down the main stages of Meiosis I:<br>• Step 1: **Prophase I**: Homologous chromosomes pair up and undergo **crossing over** (exchanging genetic material).<br>• Step 2: **Metaphase I**: Paired chromosomes line up at the center.<br>• Step 3: **Anaphase I**: Homologous chromosomes separate to opposite ends.<br>• Step 4: **Telophase I**: Two haploid daughter cells are formed, which will divide again in Meiosis II.",
+      significance: "Meiosis is crucial for sexual reproduction, maintaining constant chromosome numbers across generations, and driving evolutionary variations.",
+      tips: "Always highlight \'Crossing Over\' in Prophase I, as this is the most important term board examiners look for in Meiosis questions!"
+    },
+    "dna": {
+      title: "DNA: The Blueprint of Life (ڈی این اے)",
+      def: "DNA (Deoxyribonucleic Acid) is a double-stranded, spiral-shaped molecule that stores the genetic instructions and biological blueprints needed for the development, functioning, growth, and reproduction of all living organisms.",
+      objective: "To describe the double-helix structure, nucleotide base-pairing, and replication rules.",
+      formula: "Double Helix Base Pairing Rule: Adenine pairs with Thymine (A-T), Guanine pairs with Cytosine (G-C).",
+      example: "Let\'s identify the three components of a DNA nucleotide:<br>• Step 1: A five-carbon sugar molecule called **Deoxyribose**.<br>• Step 2: A **Phosphate Group** forming the backbone structure.<br>• Step 3: One of four nitrogenous bases: **A, T, G, or C**.<br>• Step 4: Hydrogen bonds hold these base pairs together (2 between A-T, 3 between G-C).",
+      significance: "DNA mapping is used in forensic investigations, paternity testing, medical gene therapy, and biological evolutionary trackings.",
+      tips: "Draw the double helix like a twisted ladder, labeling A, T, G, C bases clearly on the rungs with different markers."
+    },
+    "gravity": {
+      title: "Gravitational Force and Attraction (کششِ ثقل)",
+      def: "Gravity is the invisible natural force of attraction that pulls objects towards each other. It is the force that keeps our feet on the ground, causes apples to fall, and keeps planets in orbit around the sun. Any object with mass has gravity!",
+      objective: "To calculate gravitational force between two celestial bodies and understand weight relationships.",
+      formula: "Newton\'s Law of Gravitation: <code>F_g = G × (m₁ × m₂) / d²</code> (where G is Gravitational Constant = $6.673 \\times 10^{-11} \\text{ N m}^2/\\text{kg}^2$).",
+      example: "Let\'s describe how doubling the distance affects gravitational force:<br>• Step 1: State original equation: $F_1 = G \\frac{m_1 m_2}{d^2}$.<br>• Step 2: Replace distance with $2d$: $F_2 = G \\frac{m_1 m_2}{(2d)^2}$.<br>• Step 3: Expand denominator: $F_2 = G \\frac{m_1 m_2}{4d^2}$.<br>• Step 4: Gravitational force is reduced to **one-fourth** (1/4th) of its original value!",
+      significance: "Gravity calculations are essential for launching satellites, calculating tide behaviors, structural weights, and aerospace routes.",
+      tips: "Be very careful to square the distance in the denominator! Forgetting the square is the most common error in board numericals."
+    },
+    "work": {
+      title: "Work and Mechanical Energy (کام)",
+      def: "In physics, work is done when a force acting on an object causes it to move through a displacement. If you push a wall with all your strength but it doesn\'t move, the physical work done is exactly zero! Work requires both force and actual movement in the direction of the force.",
+      objective: "To calculate mechanical work done by forces acting at different angles.",
+      formula: "Work Formula: <code>W = F × d × cos(θ)</code> (where F is Force, $d$ is displacement, and θ is the angle between force and motion).",
+      example: "Let\'s find the work done when a 10 N force pushes a box 5 meters horizontally:<br>• Step 1: Write given values: Force $F = 10$ N, displacement $d = 5$ m, angle $\\theta = 0^\\circ$ (horizontal direction).<br>• Step 2: State formula: $W = F \\times d \\times \\cos(0^\\circ)$.<br>• Step 3: Substitute values (since $\\cos(0^\\circ) = 1$): $W = 10 \\times 5 \\times 1$.<br>• Step 4: Final calculation: $W = 50$ Joules (J).",
+      significance: "Mechanical work calculations help design fuel-efficient cars, heavy cranes, industrial engines, and home appliances.",
+      tips: "Always check the angle θ. If force is perpendicular to motion (e.g. carrying a suitcase while walking, $\\theta = 90^\\circ$), work is 0 because $\\cos(90^\\circ) = 0$!"
+    },
+    "energy": {
+      title: "Energy: Kinetic and Potential (توانائی)",
+      def: "Energy is defined as the capacity or ability of a system to perform work. Energy cannot be created or destroyed (Law of Conservation of Energy); it only changes from one form to another. The two most common mechanical forms are Kinetic Energy (motion) and Potential Energy (position/height).",
+      objective: "To calculate Kinetic and Potential energies of mechanical objects in motion or resting at heights.",
+      formula: "Kinetic Energy: <code>K.E = ½ m v²</code>. Potential Energy: <code>P.E = m × g × h</code> (where g = $9.8 \\text{ m/s}^2$). Unit: Joules (J).",
+      example: "Let\'s calculate the Potential Energy of a 2 kg brick held 10 meters high:<br>• Step 1: List given parameters: mass $m = 2$ kg, height $h = 10$ m, gravity $g = 9.8$ m/s².<br>• Step 2: State formula: $P.E = m \\times g \\times h$.<br>• Step 3: Substitute values: $P.E = 2 \\times 9.8 \\times 10$.<br>• Step 4: Calculate final energy: $P.E = 196$ Joules (J).",
+      significance: "Energy models are crucial for hydro-electric dam planning, roller coaster designs, chemical reactions, and solar panels.",
+      tips: "Ensure mass is in kilograms (kg) and velocity is in meters per second (m/s) before applying formulas to secure correct results."
+    },
+    "friction": {
+      title: "Friction and Opposing Forces (رگڑ)",
+      def: "Friction is the opposing force that resists the relative motion or sliding of two surfaces in contact. It works opposite to the direction of movement. While friction wastes energy, it is absolutely essential for walking, driving cars, or writing with a pencil!",
+      objective: "To calculate frictional force coefficients and understand limiting friction values.",
+      formula: "Frictional Force: <code>F_f = μ × F_N</code> (where μ is friction coefficient, and $F_N$ is normal reaction force = $m \\times g$).",
+      example: "Let\'s find limiting friction of a 10 kg block on a surface with μ = 0.3:<br>• Step 1: Mass $m = 10$ kg, $\\mu = 0.3$, $g = 9.8$ m/s².<br>• Step 2: Find Normal Force: $F_N = m \\times g = 10 \\times 9.8 = 98$ N.<br>• Step 3: Apply friction formula: $F_f = 0.3 \\times 98$.<br>• Step 4: Calculate: $F_f = 29.4$ Newtons.",
+      significance: "Friction optimization is essential for designing vehicle tires, brake pads, safe stair treads, and lubricated engine bearings.",
+      tips: "Remember that friction coefficient μ has no units! Point this out in your board paper to show a strong conceptual grasp."
+    },
+    "pressure": {
+      title: "Pressure and Fluid Mechanics (دباؤ)",
+      def: "Pressure is the measure of physical force exerted perpendicular to the surface of an object per unit area over which that force is distributed (e.g. why walking on snow with high heels sinks, but flat snowshoes keep you afloat).",
+      objective: "To calculate mechanical pressure and understand hydrostatic fluid pressures.",
+      formula: "Pressure Formula: <code>P = F / A</code> (Pressure in Pascals (Pa) or N/m², Force in Newtons, Area in m²).",
+      example: "Let\'s find the pressure exerted by a 100 N force acting on an area of 2 m²:<br>• Step 1: Force $F = 100$ N, Area $A = 2$ m².<br>• Step 2: State formula: $P = F / A$.<br>• Step 3: Substitute values: $P = 100 / 2$.<br>• Step 4: Calculate: $P = 50$ Pascals (Pa).",
+      significance: "Pressure calculation is critical in designing hydraulic lifts, submarine hulls, blood pressure devices, and weather predictions.",
+      tips: "Always check the area unit! If the area is given in cm², you must convert it to m² (divide by 10,000) first to get the correct answer in Pascals."
+    },
+    "periodic": {
+      title: "The Periodic Table of Elements (دوری جدول)",
+      def: "The Periodic Table is a tabular arrangement of all discovered chemical elements, organized in order of their increasing **Atomic Number** (protons). Elements are grouped in vertical Columns (Groups) and horizontal Rows (Periods) based on similar valence electron configurations and chemical characteristics.",
+      objective: "To understand group/period trends, identify metals/non-metals, and explain atomic radii variations.",
+      formula: "Periods: 7 horizontal rows. Groups: 18 vertical columns. Group 1: Alkali Metals, Group 17: Halogens, Group 18: Noble Gases.",
+      example: "Let\'s identify the trends as we move left-to-right across a period:<br>• Step 1: **Atomic Number**: Increases by 1 for each element.<br>• Step 2: **Atomic Radius**: Decreases because nuclear charge increases and pulls shells tighter.<br>• Step 3: **Electronegativity**: Increases as atoms have a stronger attraction for bonding electrons.<br>• Step 4: **Metallic Character**: Decreases as elements shift from metals to non-metals.",
+      significance: "The periodic table is the absolute heart of chemistry, allowing material scientists to predict element combinations and synthesize compounds.",
+      tips: "Always state the group number and period number when describing an element\'s location in your board answer sheet."
+    },
+    "molecule": {
+      title: "Molecules and Chemical Formulas (سالمہ)",
+      def: "A molecule is the smallest particle of a chemical element or compound that can exist independently and retains all the chemical properties of that substance. It consists of two or more atoms held together by strong chemical bonds (like $H_2O$, $CO_2$, or $O_2$).",
+      objective: "To calculate molecular mass and understand chemical structures.",
+      formula: "Molecular Mass: Sum of Atomic Masses of all constituent atoms. Unit: atomic mass units (a.m.u).",
+      example: "Let\'s find the Molecular Mass of water (H₂O) (Atomic masses: H = 1, O = 16):<br>• Step 1: Count atoms in formula: 2 Hydrogen atoms, 1 Oxygen atom.<br>• Step 2: State molecular mass equation: $\\text{Mass} = 2(\\text{Mass of H}) + 1(\\text{Mass of O})$.<br>• Step 3: Substitute atomic masses: $\\text{Mass} = 2(1) + 16$.<br>• Step 4: Calculate: $\\text{Mass} = 2 + 16 = 18$ a.m.u.",
+      significance: "Molecular calculations are fundamental to stoichiometric ratios in chemical laboratories, pharmaceutical dosages, and chemical manufacturing.",
+      tips: "Always list individual atomic masses on the side of your sheet before computing the total molecular weight."
+    },
+    "bonding": {
+      title: "Chemical Bonding in Chemistry (کیمیائی بانڈ)",
+      def: "Chemical bonding is the attractive electrostatic force that holds atoms together in molecules or compounds, enabling them to achieve stability by completing their outermost valence shell (Octet Rule). The three main types are **Covalent Bond** (sharing electrons), **Ionic Bond** (transferring electrons), and **Metallic Bond**.",
+      objective: "To identify bond types, draw Lewis dot structures, and explain molecular formations.",
+      formula: "Octet Rule: Atoms lose, gain, or share electrons to have exactly 8 electrons in their outer shell.",
+      example: "Let\'s describe covalent bonding in water (H₂O):<br>• Step 1: Oxygen has 6 valence electrons and needs 2 more. Hydrogen has 1 electron and needs 1 more.<br>• Step 2: Oxygen shares 1 electron with each of the two Hydrogen atoms.<br>• Step 3: This electron sharing creates two single covalent bonds (H-O-H).<br>• Step 4: Both Hydrogen shells (now 2) and Oxygen shell (now 8) are fully stable!",
+      significance: "Bond structures determine properties of materials: whether a substance is a solid or gas, has high melting points, or conducts electricity.",
+      tips: "Always draw a Lewis dot structure (using dots for oxygen electrons and crosses for hydrogen electrons) to show the shared electron pairs clearly."
+    },
+    "acid": {
+      title: "Acids, Bases, and pH Scales (تیزاب)",
+      def: "An acid is a chemical substance that releases hydrogen ions ($H^+$) in water, has a sour taste, turns blue litmus paper red, has a pH value less than 7, and reacts with bases to form salt and water (neutralization reaction). Examples include Hydrochloric acid ($HCl$) and Citric acid.",
+      objective: "To write neutralization reactions, calculate pH values, and identify acidic properties.",
+      formula: "pH Definition: <code>pH = -log[H⁺]</code> (where pH < 7 is acidic, pH = 7 is neutral, and pH > 7 is basic). Neutralization: <code>Acid + Base → Salt + Water</code>.",
+      example: "Let\'s write neutralization reaction between HCl (acid) and NaOH (base):<br>• Step 1: Identify reactants: $HCl$ and $NaOH$.<br>• Step 2: Combine $H^+$ from acid and $OH^-$ from base to form water ($H_2O$).<br>• Step 3: Combine remaining sodium ($Na$) and chlorine ($Cl$) ions to form common salt ($NaCl$).<br>• Step 4: Balanced Reaction: <b>HCl + NaOH &rarr; NaCl + H₂O</b>.",
+      significance: "Acids and bases regulate biological digestive systems, chemical laboratory processes, agriculture soil adjustments, and batteries.",
+      tips: "Remember that strong acids dissociate completely in water, while weak acids (like vinegar/acetic acid) only dissociate partially."
+    },
+    "base": {
+      title: "Bases and Alkalis in Chemistry (اساس)",
+      def: "A base is a chemical substance that accepts hydrogen ions, has a bitter taste, feels slippery/soapy to touch, turns red litmus paper blue, has a pH value greater than 7, and releases hydroxide ions ($OH^-$) when dissolved in water (bases soluble in water are called **Alkalis**). Examples include Sodium Hydroxide ($NaOH$).",
+      objective: "To identify alkaline properties, write chemical neutralization reactions, and explain pH trends.",
+      formula: "pOH Relationship: <code>pH + pOH = 14</code>. Hydroxide Release: <code>NaOH → Na⁺ + OH⁻</code> in aqueous solution.",
+      example: "Let\'s find the pH of a solution with hydroxide ion concentration [OH⁻] = 10⁻³ M:<br>• Step 1: Calculate pOH: $\\text{pOH} = -\\log[10^{-3}] = 3$.<br>• Step 2: State pH relation: $\\text{pH} + \\text{pOH} = 14$.<br>• Step 3: Substitute pOH: $\\text{pH} + 3 = 14$.<br>• Step 4: Calculate: $\\text{pH} = 14 - 3 = 11$. The solution is highly basic!",
+      significance: "Alkaline compounds are the primary chemical basis for manufacturing soaps, detergents, drain cleaners, and antacids for stomach relief.",
+      tips: "Always specify that all alkalis are bases, but not all bases are alkalis (only water-soluble bases are alkalis)."
+    },
+    "velocity": {
+      title: "Velocity and Rate of Motion (رفتار)",
+      def: "Velocity is a vector quantity that describes the rate of change of an object\'s displacement in a specific direction. Speed only tells you how fast an object is moving (scalar), but velocity tells you how fast **and in which direction** it is travelling!",
+      objective: "To calculate average velocity and solve equations of uniform motion.",
+      formula: "Velocity Formula: <code>v⃗ = d⃗ / t</code> (where d⃗ is displacement vector, and $t$ is time in seconds). SI Unit: m/s (meters per second).",
+      example: "Let\'s find the velocity of a car that travels 100 meters East in 5 seconds:<br>• Step 1: displacement $d = 100$ meters East, time $t = 5$ seconds.<br>• Step 2: State formula: $v = d / t$.<br>• Step 3: Substitute values: $v = 100 / 5$.<br>• Step 4: Final calculation: $v = 20$ m/s East.",
+      significance: "Velocity vectors are vital in automotive speedometer calibrations, air traffic control coordinates, and weather storm trackings.",
+      tips: "Never forget to write the direction (e.g. \'East\', \'North\') in your final velocity answer, as velocity is a vector quantity!"
+    },
+    "acceleration": {
+      title: "Acceleration and Velocity Change (اسرع)",
+      def: "Acceleration is the vector quantity that measures the rate of change of an object\'s velocity over a specific interval of time. If a car speeds up, slows down (deceleration/retardation), or turns a corner, it is accelerating!",
+      objective: "To calculate uniform acceleration and solve equations of motion.",
+      formula: "Acceleration Formula: <code>a⃗ = (v_f - v_i) / t</code> (where $v_f$ is final velocity, $v_i$ is initial velocity, and $t$ is time). SI Unit: m/s².",
+      example: "Let\'s calculate acceleration of a car that increases speed from 10 m/s to 30 m/s in 4 seconds:<br>• Step 1: Initial speed $v_i = 10$ m/s, final speed $v_f = 30$ m/s, time $t = 4$ s.<br>• Step 2: State formula: $a = (v_f - v_i) / t$.<br>• Step 3: Substitute: $a = (30 - 10) / 4 = 20 / 4$.<br>• Step 4: Calculate: $a = 5$ m/s².",
+      significance: "Acceleration data helps engineers design safe high-speed elevators, jet aircraft passenger comfort, and vehicle launch capabilities.",
+      tips: "Always check if the object is slowing down. If it is slowing down, your calculated acceleration will be negative, representing Deceleration/Retardation."
+    },
+    "solution": {
+      title: "Solutions, Solutes, and Solvents (محلول)",
+      def: "A solution is a homogeneous mixture composed of two or more substances. In this mixture, the **Solute** is the substance that is dissolved (present in smaller quantity, e.g. salt), while the **Solvent** is the dissolving medium (present in larger quantity, e.g. water).",
+      objective: "To calculate solution concentration percentages and understand solubility limits.",
+      formula: "Mass-Mass Percentage: <code>Concentration = [Mass of Solute / (Mass of Solute + Mass of Solvent)] × 100</code>.",
+      example: "Let\'s find concentration of a solution made by dissolving 20g of salt in 180g of water:<br>• Step 1: Mass of Solute (salt) = 20g, Mass of Solvent (water) = 180g.<br>• Step 2: Total Mass of Solution = $20 + 180 = 200$g.<br>• Step 3: State formula: $\\text{Conc} = (\\text{Mass of Solute} / \\text{Total Mass}) \\times 100$.<br>• Step 4: Calculate: $\\text{Conc} = (20 / 200) \\times 100 = 10$%. The solution concentration is 10%!",
+      significance: "Solutions are fundamental for preparing clinical intravenous fluids, liquid medicines, soft drinks, and manufacturing steel alloys.",
+      tips: "Be very careful! The denominator in the concentration formula is the total mass of the **solution** (solute + solvent), not just the solvent mass."
+    },
+    "trigonometry": {
+      title: "Trigonometry and Right Triangles (تکون)",
+      def: "Trigonometry is the branch of mathematics that studies the specific relationships between the side lengths and angles of triangles, particularly right-angled triangles. It defines standard ratios like Sine, Cosine, and Tangent.",
+      objective: "To solve right-angled triangles, calculate trigonometric ratios, and apply identities.",
+      formula: "Basic Ratios: <code>sin(θ) = Perpendicular/Hypotenuse</code>. <code>cos(θ) = Base/Hypotenuse</code>. <code>tan(θ) = Perpendicular/Base</code>. Identity: <code>sin²(θ) + cos²(θ) = 1</code>.",
+      example: "Let\'s find sin(θ) in a right triangle with Perpendicular = 3 and Base = 4:<br>• Step 1: Find Hypotenuse using Pythagoras theorem: $H = \\sqrt{3^2 + 4^2} = \\sqrt{9+16} = \\sqrt{25} = 5$.<br>• Step 2: State Sine formula: $\\sin(\\theta) = \\text{Perpendicular} / \\text{Hypotenuse}$.<br>• Step 3: Substitute side values: $\\sin(\\theta) = 3 / 5$.<br>• Step 4: Calculate decimal: $\\sin(\\theta) = 0.6$.",
+      significance: "Trigonometry is heavily used in ocean wave tracking, architectural heights measurement (without climbing), GPS navigation, flight coordinates, and rendering 3D digital graphic angles.",
+      tips: "Always draw a right-angled triangle on the side and clearly label the Perpendicular, Base, and Hypotenuse relative to angle θ."
+    }
+  };
+
   // Custom GEMS-style response builder
   let gemsIntro = "";
   let gemsSteps = [];
@@ -1506,107 +1941,146 @@ function generateSimulatedAIResponse(query, info, wasFile) {
   const isChemistry = info.subject.includes("کیمیا") || info.subject.toLowerCase().includes("chemist");
   const isBiology = info.subject.includes("حیاتیات") || info.subject.toLowerCase().includes("biolog");
   
-  // Build subject-aware parameters
-  if (isMath) {
-    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that ${info.grade} Math book and see "<b>${topic}</b>," it looks like a mountain of complex equations. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is an essential algebraic/mathematical concept in the Karachi Board (Sindh Textbook Board) syllabus. It is not just about numbers; it's about training your brain to analyze and solve problems step-by-step.`;
+  // Find normalized containment in curriculum Dictionary
+  let dictKey = null;
+  const dictKeys = Object.keys(curriculumDictionary);
+  for (const dk of dictKeys) {
+    if (normalized.includes(dk) || 
+        (dk === "vector" && normalized.includes("vactor")) ||
+        (dk === "mitosis" && normalized.includes("mitos")) ||
+        (dk === "meiosis" && normalized.includes("meios")) ||
+        (dk === "logarithm" && normalized.includes("log"))) {
+      dictKey = dk;
+      break;
+    }
+  }
+
+  if (dictKey) {
+    const entry = curriculumDictionary[dictKey];
+    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that Class ${info.grade} ${info.subject} book and see "<b>${topic}</b>," it looks like a mountain of complex equations. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.<br><br>Since you are in Class ${info.grade}, <b>${entry.title}</b> is a highly important concept in the Karachi Board (Sindh Textbook Board) syllabus. Let's understand it in a simple way:<br><br>${entry.def}`;
     
     gemsSteps = [
       {
         num: "1. Heading: Objective / Purpose",
-        text: `Explain what you are doing in the exam. For example: <i>"To resolve the given expression of <b>${topic}</b> or calculate its unknown variables systematically."</i>`
+        text: entry.objective
       },
       {
         num: "2. Heading: Formula / Identity Applied",
-        text: `Never solve a Mathematics question directly! Always state the formula or identity you are using. In Karachi Board papers, writing the formula in a neat sidebar box gives a premium impression to the examiner.`
+        text: entry.formula
       },
       {
         num: "3. Heading: Step-by-Step Resolution",
-        text: `Show every step clearly. Break down the equation, show addition/multiplication operations, and preserve the logical flow. Examiners marks each line of calculation!`
-      },
-      {
-        num: "4. Heading: Final Result",
-        text: `Write the final values or factors in a clear, bold line or wrap it inside a neat border box so the examiner can see the answer immediately.`
+        text: entry.example
       }
     ];
     
-    gemsSignificance = `<b>Heading: Final Result & Significance</b><br>Write the final solution in a bold box. Understanding <b>${topic}</b> helps solve advanced scientific calculations and is heavily applied in computer graphics, coordinate tracking, and architectural designs.`;
+    gemsSignificance = `<b>Heading: Real World Significance</b><br>${entry.significance}`;
+    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: <b>${topic}</b> is a highly repeating concept for the Karachi Board examiners. In the last 5 years of board papers, questions on this topic have appeared at least <b>2 to 3 times</b>. <br><br>💡 <b>Board Exam Tips:</b> ${entry.tips}`;
     
-    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: <b>${topic}</b> is a highly repeating concept for the Karachi Board examiners. In the last 5 years of board papers, questions on this topic have appeared at least <b>2 to 3 times in the Short Questions (Section B)</b>. If you master this, those crucial marks are safely in your pocket! Make sure to write steps with clear headings to score full marks!`;
-    
-    gemsMotivation = `Beta, I know the pressure of getting into NED, Dawood, or Dow Medical College is sitting on your shoulders. You might feel like your whole life depends on these formulas. Take a deep breath.<br><br>Mathematics isn't here to fail you; it's here to train your brain. Don't "ratta" (memorize) the steps. Understand the "why" behind it, and you won't need to fear the exam paper. You definitely have what it takes to ace this!`;
-  }
-  else if (isPhysics) {
-    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that ${info.grade} Physics book and see "<b>${topic}</b>," it looks like a mountain of complex formulas and definitions. But believe me, Physics is just about our daily life, and I’m going to show you how to understand it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a fundamental concept of mechanics/dynamics in the Sindh Textbook Board. It describes how the physical world behaves around us!`;
-    
-    gemsSteps = [
-      {
-        num: "1. Heading: Core Definition",
-        text: `Start your answer with the precise textbook definition. Write it with a marker in quotation marks to instantly impress the examiner.`
-      },
-      {
-        num: "2. Heading: Mathematical Expression / Derivation",
-        text: `If the concept has a formula (like $F = ma$), write the equation clearly. State what each symbol stands for (e.g. $m$ = mass, $a$ = acceleration) along with their SI units (e.g., kg, m/s²).`
-      },
-      {
-        num: "3. Heading: Practical Example / Analogy",
-        text: `Always link Physics to a real-world example! Whether it's sudden car brakes (inertia) or a balloon flying (action/reaction), a physical analogy makes your concept crystal clear.`
-      }
-    ];
-    
-    gemsSignificance = `<b>Heading: Real World Significance</b><br>Understanding <b>${topic}</b> is vital in modern engineering, automotive safety designs, aerospace calculations, and building stable bridges and structures.`;
-    
-    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, <b>${topic}</b> is a "hot favorite" for the BIEK/BSEK examiners. It has appeared multiple times in the past 5 years of board papers. Pay close attention to standard derivations and numerical questions associated with it! Make sure to highlight SI units at the end of numericals to avoid losing 0.5 marks.`;
-    
-    gemsMotivation = `Beta, I know the pressure of board exams and entry tests is intense. But Physics isn't about memorization; it's about seeing the universe in action. Don't 'ratta' the definitions. Understand 'why' it happens, and you will write it beautifully. You are hardworking and brilliant!`;
-  }
-  else if (isBiology) {
-    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. Biology is a beautiful study of life, and though "<b>${topic}</b>" may seem like a mountain of tough terminologies, it’s just a fascinating story of how living organisms function. I will help you master it easily!<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a highly structured topic in the Karachi Board Biology syllabus, describing how cells, tissues, or biological processes sustain life.`;
-    
-    gemsSteps = [
-      {
-        num: "1. Heading: Concept Definition",
-        text: `State the precise scientific definition of <b>${topic}</b>. Highlight key technical terms (like 'programmed death', 'synthesis', 'mitosis') with a dark marker.`
-      },
-      {
-        num: "2. Heading: Step-by-Step Biological Process",
-        text: `Biology loves sequences! Break down the stages of <b>${topic}</b> step-by-step (e.g., Phase 1 to Phase 4) clearly outlining what happens to the cell or organism at each stage.`
-      },
-      {
-        num: "3. Heading: Labeled Diagrammatic Flow",
-        text: `Never write a Biology answer without a diagram! Even a simple 3-box workflow chart showing the changes will guarantee you full marks in BIEK/BSEK exams.`
-      }
-    ];
-    
-    gemsSignificance = `<b>Heading: Biological Significance</b><br>Understanding <b>${topic}</b> is crucial for medical studies, understanding disease mechanisms (like cancer), genetic research, and how our immune system keeps us healthy.`;
-    
-    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: Questions on <b>${topic}</b> are very popular in Section B (Short Answers). In the last 5 years of Biology papers, this concept has been repeated at least 3 times. Always draw clean diagrams and underline terms like phagocytes, blebbing, or chloroplasts to secure 100% marks!`;
-    
-    gemsMotivation = `Beta, I know you are aiming for Dow Medical College or other top medical universities, and the path looks challenging. Take a deep breath. Biology is a visual science—don't memorize dry text, visualize the cell or process in your mind. You are highly talented, and I am proud of your efforts!`;
-  }
-  else {
-    // Default subject fallback
-    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that Class ${info.grade} ${info.subject} book and see "<b>${topic}</b>," it looks like a mountain of complex definitions. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a highly important concept in the Karachi Board <b>${info.subject}</b> syllabus. It plays a vital role in understanding the curriculum.`;
-    
-    gemsSteps = [
-      {
-        num: "1. Heading: Objective / Core Definition",
-        text: `Explain what <b>${topic}</b> is in standard textbook terms. Write it clearly under a bold heading to help the examiner understand your baseline concept.`
-      },
-      {
-        num: "2. Heading: Basic Working / Structure",
-        text: `Break down how <b>${topic}</b> works or its basic components. Show any steps, rules, or formulas associated with it clearly.`
-      },
-      {
-        num: "3. Heading: Heading Culture Example",
-        text: `Provide a clear textbook example. Presenting a step-by-step sample problem or scenario makes your answer look outstanding!`
-      }
-    ];
-    
-    gemsSignificance = `<b>Heading: Significance & Result</b><br>Write the final results clearly. Understanding <b>${topic}</b> builds a strong foundation for high-level academic courses and plays a crucial role in practical applications.`;
-    
-    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, <b>${topic}</b> is a very important topic in past board papers. In the last 5 years, this concept has appeared multiple times in short and long questions. Use clear headings like "Definition", "Working Rule", and "Example" to secure full marks!`;
-    
-    gemsMotivation = `Beta, don't feel overwhelmed by exam pressure. Study with an active mind, focus on standard concepts, and practice writing step-by-step answers. You are extremely talented, and I have complete faith in your potential to ace this!`;
+    gemsMotivation = `Beta, I know the pressure of getting into NED, Dawood, or Dow Medical College is sitting on your shoulders. You might feel like your whole life depends on these formulas. Take a deep breath.<br><br>Don't "ratta" (memorize) the steps. Understand the "why" behind it, and you won't need to fear the exam paper. You are hardworking, and you definitely have what it takes to ace this!`;
+  } else {
+    // Build generic yet highly engaging subject-aware parameters for topics not in dictionary
+    if (isMath) {
+      gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that ${info.grade} Math book and see "<b>${topic}</b>," it looks like a mountain of complex equations. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is an essential algebraic/mathematical concept in the Karachi Board (Sindh Textbook Board) syllabus. It is not just about numbers; it's about training your brain to analyze and solve problems step-by-step.`;
+      
+      gemsSteps = [
+        {
+          num: "1. Heading: Objective / Purpose",
+          text: `Explain what you are doing in the exam. For example: <i>"To resolve the given expression of <b>${topic}</b> or calculate its unknown variables systematically."</i>`
+        },
+        {
+          num: "2. Heading: Formula / Identity Applied",
+          text: `Never solve a Mathematics question directly! Always state the formula or identity you are using. In Karachi Board papers, writing the formula in a neat sidebar box gives a premium impression to the examiner.`
+        },
+        {
+          num: "3. Heading: Step-by-Step Resolution",
+          text: `Show every step clearly. Break down the equation, show addition/multiplication operations, and preserve the logical flow. Examiners marks each line of calculation!`
+        },
+        {
+          num: "4. Heading: Final Result",
+          text: `Write the final values or factors in a clear, bold line or wrap it inside a neat border box so the examiner can see the answer immediately.`
+        }
+      ];
+      
+      gemsSignificance = `<b>Heading: Final Result & Significance</b><br>Write the final solution in a bold box. Understanding <b>${topic}</b> helps solve advanced scientific calculations and is heavily applied in computer graphics, coordinate tracking, and architectural designs.`;
+      
+      gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: <b>${topic}</b> is a highly repeating concept for the Karachi Board examiners. In the last 5 years of board papers, questions on this topic have appeared at least <b>2 to 3 times in the Short Questions (Section B)</b>. If you master this, those crucial marks are safely in your pocket! Make sure to write steps with clear headings to score full marks!`;
+      
+      gemsMotivation = `Beta, I know the pressure of getting into NED, Dawood, or Dow Medical College is sitting on your shoulders. You might feel like your whole life depends on these formulas. Take a deep breath.<br><br>Mathematics isn't here to fail you; it's here to train your brain. Don't "ratta" (memorize) the steps. Understand the "why" behind it, and you won't need to fear the exam paper. You definitely have what it takes to ace this!`;
+    }
+    else if (isPhysics) {
+      gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that ${info.grade} Physics book and see "<b>${topic}</b>," it looks like a mountain of complex formulas and definitions. But believe me, Physics is just about our daily life, and I’m going to show you how to understand it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a fundamental concept of mechanics/dynamics in the Sindh Textbook Board. It describes how the physical world behaves around us!`;
+      
+      gemsSteps = [
+        {
+          num: "1. Heading: Core Definition",
+          text: `Start your answer with the precise textbook definition. Write it with a marker in quotation marks to instantly impress the examiner.`
+        },
+        {
+          num: "2. Heading: Mathematical Expression / Derivation",
+          text: `If the concept has a formula (like $F = ma$), write the equation clearly. State what each symbol stands for (e.g. $m$ = mass, $a$ = acceleration) along with their SI units (e.g., kg, m/s²).`
+        },
+        {
+          num: "3. Heading: Practical Example / Analogy",
+          text: `Always link Physics to a real-world example! Whether it's sudden car brakes (inertia) or a balloon flying (action/reaction), a physical analogy makes your concept crystal clear.`
+        }
+      ];
+      
+      gemsSignificance = `<b>Heading: Real World Significance</b><br>Understanding <b>${topic}</b> is vital in modern engineering, automotive safety designs, aerospace calculations, and building stable bridges and structures.`;
+      
+      gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, <b>${topic}</b> is a "hot favorite" for the BIEK/BSEK examiners. It has appeared multiple times in the past 5 years of board papers. Pay close attention to standard derivations and numerical questions associated with it! Make sure to highlight SI units at the end of numericals to avoid losing 0.5 marks.`;
+      
+      gemsMotivation = `Beta, I know the pressure of board exams and entry tests is intense. But Physics isn't about memorization; it's about seeing the universe in action. Don't 'ratta' the definitions. Understand 'why' it happens, and you will write it beautifully. You are hardworking and brilliant!`;
+    }
+    else if (isBiology) {
+      gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. Biology is a beautiful study of life, and though "<b>${topic}</b>" may seem like a mountain of tough terminologies, it’s just a fascinating story of how living organisms function. I will help you master it easily!<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a highly structured topic in the Karachi Board Biology syllabus, describing how cells, tissues, or biological processes sustain life.`;
+      
+      gemsSteps = [
+        {
+          num: "1. Heading: Concept Definition",
+          text: `State the precise scientific definition of <b>${topic}</b>. Highlight key technical terms (like 'programmed death', 'synthesis', 'mitosis') with a dark marker.`
+        },
+        {
+          num: "2. Heading: Step-by-Step Biological Process",
+          text: `Biology loves sequences! Break down the stages of <b>${topic}</b> step-by-step (e.g., Phase 1 to Phase 4) clearly outlining what happens to the cell or organism at each stage.`
+        },
+        {
+          num: "3. Heading: Labeled Diagrammatic Flow",
+          text: `Never write a Biology answer without a diagram! Even a simple 3-box workflow chart showing the changes will guarantee you full marks in BIEK/BSEK exams.`
+        }
+      ];
+      
+      gemsSignificance = `<b>Heading: Biological Significance</b><br>Understanding <b>${topic}</b> is crucial for medical studies, understanding disease mechanisms (like cancer), genetic research, and how our immune system keeps us healthy.`;
+      
+      gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: Questions on <b>${topic}</b> are very popular in Section B (Short Answers). In the last 5 years of Biology papers, this concept has been repeated at least 3 times. Always draw clean diagrams and underline terms like phagocytes, blebbing, or chloroplasts to secure 100% marks!`;
+      
+      gemsMotivation = `Beta, I know you are aiming for Dow Medical College or other top medical universities, and the path looks challenging. Take a deep breath. Biology is a visual science—don't memorize dry text, visualize the cell or process in your mind. You are highly talented, and I am proud of your efforts!`;
+    }
+    else {
+      // Default subject fallback
+      gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that Class ${info.grade} ${info.subject} book and see "<b>${topic}</b>," it looks like a mountain of complex definitions. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a highly important concept in the Karachi Board <b>${info.subject}</b> syllabus. It plays a vital role in understanding the curriculum.`;
+      
+      gemsSteps = [
+        {
+          num: "1. Heading: Objective / Core Definition",
+          text: `Explain what <b>${topic}</b> is in standard textbook terms. Write it clearly under a bold heading to help the examiner understand your baseline concept.`
+        },
+        {
+          num: "2. Heading: Basic Working / Structure",
+          text: `Break down how <b>${topic}</b> works or its basic components. Show any steps, rules, or formulas associated with it clearly.`
+        },
+        {
+          num: "3. Heading: Heading Culture Example",
+          text: `Provide a clear textbook example. Presenting a step-by-step sample problem or scenario makes your answer look outstanding!`
+        }
+      ];
+      
+      gemsSignificance = `<b>Heading: Significance & Result</b><br>Write the final results clearly. Understanding <b>${topic}</b> builds a strong foundation for high-level academic courses and plays a crucial role in practical applications.`;
+      
+      gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, <b>${topic}</b> is a very important topic in past board papers. In the last 5 years, this concept has appeared multiple times in short and long questions. Use clear headings like "Definition", "Working Rule", and "Example" to secure full marks!`;
+      
+      gemsMotivation = `Beta, don't feel overwhelmed by exam pressure. Study with an active mind, focus on standard concepts, and practice writing step-by-step answers. You are extremely talented, and I have complete faith in your potential to ace this!`;
+    }
   }
 
   const title = isEn ? `${topic} in Simple Terms` : `${topic} and Its Concepts (آسان الفاظ میں)`;
