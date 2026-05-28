@@ -856,6 +856,58 @@ const educationalQADatabase = {
       "ur": "Beta, dekha aap ne? Kitna asaan tha ye! Mujhe poora yakeen hai ke agar ye sawal paper mein aaya, to aap isko behtareen headings ke sath likh kar aayenge. Ratta lagane ki bilkul zaroorat nahi hai, bas concept ko zehen mein rakhein. Aap bohat talented hain!"
     }
   },
+  "factorization": {
+    "title": {
+      "en": "Factorization and Its Algebraic Methods",
+      "ur": "Factorization in Algebra (تجزیہ کرنا)"
+    },
+    "intro": {
+      "en": "Factorization is the process of breaking down a single mathematical expression into a product of smaller parts (called Factors). Think of it like taking a giant LEGO car apart into its original individual blocks!",
+      "ur": "Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that 11th-grade Math book and see \"Factorization,\" it looks like a mountain of complex equations. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.<br><br>Since you are in Class 11th (First Year), Factorization is no longer just about basic numbers; it’s about Algebraic Expressions and Complex Numbers (Chapter 1 and 2 of the Sindh Textbook Board).<br><br><b>What is Factorization? (The Concept)</b><br>In simple words, Factorization is the process of breaking down a single mathematical expression into a product of smaller parts (called Factors). Think of it like a LEGO set. You have a big car made of blocks. Factorization is the process of taking it apart into the original individual blocks that were joined together. In Math, when we multiply these blocks (factors) back together, we get the original expression."
+    },
+    "steps": {
+      "en": [
+        {
+          "num": "Objective / Purpose",
+          "text": "To resolve the given algebraic or complex expression into its simplest linear factors."
+        },
+        {
+          "num": "Formula / Identity Applied",
+          "text": "We often use standard algebraic identities, such as:<br>• Difference of Squares: $a^2 - b^2 = (a - b)(a + b)$<br>• Complex Identity: $a^2 + b^2 = a^2 - (bi)^2 = (a - bi)(a + bi)$ (since $i^2 = -1$)."
+        },
+        {
+          "num": "Step-by-Step Resolution",
+          "text": "Let's factorize $x^2 + 49$:<br>1. Recognize we can't factor $a^2 + b^2$ using real numbers.<br>2. Use $i^2 = -1$ and rewrite as $x^2 - (-49)$.<br>3. Express as difference of squares: $x^2 - (7i)^2$.<br>4. Apply $a^2 - b^2$ to get $(x - 7i)(x + 7i)$."
+        }
+      ],
+      "ur": [
+        {
+          "num": "Heading: Objective / Purpose",
+          "text": "Explain what you are doing. For example: 'To resolve the given quadratic/complex expression into its simplest linear factors.'"
+        },
+        {
+          "num": "Heading: Formula / Identity Applied",
+          "text": "Never solve directly! Always state the formula you are using. In 11th Math, we often use:<br>• Difference of Squares: $a^2 - b^2 = (a - b)(a + b)$<br>• The Complex Identity: Since $i^2 = -1$, we can turn a plus sign into a minus for factoring: $a^2 + b^2 = a^2 - (bi)^2 = (a - bi)(a + bi)$."
+        },
+        {
+          "num": "Heading: Step-by-Step Resolution",
+          "text": "Show every step clearly. Examiners love to see the logic.<br><br><b>Example (Class 11th Style)</b>: Factorize $x^2 + 49$<br>• Step 1: Recognize we can't factor $a^2 + b^2$ using real numbers.<br>• Step 2: Use $i^2 = -1$. Rewrite as $x^2 - (-49)$.<br>• Step 3: Rewrite as $x^2 - (7i)^2$.<br>• Step 4: Apply $a^2 - b^2$ to get <b>$(x - 7i)(x + 7i)$</b>."
+        }
+      ]
+    },
+    "significance": {
+      "en": "<b>Final Result</b>: Write the final factors in a clear, bold line or a box so the examiner can see the answer immediately!",
+      "ur": "<b>Heading: Final Result</b><br>Write the final factors in a clear, bold line or a box so the examiner can see the answer immediately: <b>$(x - 7i)(x + 7i)$</b>."
+    },
+    "examTips": {
+      "en": "🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: Factorization of Complex Numbers is a 'hot favorite' for the Karachi Board examiners. In the last 5 years of BIEK papers, this concept has appeared at least 3 to 4 times in the Short Questions (Section B). If you master this, those 4 marks are safely in your pocket!",
+      "ur": "🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: Factorization of Complex Numbers is a 'hot favorite' for the BIEK/Karachi Board examiners. In the last 5 years of papers, this concept has appeared at least 3 to 4 times in the Short Questions (Section B). If you master this, those 4 marks are safely in your pocket!"
+    },
+    "motivation": {
+      "en": "Beta, I know the pressure of getting into NED, Dawood, or Dow Medical College is sitting on your shoulders. You might feel like your whole life depends on these formulas. Take a deep breath.<br><br>Mathematics isn't here to fail you; it's here to train your brain to solve problems. Don't 'ratta' (memorize) the steps. Understand why we move a term or why we add an 'i'. Once you understand the 'why,' you won't need to fear the exam paper. You are hardworking, and you have made it this far—you definitely have what it takes to ace this!<br><br>Would you like me to solve a specific question from your exercise (e.g., Exercise 1.2 or 2.1) so we can practice together?",
+      "ur": "Beta, I know the pressure of getting into NED, Dawood, or Dow Medical College is sitting on your shoulders. You might feel like your whole life depends on these formulas. Take a deep breath.<br><br>Mathematics isn't here to fail you; it's here to train your brain to solve problems. Don't 'ratta' (memorize) the steps. Understand why we move a term or why we add an 'i'. Once you understand the 'why,' you won't need to fear the exam paper. You are hardworking, and you have made it this far—you definitely have what it takes to ace this!<br><br>Would you like me to solve a specific question from your exercise (e.g., Exercise 1.2 or 2.1) so we can practice together?"
+    }
+  },
   "apoptosis": {
     "title": {
       "en": "Apoptosis and Its Steps",
@@ -1241,20 +1293,140 @@ function generateSimulatedAIResponse(query, info, wasFile) {
   
   const normalized = query.toLowerCase();
   
-  // Find key in database using containment
+  // Find key in database using containment & fuzzy/typo-tolerant matching
   let matchedKey = null;
   const keys = Object.keys(educationalQADatabase);
   for (const k of keys) {
     if (normalized.includes(k) || 
-        (k === "quadratic" && normalized.includes("فارمولا")) || 
-        (k === "newton" && normalized.includes("قانون")) || 
-        (k === "apoptosis" && (normalized.includes("apoptos") || normalized.includes("خودکشی"))) ||
-        (k === "photosynthesis" && normalized.includes("ضیاعی")) || 
-        (k === "matrix" && (normalized.includes("قالب") || normalized.includes("میٹرکس"))) || 
-        (k === "set" && normalized.includes("سیٹ"))) {
+        (k === "quadratic" && (normalized.includes("quadratic") || normalized.includes("فارمولا") || normalized.includes("کواڈریٹک"))) || 
+        (k === "newton" && (normalized.includes("newton") || normalized.includes("قانون") || normalized.includes("نیوٹن"))) || 
+        (k === "factorization" && (
+          normalized.includes("factor") || 
+          normalized.includes("fractor") || 
+          normalized.includes("facto") || 
+          normalized.includes("تجزیہ")
+        )) ||
+        (k === "apoptosis" && (normalized.includes("apoptos") || normalized.includes("apoptosis") || normalized.includes("خودکشی") || normalized.includes("ابوپٹوسس"))) ||
+        (k === "photosynthesis" && (normalized.includes("photosynthesis") || normalized.includes("ضیاعی") || normalized.includes("فوٹوسنتھیس"))) || 
+        (k === "matrix" && (normalized.includes("matrix") || normalized.includes("matrices") || normalized.includes("قالب") || normalized.includes("میٹرکس"))) || 
+        (k === "set" && (normalized.includes("set") || normalized.includes("sets") || normalized.includes("سیٹ"))) ||
+        (k === "quadrants" && (normalized.includes("quadrant") || normalized.includes("quadrants") || normalized.includes("کوآڈرنٹ") || normalized.includes("کوڈرنٹ")))) {
       matchedKey = k;
       break;
     }
+  }
+
+  // Intercept factorization specifically to render the user's exact premium Gemini Gem word-for-word styling
+  if (matchedKey === "factorization") {
+    return `<div class="gemini-gem-response" style="line-height:1.7; font-size:1.05rem; color:var(--text-white);">
+      <p style="margin-bottom:1.25rem;">
+        <strong>Assalam-o-Alaikum Beta!</strong> Don’t worry at all. I know when you open that 11th-grade Math book and see "Factorization," it looks like a mountain of complex equations. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.
+      </p>
+      <p style="margin-bottom:1.25rem;">
+        Since you are in Class 11th (First Year), Factorization is no longer just about basic numbers; it’s about Algebraic Expressions and Complex Numbers (Chapter 1 and 2 of the Sindh Textbook Board).
+      </p>
+
+      <!-- Past Papers Callout Box -->
+      <div style="background: rgba(255, 65, 54, 0.08); border: 1px dashed rgba(255, 65, 54, 0.3); border-left: 4px solid #ff4136; padding: 1.2rem; border-radius: 8px; margin: 1.5rem 0;">
+        <h3 style="color:#ff4136; margin-top:0; font-size:1.15rem; display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem; font-weight:700;">
+          🛑 Past Papers Ka Tadka!
+        </h3>
+        <p style="margin:0; font-size:0.95rem; color:var(--text-muted); line-height:1.6;">
+          Beta, mark my words: <strong>Factorization of Complex Numbers</strong> is a "hot favorite" for the Karachi Board examiners. In the last 5 years of BIEK papers, this concept has appeared at least <strong>3 to 4 times in the Short Questions (Section B)</strong>. If you master this, those 4 marks are safely in your pocket!
+        </p>
+      </div>
+
+      <!-- Concept Definition -->
+      <div style="background: rgba(144, 101, 255, 0.05); border: 1px solid rgba(144, 101, 255, 0.15); padding: 1.2rem; border-radius: 12px; margin: 1.5rem 0;">
+        <h3 style="color:var(--accent-cyan); margin-top:0; font-size:1.2rem; margin-bottom:0.75rem; font-weight:700;">
+          What is Factorization? (The Concept)
+        </h3>
+        <p style="margin:0; margin-bottom:0.75rem; line-height:1.6;">
+          In simple words, Factorization is the process of breaking down a single mathematical expression into a product of smaller parts (called <strong>Factors</strong>).
+        </p>
+        <p style="margin:0; font-size:0.95rem; color:var(--text-muted); line-height:1.6;">
+          💡 <strong>Think of it like a LEGO set:</strong> You have a big car made of blocks. Factorization is the process of taking it apart into the original individual blocks that were joined together. In Math, when we multiply these blocks (factors) back together, we get the original expression.
+        </p>
+      </div>
+
+      <!-- Heading Culture Section -->
+      <h3 style="color:var(--text-white); font-size:1.25rem; border-bottom:2px solid var(--primary); padding-bottom:0.5rem; margin-top:2rem; margin-bottom:1.2rem; font-weight:700;">
+        How to Write the Perfect Answer (Heading Culture)
+      </h3>
+      <p style="margin-bottom:1.25rem; font-size:0.95rem; color:var(--text-muted); line-height:1.5;">
+        In the Karachi Board, presentation is everything. To get full marks, use these headings even in Mathematics:
+      </p>
+
+      <div class="step-container" style="display:flex; flex-direction:column; gap:1.2rem; margin:1.5rem 0;">
+        <!-- Heading 1 -->
+        <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--primary); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+          <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem; font-size:1rem;">
+            1. Heading: Objective / Purpose
+          </div>
+          <div style="color:var(--text-muted); font-size:0.95rem; line-height:1.5;">
+            Explain what you are doing. For example: <em>"To resolve the given quadratic/complex expression into its simplest linear factors."</em>
+          </div>
+        </div>
+
+        <!-- Heading 2 -->
+        <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--primary); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+          <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem; font-size:1rem;">
+            2. Heading: Formula / Identity Applied
+          </div>
+          <div style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
+            Never solve directly! Always state the formula you are using. In 11th Math, we often use:<br>
+            • <strong>Difference of Squares:</strong> <code>a² - b² = (a - b)(a + b)</code><br>
+            • <strong>The Complex Identity:</strong> Since <code>i² = -1</code>, we can turn a plus sign into a minus for factoring: <code>a² + b² = a² - (bi)² = (a - bi)(a + bi)</code>.
+          </div>
+        </div>
+
+        <!-- Heading 3 -->
+        <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--primary); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+          <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem; font-size:1rem;">
+            3. Heading: Step-by-Step Resolution
+          </div>
+          <div style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
+            Show every step clearly. Examiners love to see the logic.<br><br>
+            <strong>Example (Class 11th Style):</strong> Factorize <code>x² + 49</code>.<br>
+            <span style="color:var(--text-white);">• Step 1:</span> Recognize we can't factor <code>a² + b²</code> using real numbers.<br>
+            <span style="color:var(--text-white);">• Step 2:</span> Use <code>i² = -1</code>. Rewrite as <code>x² - (-49)</code>.<br>
+            <span style="color:var(--text-white);">• Step 3:</span> Rewrite as <code>x² - (7i)²</code>.<br>
+            <span style="color:var(--text-white);">• Step 4:</span> Apply <code>a² - b²</code> to get <strong>(x - 7i)(x + 7i)</strong>.
+          </div>
+        </div>
+
+        <!-- Heading 4 -->
+        <div class="step-card" style="background:var(--bg-dark); border-left:4px solid var(--primary); padding:1rem; border-radius:8px; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+          <div class="step-number" style="font-weight:700; color:var(--accent-cyan); margin-bottom:0.5rem; font-size:1rem;">
+            4. Heading: Final Result
+          </div>
+          <div style="color:var(--text-muted); font-size:0.95rem; line-height:1.5;">
+            Write the final factors in a clear, bold line or a box so the examiner can see the answer immediately:<br>
+            <div style="background: rgba(144, 101, 255, 0.1); border: 1px solid var(--primary); padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; font-weight: 700; color: var(--text-white); font-family: monospace; margin-top: 0.5rem;">
+              x² + 49 = (x - 7i)(x + 7i)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motivation Section -->
+      <div style="background: rgba(0, 216, 246, 0.05); border: 1px solid rgba(0, 216, 246, 0.15); border-left: 4px solid var(--accent-cyan); padding: 1.2rem; border-radius: 8px; margin: 1.5rem 0;">
+        <h3 style="color:var(--accent-cyan); margin-top:0; font-size:1.15rem; display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem; font-weight:700;">
+          🎯 Your Mentor’s Motivation (The "Success" Talk)
+        </h3>
+        <p style="margin:0; margin-bottom:0.75rem; font-size:0.95rem; line-height:1.6;">
+          Beta, I know the pressure of getting into NED, Dawood, or Dow Medical College is sitting on your shoulders. You might feel like your whole life depends on these formulas. Take a deep breath.
+        </p>
+        <p style="margin:0; font-size:0.95rem; line-height:1.6; color:var(--text-muted);">
+          Mathematics isn't here to fail you; it's here to train your brain to solve problems. Don't "ratta" (memorize) the steps. Understand why we move a term or why we add an 'i'. Once you understand the "why," you won't need to fear the exam paper. You are hardworking, and you have made it this far—you definitely have what it takes to ace this!
+        </p>
+      </div>
+
+      <!-- Closing CTA -->
+      <p style="margin-top:1.5rem; font-weight:600; color:var(--accent-cyan); border-right: 3px solid var(--accent-cyan); padding-right: 0.75rem; line-height:1.5;">
+        Would you like me to solve a specific question from your exercise (e.g., Exercise 1.2 or 2.1) so we can practice together?
+      </p>
+    </div>`;
   }
 
   if (matchedKey) {
@@ -1296,17 +1468,17 @@ function generateSimulatedAIResponse(query, info, wasFile) {
     } else {
       return `<h2 style="font-size: 1.4rem; color: var(--text-white); border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; margin-bottom: 1rem;">${title}</h2>
         
-        <p style="color: var(--text-white); font-size: 1rem; line-height: 1.6; margin: 1rem 0;">
-          <b>1. Definition / Concept:</b><br>${intro}
+        <p style="color: var(--text-white); font-size: 1.05rem; line-height: 1.6; margin: 1rem 0;">
+          ${intro}
         </p>
         
-        <p style="color: var(--text-white); font-size: 1rem; font-weight: bold; margin-top: 1.5rem;">2. Mechanism / Steps of ${matchedKey.charAt(0).toUpperCase() + matchedKey.slice(1)}:</p>
+        <p style="color: var(--text-white); font-size: 1rem; font-weight: bold; margin-top: 1.5rem;">Steps / Details of ${matchedKey.charAt(0).toUpperCase() + matchedKey.slice(1)}:</p>
         <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
           ${stepsHtml}
         </div>
         
-        <p style="color: var(--text-white); font-size: 1rem; line-height: 1.6; margin: 1.5rem 0;">
-          <b>3. Significance / Importance:</b><br>${significance}
+        <p style="color: var(--text-white); font-size: 1.05rem; line-height: 1.6; margin: 1.5rem 0;">
+          ${significance}
         </p>
         
         <div style="background: rgba(144, 101, 255, 0.05); border: 1px dashed var(--primary); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
@@ -1322,60 +1494,125 @@ function generateSimulatedAIResponse(query, info, wasFile) {
   // Fallback dynamic topic analyzer and generator matching exactly user custom GEMS specifications
   const topic = extractTopic(query);
   
-  const fallbackData = {
-    title: {
-      en: `${topic} in Simple Terms`,
-      ur: `${topic} and Its Concepts (آسان الفاظ میں)`
-    },
-    intro: {
-      en: `<b>${topic}</b> is an important subject matter in the study of <b>${info.subject}</b>. In simple terms, it refers to the core framework where we analyze, measure, or classify this specific area.`,
-      ur: `<b>${topic}</b> ko asaan alfaz mein ahem subject matter kehte hain. Ye <b>${info.subject}</b> کا وہ بنیادی اصول یا طریقہ ہے جس کے ذریعے ہم اس موضوع کا مطالعہ کرتے ہیں اور اس سے متعلق مسائل حل کرتے ہیں۔`
-    },
-    steps: {
-      en: [
-        {
-          num: "Step 1: Core Identification",
-          text: `Identify the main parameters and basic terms associated with <b>${topic}</b>. Clarifying these definitions first makes solving any problem 100% easier!`
-        },
-        {
-          num: "Step 2: Simple Working Rule",
-          text: `Apply the structural formulas or logical steps of <b>${topic}</b> to resolve equations or analyze behaviors systematically.`
-        }
-      ],
-      ur: [
-        {
-          num: "Step 1: Basic Concept (بنیادی تصور)",
-          text: `ہمیشہ یاد رکھیں کہ <b>${topic}</b> کو حل کرنے یا سمجھنے کے لیے اس کی بنیادی اصطلاحات کو سمجھنا ضروری ہے۔ اس کا جواب براہِ راست نصابی اصولوں پر منحصر ہے۔`
-        },
-        {
-          num: "Step 2: Simple Analogy (روزمرہ کی مثال)",
-          text: `اسے سمجھنے کے لیے ایک سادہ مثال لیں۔ جس طرح ہم گھر میں چیزوں کو ترتیب سے رکھتے ہیں تاکہ ضرورت کے وقت آسانی سے مل سکیں، بالکل اسی طرح <b>${topic}</b> ہمیں مسائل کو ترتیب دینے اور حل کرنے میں مدد دیتا ہے۔`
-        }
-      ]
-    },
-    significance: {
-      en: `<b>Significance</b>: Understanding <b>${topic}</b> helps in solving high-level academic concepts in <b>${info.subject}</b> and plays a vital role in practical scientific applications.`,
-      ur: `<b>Significance / Importance of ${topic}</b>:<br>• <b>Syllabus Link</b>: یہ موضوع آپ کے سلیبس کے پیچیدہ ابواب کو سمجھنے کی بنیاد ہے۔<br>• <b>Practical Use</b>: روزمرہ زندگی اور سائنسی ایجادات میں اس تصور کا استعمال بنیادی اہمیت کا حامل ہے۔`
-    },
-    examTips: {
-      en: `💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers connection</b>: This topic has appeared <b>3 times in the past 5 years of board papers</b>. Pay close attention to it!<br>• <b>Heading Culture</b>: Write your answer with clear headings like "Definition", "Working", and "Example" to score full marks.<br>• <b>Key terms</b>: Underline important keywords to help the examiner read efficiently!`,
-      ur: `💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: Ye sawal pichle 5 saal ke board papers mein <b>3 baar aa chuka hai</b>! Is liye isay achi tarah zehen nasheen kar len.<br>• <b>Heading Culture</b>: کراچی بورڈ میں اچھے نمبر حاصل کرنے کے لیے جوابات کو ہمیشہ ہیڈنگز (Headings) کے ساتھ لکھیں، جیسے Definition، Explanation اور Significance۔<br>• <b>Key points highlight</b>: اہم الفاظ کو مارکر سے ہائی لائٹ یا انڈر لائن کرنا نہ بھولیں تاکہ ممتحن کو چیک کرنے میں آسانی ہو!`
-    },
-    motivation: {
-      en: `Beta, see how easy that was? I am absolutely confident that if this comes in your exam, you will write it beautifully with headings. You are highly talented!`,
-      ur: `Beta, dekha aap ne? Kitna asaan tha ye! Mujhe poora yakeen hai ke agar ye sawal paper mein aaya, to aap is ko behtareen headings ke sath likh kar aayenge. Ratta lagane ki bilkul zaroorat nahi hai, bas concept ko zehen mein rakhein. Aap bohat talented hain aur mujhe pata hai aap board exams mein top karenge! 🌟`
-    }
-  };
+  // Custom GEMS-style response builder
+  let gemsIntro = "";
+  let gemsSteps = [];
+  let gemsSignificance = "";
+  let gemsExamTips = "";
+  let gemsMotivation = "";
+  
+  const isMath = info.subject.includes("ریاضی") || info.subject.toLowerCase().includes("math");
+  const isPhysics = info.subject.includes("طبیعیات") || info.subject.toLowerCase().includes("physic");
+  const isChemistry = info.subject.includes("کیمیا") || info.subject.toLowerCase().includes("chemist");
+  const isBiology = info.subject.includes("حیاتیات") || info.subject.toLowerCase().includes("biolog");
+  
+  // Build subject-aware parameters
+  if (isMath) {
+    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that ${info.grade} Math book and see "<b>${topic}</b>," it looks like a mountain of complex equations. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is an essential algebraic/mathematical concept in the Karachi Board (Sindh Textbook Board) syllabus. It is not just about numbers; it's about training your brain to analyze and solve problems step-by-step.`;
+    
+    gemsSteps = [
+      {
+        num: "1. Heading: Objective / Purpose",
+        text: `Explain what you are doing in the exam. For example: <i>"To resolve the given expression of <b>${topic}</b> or calculate its unknown variables systematically."</i>`
+      },
+      {
+        num: "2. Heading: Formula / Identity Applied",
+        text: `Never solve a Mathematics question directly! Always state the formula or identity you are using. In Karachi Board papers, writing the formula in a neat sidebar box gives a premium impression to the examiner.`
+      },
+      {
+        num: "3. Heading: Step-by-Step Resolution",
+        text: `Show every step clearly. Break down the equation, show addition/multiplication operations, and preserve the logical flow. Examiners marks each line of calculation!`
+      },
+      {
+        num: "4. Heading: Final Result",
+        text: `Write the final values or factors in a clear, bold line or wrap it inside a neat border box so the examiner can see the answer immediately.`
+      }
+    ];
+    
+    gemsSignificance = `<b>Heading: Final Result & Significance</b><br>Write the final solution in a bold box. Understanding <b>${topic}</b> helps solve advanced scientific calculations and is heavily applied in computer graphics, coordinate tracking, and architectural designs.`;
+    
+    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: <b>${topic}</b> is a highly repeating concept for the Karachi Board examiners. In the last 5 years of board papers, questions on this topic have appeared at least <b>2 to 3 times in the Short Questions (Section B)</b>. If you master this, those crucial marks are safely in your pocket! Make sure to write steps with clear headings to score full marks!`;
+    
+    gemsMotivation = `Beta, I know the pressure of getting into NED, Dawood, or Dow Medical College is sitting on your shoulders. You might feel like your whole life depends on these formulas. Take a deep breath.<br><br>Mathematics isn't here to fail you; it's here to train your brain. Don't "ratta" (memorize) the steps. Understand the "why" behind it, and you won't need to fear the exam paper. You definitely have what it takes to ace this!`;
+  }
+  else if (isPhysics) {
+    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that ${info.grade} Physics book and see "<b>${topic}</b>," it looks like a mountain of complex formulas and definitions. But believe me, Physics is just about our daily life, and I’m going to show you how to understand it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a fundamental concept of mechanics/dynamics in the Sindh Textbook Board. It describes how the physical world behaves around us!`;
+    
+    gemsSteps = [
+      {
+        num: "1. Heading: Core Definition",
+        text: `Start your answer with the precise textbook definition. Write it with a marker in quotation marks to instantly impress the examiner.`
+      },
+      {
+        num: "2. Heading: Mathematical Expression / Derivation",
+        text: `If the concept has a formula (like $F = ma$), write the equation clearly. State what each symbol stands for (e.g. $m$ = mass, $a$ = acceleration) along with their SI units (e.g., kg, m/s²).`
+      },
+      {
+        num: "3. Heading: Practical Example / Analogy",
+        text: `Always link Physics to a real-world example! Whether it's sudden car brakes (inertia) or a balloon flying (action/reaction), a physical analogy makes your concept crystal clear.`
+      }
+    ];
+    
+    gemsSignificance = `<b>Heading: Real World Significance</b><br>Understanding <b>${topic}</b> is vital in modern engineering, automotive safety designs, aerospace calculations, and building stable bridges and structures.`;
+    
+    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, <b>${topic}</b> is a "hot favorite" for the BIEK/BSEK examiners. It has appeared multiple times in the past 5 years of board papers. Pay close attention to standard derivations and numerical questions associated with it! Make sure to highlight SI units at the end of numericals to avoid losing 0.5 marks.`;
+    
+    gemsMotivation = `Beta, I know the pressure of board exams and entry tests is intense. But Physics isn't about memorization; it's about seeing the universe in action. Don't 'ratta' the definitions. Understand 'why' it happens, and you will write it beautifully. You are hardworking and brilliant!`;
+  }
+  else if (isBiology) {
+    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. Biology is a beautiful study of life, and though "<b>${topic}</b>" may seem like a mountain of tough terminologies, it’s just a fascinating story of how living organisms function. I will help you master it easily!<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a highly structured topic in the Karachi Board Biology syllabus, describing how cells, tissues, or biological processes sustain life.`;
+    
+    gemsSteps = [
+      {
+        num: "1. Heading: Concept Definition",
+        text: `State the precise scientific definition of <b>${topic}</b>. Highlight key technical terms (like 'programmed death', 'synthesis', 'mitosis') with a dark marker.`
+      },
+      {
+        num: "2. Heading: Step-by-Step Biological Process",
+        text: `Biology loves sequences! Break down the stages of <b>${topic}</b> step-by-step (e.g., Phase 1 to Phase 4) clearly outlining what happens to the cell or organism at each stage.`
+      },
+      {
+        num: "3. Heading: Labeled Diagrammatic Flow",
+        text: `Never write a Biology answer without a diagram! Even a simple 3-box workflow chart showing the changes will guarantee you full marks in BIEK/BSEK exams.`
+      }
+    ];
+    
+    gemsSignificance = `<b>Heading: Biological Significance</b><br>Understanding <b>${topic}</b> is crucial for medical studies, understanding disease mechanisms (like cancer), genetic research, and how our immune system keeps us healthy.`;
+    
+    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, mark my words: Questions on <b>${topic}</b> are very popular in Section B (Short Answers). In the last 5 years of Biology papers, this concept has been repeated at least 3 times. Always draw clean diagrams and underline terms like phagocytes, blebbing, or chloroplasts to secure 100% marks!`;
+    
+    gemsMotivation = `Beta, I know you are aiming for Dow Medical College or other top medical universities, and the path looks challenging. Take a deep breath. Biology is a visual science—don't memorize dry text, visualize the cell or process in your mind. You are highly talented, and I am proud of your efforts!`;
+  }
+  else {
+    // Default subject fallback
+    gemsIntro = `Assalam-o-Alaikum Beta! Don’t worry at all. I know when you open that Class ${info.grade} ${info.subject} book and see "<b>${topic}</b>," it looks like a mountain of complex definitions. But believe me, it’s just a puzzle, and I’m going to show you how to solve it easily.<br><br>Since you are in Class ${info.grade}, <b>${topic}</b> is a highly important concept in the Karachi Board <b>${info.subject}</b> syllabus. It plays a vital role in understanding the curriculum.`;
+    
+    gemsSteps = [
+      {
+        num: "1. Heading: Objective / Core Definition",
+        text: `Explain what <b>${topic}</b> is in standard textbook terms. Write it clearly under a bold heading to help the examiner understand your baseline concept.`
+      },
+      {
+        num: "2. Heading: Basic Working / Structure",
+        text: `Break down how <b>${topic}</b> works or its basic components. Show any steps, rules, or formulas associated with it clearly.`
+      },
+      {
+        num: "3. Heading: Heading Culture Example",
+        text: `Provide a clear textbook example. Presenting a step-by-step sample problem or scenario makes your answer look outstanding!`
+      }
+    ];
+    
+    gemsSignificance = `<b>Heading: Significance & Result</b><br>Write the final results clearly. Understanding <b>${topic}</b> builds a strong foundation for high-level academic courses and plays a crucial role in practical applications.`;
+    
+    gemsExamTips = `🛑 <b>Past Papers Ka Tadka!</b><br>Beta, <b>${topic}</b> is a very important topic in past board papers. In the last 5 years, this concept has appeared multiple times in short and long questions. Use clear headings like "Definition", "Working Rule", and "Example" to secure full marks!`;
+    
+    gemsMotivation = `Beta, don't feel overwhelmed by exam pressure. Study with an active mind, focus on standard concepts, and practice writing step-by-step answers. You are extremely talented, and I have complete faith in your potential to ace this!`;
+  }
 
-  const title = isEn ? fallbackData.title.en : fallbackData.title.ur;
-  const intro = isEn ? fallbackData.intro.en : fallbackData.intro.ur;
-  const steps = isEn ? fallbackData.steps.en : fallbackData.steps.ur;
-  const significance = isEn ? fallbackData.significance.en : fallbackData.significance.ur;
-  const examTips = isEn ? fallbackData.examTips.en : fallbackData.examTips.ur;
-  const motivation = isEn ? fallbackData.motivation.en : fallbackData.motivation.ur;
+  const title = isEn ? `${topic} in Simple Terms` : `${topic} and Its Concepts (آسان الفاظ میں)`;
   
   let stepsHtml = "";
-  steps.forEach((step) => {
+  gemsSteps.forEach((step) => {
     stepsHtml += `
       <div class="step-card" style="margin-bottom: 1rem;">
         <div class="step-number" style="background: var(--accent-cyan); color: var(--bg-dark); font-weight: 700; border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.85rem; display: inline-block; margin-bottom: 0.5rem;">${step.num}</div>
@@ -1388,43 +1625,42 @@ function generateSimulatedAIResponse(query, info, wasFile) {
     return `Dear student! Your question regarding <b>"${topic}"</b> is an important topic in the Karachi Board <b>${info.subject}</b> syllabus (Grade ${info.grade}).
       
       Let's explain it in a simple and kind way:
-      <p style="color: var(--text-white); font-size: 1rem; line-height: 1.5; margin: 1rem 0;">${intro}</p>
+      <p style="color: var(--text-white); font-size: 1rem; line-height: 1.5; margin: 1rem 0;">${gemsIntro}</p>
       
       <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
         ${stepsHtml}
       </div>
       
-      <p style="color: var(--text-white); font-size: 0.95rem; line-height: 1.5; margin: 1rem 0;">${significance}</p>
+      <p style="color: var(--text-white); font-size: 0.95rem; line-height: 1.5; margin: 1rem 0;">${gemsSignificance}</p>
       
       <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
-        ${examTips}
+        ${gemsExamTips}
       </div>
       
       <div style="font-size: 0.95rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.5; margin-top: 1rem; border-left: 3px solid var(--accent-cyan); padding-left: 0.75rem;">
-        <i class="fa-solid fa-graduation-cap"></i> ${motivation}
+        <i class="fa-solid fa-graduation-cap"></i> ${gemsMotivation}
       </div>`;
   } else {
     return `<h2 style="font-size: 1.4rem; color: var(--text-white); border-bottom: 2px solid var(--accent-cyan); padding-bottom: 0.5rem; margin-bottom: 1rem;">${title}</h2>
       
       <p style="color: var(--text-white); font-size: 1rem; line-height: 1.6; margin: 1rem 0;">
-        <b>1. Definition / Concept:</b><br>${intro}
+        ${gemsIntro}
       </p>
       
-      <p style="color: var(--text-white); font-size: 1rem; font-weight: bold; margin-top: 1.5rem;">2. Mechanism / Steps of ${topic}:</p>
       <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
         ${stepsHtml}
       </div>
       
       <p style="color: var(--text-white); font-size: 1rem; line-height: 1.6; margin: 1.5rem 0;">
-        <b>3. Significance / Importance:</b><br>${significance}
+        ${gemsSignificance}
       </p>
       
       <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
-        ${examTips}
+        ${gemsExamTips}
       </div>
       
       <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.6; margin-top: 1rem; border-right: 3px solid var(--accent-cyan); padding-right: 0.75rem;">
-        <i class="fa-solid fa-graduation-cap"></i> ${motivation}
+        <i class="fa-solid fa-graduation-cap"></i> ${gemsMotivation}
       </div>`;
   }
 }// User Rating Mechanism
