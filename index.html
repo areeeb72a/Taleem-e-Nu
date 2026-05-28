@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تعلیمِ نو اے آئی - کراچی بورڈ اسسٹنٹ اور زبان سیکھنے کا مرکز</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styling System -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Glowing Orbs and Confetti for high achievements -->
+  <div id="confetti-holder" class="confetti-container" style="display: none;"></div>
+
+  <div class="app-container">
+    
+    <!-- Glassmorphic Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="brand-name" id="txt-brand-name">تعلیمِ نو اے آئی</div>
+      </div>
+      
+      <!-- Gorgeous Urdu/English Dynamic Language Toggle -->
+      <div class="lang-toggle-container">
+        <button class="lang-toggle-btn ur active" id="lang-btn-ur" onclick="setAppLanguage('ur')">اردو</button>
+        <button class="lang-toggle-btn" id="lang-btn-en" onclick="setAppLanguage('en')">English</button>
+      </div>
+      
+      <nav class="nav-links">
+        <li class="nav-item">
+          <button class="nav-button active" onclick="switchView('home-view')" id="btn-home-view">
+            <i class="fa-solid fa-house"></i>
+            <span id="nav-lbl-home">ہوم ڈیش بورڈ</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-button" onclick="switchView('academic-view')" id="btn-academic-view">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span id="nav-lbl-academic">کراچی بورڈ معاون</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-button" onclick="switchView('language-view')" id="btn-language-view">
+            <i class="fa-solid fa-language"></i>
+            <span id="nav-lbl-lang">زبان سیکھنے کا مرکز</span>
+          </button>
+        </li>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <p id="txt-version-text">ورژن: 1.0.0 (Beta)</p>
+        <p id="txt-status-text">سروس اسٹیٹس:</p>
+        <span class="api-badge">
+          <i class="fa-solid fa-circle-check"></i> Groq API Active
+        </span>
+      </div>
+    </aside>
+    
+    <!-- Main Display Workspace -->
+    <main class="main-content">
+      
+      <!-- 1. HOME / DASHBOARD VIEW -->
+      <section id="home-view" class="app-view active">
+        <div>
+          <h1 class="section-title ur-text" id="txt-home-title">تعلیمِ نو اے آئی میں خوش آمدید!</h1>
+          <p class="section-subtitle ur-text" id="txt-home-subtitle">جدید مصنوعی ذہانت سے لیس پاکستان کا واحد تعلیمی اور لسانی مرکز۔</p>
+        </div>
+        
+        <!-- Welcome banner -->
+        <div class="glass-card welcome-banner">
+          <div class="ur-text" style="max-width: 65%;">
+            <h2 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;" id="txt-banner-title">سیکھنے کی دنیا میں ایک نیا انقلاب</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;" id="txt-banner-desc">یہاں آپ کراچی بورڈ سیکنڈری و ہائر سیکنڈری نصاب کے تمام مضامین میں مدد حاصل کر سکتے ہیں، اور دنیا بھر کی مشہور زبانیں انتہائی آسان مراحل میں سیکھ سکتے ہیں۔</p>
+          </div>
+          <div class="welcome-stats" style="text-align: left; font-family: monospace;">
+            <p style="color: var(--accent-cyan); font-weight: bold; font-size: 1.1rem;" id="txt-banner-llm"><i class="fa-solid fa-bolt"></i> Powered by LLM</p>
+            <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.3rem;" id="txt-banner-api">API Key Connected</p>
+          </div>
+        </div>
+        
+        <!-- Dashboard promotional grid -->
+        <div class="dashboard-grid">
+          <!-- Karachi Board Academic Assistant promo card -->
+          <div class="glass-card dash-promo-card" onclick="switchView('academic-view')">
+            <span class="promo-badge academic ur-text" id="txt-promo-academic-badge">کراچی بورڈ نصاب</span>
+            <div class="ur-text" style="margin-top: 1rem;">
+              <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem;" id="txt-promo-academic-title"><i class="fa-solid fa-chalkboard-user"></i> اکیڈمک اسسٹنٹ (جماعت 5 تا 12)</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;" id="txt-promo-academic-desc">ریاضی، فزکس، کیمسٹری، بیالوجی، اور کمپیوٹر سائنس کے مشکل ترین سوالات کے مرحلہ وار حل۔ ہاتھ سے لکھے ہوئے نوٹس، امیجز یا پی ڈی ایف اپ لوڈ کریں۔</p>
+            </div>
+            <button class="promo-btn ur-text" id="txt-promo-academic-btn">مدد حاصل کریں <i class="fa-solid fa-arrow-left"></i></button>
+          </div>
+          
+          <!-- Global Language Learning Module promo card -->
+          <div class="glass-card dash-promo-card" onclick="switchView('language-view')">
+            <span class="promo-badge lang ur-text" id="txt-promo-lang-badge">کثیر لسانی کورسز</span>
+            <div class="ur-text" style="margin-top: 1rem;">
+              <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem;" id="txt-promo-lang-title"><i class="fa-solid fa-globe"></i> زبانیں سیکھیں (چار منظم مراحل)</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;" id="txt-promo-lang-desc">اردو، انگریزی، عربی، چینی، فرانسیسی اور ہسپانوی سیکھیں۔ بنیادی درجے سے شروع کریں، امتحان پاس کریں اور اگلا مرحلہ ان لاک کریں۔</p>
+            </div>
+            <button class="promo-btn ur-text" id="txt-promo-lang-btn">سیکھنا شروع کریں <i class="fa-solid fa-arrow-left"></i></button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- 2. ACADEMIC ASSISTANT VIEW -->
+      <section id="academic-view" class="app-view">
+        <div>
+          <h1 class="section-title ur-text" id="txt-academic-title">کراچی بورڈ تعلیمی معاون</h1>
+          <p class="section-subtitle ur-text" id="txt-academic-subtitle">جماعت پنجم سے بارہویں کے تمام مضامین میں رہنمائی حاصل کریں۔</p>
+        </div>
+        
+        <div class="assistant-workspace">
+          <!-- Selection & settings panel -->
+          <aside class="glass-card selection-panel ur-text">
+            <h3 style="font-size: 1.2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 0.5rem; color: #fff;" id="txt-panel-title">
+              <i class="fa-solid fa-sliders"></i> سیٹنگز پینل
+            </h3>
+            
+            <div class="form-group">
+              <label for="grade-select" id="txt-label-grade">جماعت کا انتخاب کریں:</label>
+              <select id="grade-select" class="styled-select" onchange="updateSubjects()">
+                <option value="5th">جماعت پنجم (5th Grade)</option>
+                <option value="6th">جماعت ششم (6th Grade)</option>
+                <option value="7th">جماعت ہفتم (7th Grade)</option>
+                <option value="8th">جماعت ہشتم (8th Grade)</option>
+                <option value="9th" selected>جماعت نہم (9th Grade)</option>
+                <option value="10th">جماعت دہم (10th Grade)</option>
+                <option value="11th">جماعت الیون (11th Grade)</option>
+                <option value="12th">جماعت ٹویلو (12th Grade)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject-select" id="txt-label-subject">مضمون منتخب کریں:</label>
+              <select id="subject-select" class="styled-select">
+                <!-- Populated dynamically via JS based on selected grade -->
+              </select>
+            </div>
+            
+            <div class="form-group" style="margin-top: 1rem;">
+              <label id="txt-label-sample">نمونہ سوالات (مثالیں):</label>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
+                <button class="promo-btn ur-text" style="width: 100%; text-align: right; font-size: 0.85rem; padding: 0.6rem 0.8rem;" onclick="applySampleQuestion(1)" id="txt-sample-q1">
+                  ریاضی: Quadratic Formula کیا ہے؟
+                </button>
+                <button class="promo-btn ur-text" style="width: 100%; text-align: right; font-size: 0.85rem; padding: 0.6rem 0.8rem;" onclick="applySampleQuestion(2)" id="txt-sample-q2">
+                  طبیعیات: Newton's Second Law کی وضاحت۔
+                </button>
+                <button class="promo-btn ur-text" style="width: 100%; text-align: right; font-size: 0.85rem; padding: 0.6rem 0.8rem;" onclick="applySampleQuestion(3)" id="txt-sample-q3">
+                  کیمیا: پانی کے سالمہ (H₂O) کی ساخت۔
+                </button>
+              </div>
+            </div>
+          </aside>
+          
+          <!-- Chat container -->
+          <div class="glass-card chat-container">
+            <div class="chat-header">
+              <div class="chat-header-avatar">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div class="chat-header-info ur-text">
+                <h3 id="txt-teacher-title">اے آئی شفیق تعلیمی رہنما (AI Expert Teacher)</h3>
+                <span id="txt-teacher-status"><i class="fa-solid fa-circle"></i> آن لائن | آپ کی زبان میں رہنمائی کے لیے تیار</span>
+              </div>
+            </div>
+            
+            <!-- Chat display messages -->
+            <div id="chat-messages" class="chat-messages">
+              <div class="message ai">
+                <div class="message-bubble ur-text" id="txt-welcome-chat-bubble">
+                  السلام علیکم! میں آپ کا اے آئی تعلیمی رہنما ہوں۔ کراچی بورڈ کے نصاب کے مطابق کسی بھی مضمون کا سوال ٹائپ کریں یا امیج/پی ڈی ایف فائل اپ لوڈ کریں۔ میں آپ کو آسان اردو میں قدم بہ قدم وضاحت فراہم کروں گا!
+                </div>
+                <div class="message-meta">02:29 PM</div>
+              </div>
+            </div>
+            
+            <!-- File upload preview state -->
+            <div id="file-preview-bar" class="file-preview-bar">
+              <div class="file-preview-info">
+                <i class="fa-solid fa-file-pdf" id="file-preview-icon" style="font-size: 1.1rem; color: var(--primary);"></i>
+                <span id="file-preview-name" style="color: var(--text-white); font-weight: 600;">document.pdf</span>
+              </div>
+              <button class="remove-file" onclick="clearUploadedFile()"><i class="fa-solid fa-times"></i></button>
+            </div>
+            
+            <!-- Input control bar -->
+            <div class="chat-input-area">
+              <div class="input-row">
+                <!-- Attachment actions -->
+                <button class="action-btn" title="امیج اپ لوڈ کریں" onclick="triggerFileInput('image')">
+                  <i class="fa-solid fa-image"></i>
+                </button>
+                <button class="action-btn" title="پی ڈی ایف یا دستاویز اپ لوڈ کریں" onclick="triggerFileInput('document')">
+                  <i class="fa-solid fa-file-invoice"></i>
+                </button>
+                
+                <!-- Hidden inputs -->
+                <input type="file" id="image-file-input" accept="image/*" style="display:none;" onchange="handleFileChange(this, 'image')">
+                <input type="file" id="doc-file-input" accept=".pdf,.doc,.docx,.txt" style="display:none;" onchange="handleFileChange(this, 'document')">
+                
+                <!-- Chat text input -->
+                <input type="text" id="chat-user-input" class="chat-input ur-text" placeholder="یہاں اپنا تعلیمی سوال ٹائپ کریں..." onkeydown="if(event.key === 'Enter') sendAcademicQuery()">
+                
+                <!-- Send button -->
+                <button class="action-btn send-btn" onclick="sendAcademicQuery()">
+                  <i class="fa-solid fa-paper-plane" style="transform: rotate(180deg);"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- 3. GLOBAL LANGUAGE MODULE VIEW -->
+      <section id="language-view" class="app-view">
+        <div class="lang-header">
+          <div>
+            <h1 class="section-title ur-text" id="txt-lang-title">عالمی زبان سیکھنے کا مرکز</h1>
+            <p class="section-subtitle ur-text" id="txt-lang-subtitle">منظم مراحل، خودکار امتحانات اور صوتی رہنمائی کے ساتھ کسی بھی زبان پر عبور حاصل کریں۔</p>
+          </div>
+          
+          <!-- Language Selector -->
+          <div class="lang-selector-group ur-text">
+            <label for="lang-select" style="font-weight: 600; color: var(--text-muted);" id="txt-label-lang">زبان منتخب کریں:</label>
+            <select id="lang-select" class="styled-select" style="width: 180px;" onchange="updateLanguageProgress()">
+              <option value="arabic" selected>عربی (Arabic)</option>
+              <option value="english">انگریزی (English)</option>
+              <option value="chinese">چینی (Chinese)</option>
+              <option value="french">فرانسیسی (French)</option>
+              <option value="spanish">ہسپانوی (Spanish)</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- 4.1 PROGRESSION MAP (Main Stage Selector) -->
+        <div id="progression-map" class="stages-timeline">
+          <!-- Stage 1: Basic -->
+          <div class="glass-card stage-card" id="card-stage-basic">
+            <span class="stage-indicator">01</span>
+            <span class="stage-badge basic ur-text" id="lbl-badge-basic">مرحلہ ۱: بنیادی (Basic)</span>
+            <div class="ur-text">
+              <h4 id="lbl-desc-basic" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.35rem;">تعارف اور بنیادی الفاظ</h4>
+              <p id="lbl-details-basic" style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">آداب، تعارفی جملے، گنتی اور روزمرہ کے بنیادی ۲0 ذخیرہ الفاظ۔</p>
+            </div>
+            <div class="stage-card-footer">
+              <span id="badge-status-basic" style="color: var(--accent-green); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-circle-check"></i> کھلا ہوا ہے</span>
+              <button class="stage-start-btn ur-text" id="btn-stage-basic" onclick="startLanguageStage('basic')">شروع کریں</button>
+            </div>
+          </div>
+          
+          <!-- Stage 2: Normal -->
+          <div class="glass-card stage-card locked" id="card-stage-normal">
+            <span class="stage-indicator">02</span>
+            <span class="stage-badge normal ur-text" id="lbl-badge-normal">مرحلہ ۲: درمیانہ (Normal)</span>
+            <div class="ur-text">
+              <h4 id="lbl-desc-normal" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.35rem;">گفتگو اور گرامر قواعد</h4>
+              <p id="lbl-details-normal" style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">عام گرامر کے بنیادی قوانین، زمانہ اور روزمرہ گفتگو کے فقرے۔</p>
+            </div>
+            <div class="stage-card-footer">
+              <span id="badge-status-normal" style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-lock"></i> لاک ہے</span>
+              <button class="stage-start-btn ur-text" id="btn-stage-normal" disabled onclick="startLanguageStage('normal')">لاک ہے</button>
+            </div>
+          </div>
+          
+          <!-- Stage 3: Expert -->
+          <div class="glass-card stage-card locked" id="card-stage-expert">
+            <span class="stage-indicator">03</span>
+            <span class="stage-badge expert ur-text" id="lbl-badge-expert">مرحلہ ۳: ماہرانہ (Expert)</span>
+            <div class="ur-text">
+              <h4 id="lbl-desc-expert" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.35rem;">ثقافتی باریکیاں اور پیچیدہ جملے</h4>
+              <p id="lbl-details-expert" style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">جدید محاورات، پختہ تحریر اور روانی کے ساتھ گفتگو۔</p>
+            </div>
+            <div class="stage-card-footer">
+              <span id="badge-status-expert" style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-lock"></i> لاک ہے</span>
+              <button class="stage-start-btn ur-text" id="btn-stage-expert" disabled onclick="startLanguageStage('expert')">لاک ہے</button>
+            </div>
+          </div>
+          
+          <!-- Stage 4: Professional -->
+          <div class="glass-card stage-card locked" id="card-stage-professional">
+            <span class="stage-indicator">04</span>
+            <span class="stage-badge professional ur-text" id="lbl-badge-professional">مرحلہ ۴: پیشہ ورانہ (Professional)</span>
+            <div class="ur-text">
+              <h4 id="lbl-desc-professional" style="font-size: 1.15rem; color: #fff; margin-bottom: 0.35rem;">کاروباری مواصلات</h4>
+              <p id="lbl-details-professional" style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">کاروباری خط و کتابت، دفتری زبان، علمی مضامین اور کامل روانی۔</p>
+            </div>
+            <div class="stage-card-footer">
+              <span id="badge-status-professional" style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-lock"></i> لاک ہے</span>
+              <button class="stage-start-btn ur-text" id="btn-stage-professional" disabled onclick="startLanguageStage('professional')">لاک ہے</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 4.2 INTERACTIVE LESSON MODULE WORKSPACE -->
+        <div id="lesson-workspace" class="lesson-container">
+          <div class="lesson-header">
+            <button class="back-btn ur-text" onclick="exitLanguageStage()" id="txt-btn-lesson-back"><i class="fa-solid fa-arrow-right"></i> واپس جائیں</button>
+            <div class="ur-text" style="text-align: left;">
+              <h3 id="lesson-stage-title" style="font-size: 1.5rem; color: #fff;">مرحلہ ۱: عربی بنیادی الفاظ</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem;" id="txt-lesson-instructions">مرحلہ مکمل کر کے ۲۰ سوالات کا کوئز دیں اور اگلا لیول ان لاک کریں!</p>
+            </div>
+          </div>
+          
+          <!-- Lesson content grid showing translation cards -->
+          <div class="lesson-grid" id="lesson-words-grid">
+            <!-- Word Cards Populated Dynamically via JS -->
+          </div>
+          
+          <!-- Cultural and grammar note area -->
+          <div class="glass-card cultural-note ur-text">
+            <h4 style="color: var(--accent-cyan); font-weight: 700; margin-bottom: 0.5rem;" id="txt-lesson-cultural-title"><i class="fa-solid fa-circle-info"></i> اے آئی اہم تدریسی نوٹ (AI Language Note):</h4>
+            <p id="lesson-cultural-text" style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted);"></p>
+          </div>
+          
+          <button class="action-btn send-btn ur-text" style="width: 100%; border-radius: var(--border-radius); padding: 1.2rem; font-size: 1.1rem; height: auto;" onclick="startStageAssessment()" id="txt-btn-start-test">
+            <i class="fa-solid fa-vial"></i> مرحلے کا ۲۰ سوالات کا ٹیسٹ شروع کریں
+          </button>
+        </div>
+        
+        <!-- 4.3 INTERACTIVE ASSESSMENT CONTAINER (20 QUESTIONS) -->
+        <div id="assessment-workspace" class="glass-card assessment-container">
+          <!-- Quiz progress bar -->
+          <div class="quiz-progress-bar-bg">
+            <div id="quiz-progress-bar-fill" class="quiz-progress-bar-fg"></div>
+          </div>
+          
+          <!-- Quiz header info -->
+          <div class="quiz-header ur-text">
+            <span style="color: var(--text-white); font-weight: bold; font-size: 1.1rem;" id="quiz-question-index">سوال نمبر 1 / 20</span>
+            <span style="color: var(--text-muted); font-size: 0.9rem;" id="quiz-timer">وقت: غیر محدود</span>
+          </div>
+          
+          <!-- Dynamic quiz question -->
+          <div class="quiz-question-container ur-text">
+            <h3 id="quiz-question-text" class="quiz-question-text">عربی لفظ "مرحباً" کا اردو میں صحیح ترجمہ کیا ہے؟</h3>
+            
+            <div id="quiz-options-list" class="quiz-options-list">
+              <!-- Rendered Dynamically via JS -->
+            </div>
+          </div>
+          
+          <!-- Quiz button controls -->
+          <div class="quiz-footer">
+            <button class="back-btn ur-text" onclick="quitAssessment()" id="txt-btn-quiz-cancel"><i class="fa-solid fa-circle-xmark"></i> ٹیسٹ منسوخ کریں</button>
+            <button id="quiz-next-btn" class="action-btn send-btn ur-text" style="width: auto; border-radius: 12px; padding: 0.8rem 2rem; height: auto;" onclick="nextQuizQuestion()">
+              اگلا سوال <i class="fa-solid fa-arrow-left"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- 4.4 ASSESSMENT RESULTS PANEL -->
+        <div id="results-workspace" class="glass-card quiz-results-container ur-text">
+          <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 0.5rem;" id="txt-results-header">ٹیسٹ مکمل ہو گیا!</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;" id="txt-results-sub">آپ کا حاصل کردہ تفصیلی نتیجہ نیچے درج ہے</p>
+          
+          <!-- Score gauge container -->
+          <div class="score-gauge" id="results-gauge">
+            <div class="score-gauge-inner">
+              <span class="score-number" id="results-score-num">85</span>
+              <span class="score-percent" id="txt-results-percent">فیصد سکور</span>
+            </div>
+          </div>
+          
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem;" id="txt-results-verdict">مبارک ہو! آپ نے یہ مرحلہ پاس کر لیا ہے۔</h3>
+          
+          <!-- Targeted recovery plan if scored < 80% -->
+          <div id="remediation-box" class="remediation-section">
+            <h4 style="color: var(--accent-red); font-weight: 700; margin-bottom: 0.5rem;" id="txt-remediation-title"><i class="fa-solid fa-triangle-exclamation"></i> اے آئی اصلاحی منصوبہ (AI Remediation Path):</h4>
+            <p id="remediation-text" style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted);"></p>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+            <button class="back-btn ur-text" onclick="exitResultsToMap()" id="txt-btn-results-back"><i class="fa-solid fa-map-location-dot"></i> نقشے پر واپس جائیں</button>
+            <button id="results-action-btn" class="action-btn send-btn ur-text" style="width: auto; border-radius: 12px; padding: 0.8rem 2rem; height: auto;" onclick="restartAssessment()">
+              ٹیسٹ دوبارہ دیں
+            </button>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  </div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

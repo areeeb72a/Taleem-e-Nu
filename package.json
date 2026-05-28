@@ -1,0 +1,23 @@
+{
+  "name": "taleem-e-nau-ai",
+  "version": "1.0.0",
+  "description": "Taleem-e-Nau AI: Karachi Board Academic Assistant & Global Language Learning Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "education",
+    "karachi-board",
+    "language-learning",
+    "ai",
+    "pakistan"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
