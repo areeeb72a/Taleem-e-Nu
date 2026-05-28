@@ -17,7 +17,7 @@ let stageProgress = {
   english: { basic: true, normal: false, expert: false, professional: false },
   chinese: { basic: true, normal: false, expert: false, professional: false },
   french: { basic: true, normal: false, expert: false, professional: false },
-  spanish: { basic: true, normal: false, expert: false, professional: false }
+  turkish: { basic: true, normal: false, expert: false, professional: false }
 };
 
 // --- BILINGUAL LOCALIZATION TRANSLATIONS ---
@@ -279,14 +279,14 @@ function setAppLanguage(lang) {
 
 // --- DYNAMIC CURRICULUM DATABASE (KARACHI BOARD) ---
 const subjectsByGrade = {
-  "5th": ["ریاضی (Math)", "جنرل سائنس (General Science)", "اردو (Urdu)", "اسلامیات (Islamiat)", "سوشل سٹڈیز (Social Studies)"],
-  "6th": ["ریاضی (Math)", "جنرل سائنس (General Science)", "اردو (Urdu)", "انگریزی (English)", "اسلامیات (Islamiat)"],
-  "7th": ["ریاضی (Math)", "جنرل سائنس (General Science)", "اردو (Urdu)", "انگریزی (English)", "اسلامیات (Islamiat)"],
-  "8th": ["ریاضی (Math)", "جنرل سائنس (General Science)", "اردو (Urdu)", "انگریزی (English)", "مطالعہ پاکستان (Pak Studies)"],
-  "9th": ["ریاضی (Math)", "طبیعیات (Physics)", "کیمیا (Chemistry)", "کمپیوٹر سائنس (Computer Science)", "انگریزی (English)"],
-  "10th": ["ریاضی (Math)", "حیاتیات (Biology)", "طبیعیات (Physics)", "کیمیا (Chemistry)", "اردو (Urdu)"],
-  "11th": ["ریاضی (Mathematics)", "طبیعیات (Physics)", "کیمیا (Chemistry)", "اردو (Urdu)", "انگریزی (English)"],
-  "12th": ["ریاضی (Mathematics)", "حیاتیات (Biology)", "طبیعیات (Physics)", "کیمیا (Chemistry)", "مطالعہ پاکستان"]
+  "5th": ["ریاضی (Math)", "جنرل سائنس (General Science)", "اردو (Urdu)", "سندھی (Sindhi)", "انگریزی (English)", "اسلامیات (Islamiat)", "سوشل سٹڈیز (Social Studies)"],
+  "6th": ["ریاضی (Math)", "جنرل سائنس (General Science)", "اردو (Urdu)", "سندھی (Sindhi)", "انگریزی (English)", "اسلامیات (Islamiat)", "سوشل سٹڈیز (Social Studies)"],
+  "7th": ["ریاضی (Math)", "جنرل سائنس (General Science)", "اردو (Urdu)", "سندھی (Sindhi)", "انگریزی (English)", "اسلامیات (Islamiat)", "سوشل سٹڈیز (Social Studies)"],
+  "8th": ["ریاضی (Math)", "جنرل سائنس (General Science)", "اردو (Urdu)", "سندھی (Sindhi)", "انگریزی (English)", "اسلامیات (Islamiat)", "مطالعہ پاکستان (Pak Studies)"],
+  "9th": ["ریاضی (Math)", "طبیعیات (Physics)", "کیمیا (Chemistry)", "کمپیوٹر سائنس (Computer Science)", "حیاتیات (Biology)", "انگریزی (English)", "سندھی لازمی (Sindhi Lazmi)", "اسلامیات (Islamiat)"],
+  "10th": ["ریاضی (Math)", "طبیعیات (Physics)", "کیمیا (Chemistry)", "کمپیوٹر سائنس (Computer Science)", "حیاتیات (Biology)", "انگریزی (English)", "اردو (Urdu)", "مطالعہ پاکستان (Pak Studies)"],
+  "11th": ["انگریزی (English)", "اردو (Urdu)", "سندھی لازمی (Sindhi Lazmi)", "اسلامیات (Islamiat)", "ریاضی (Mathematics)", "طبیعیات (Physics)", "کیمیا (Chemistry)", "حیاتیات (Biology)", "کمپیوٹر سائنس (Computer Science)", "اصولِ تجارت (Commerce)", "اصولِ حسابات (Accounting)"],
+  "12th": ["انگریزی (English)", "اردو (Urdu)", "سندھی لازمی (Sindhi Lazmi)", "مطالعہ پاکستان (Pak Studies)", "ریاضی (Mathematics)", "طبیعیات (Physics)", "کیمیا (Chemistry)", "حیاتیات (Biology)", "کمپیوٹر سائنس (Computer Science)", "اصولِ معاشیات (Economics)", "کاروباری ریاضی (Business Math)", "بینکنگ (Banking)"]
 };
 
 // --- GLOBAL MULTILINGUAL CONTENT DATABASE ---
@@ -484,49 +484,49 @@ const languageData = {
       ]
     }
   },
-  spanish: {
-    title: "ہسپانوی زبان (Spanish)",
-    culturalNote: "ہسپانوی دنیا کی کثیر مقاصد اور آسانی سے سیکھی جانے والی زبان ہے۔ یہ صوتی (phonetic) زبان ہے، یعنی جیسا لکھا جاتا ہے ویسا ہی پڑھا جاتا ہے۔",
+  turkish: {
+    title: "ترکی زبان (Turkish)",
+    culturalNote: "ترکی زبان لاطینی حروفِ تہجی میں لکھی جاتی ہے اور اس میں آوازوں کا ایک خاص توازن (Vowel Harmony) ہوتا ہے۔ یہ زبان یورپ اور ایشیا کے سنگم پر واقع ترکی کی قدیم و جدید ثقافت کی عکاس ہے۔",
     basic: {
       words: [
-        { native: "Hola", roman: "Hola (ہولا)", meaning: "ہیلو / سلام" },
-        { native: "Gracias", roman: "Gracias (گراسیاس)", meaning: "شکریہ" },
-        { native: "Sí", roman: "Sí (سی)", meaning: "جی ہاں" },
-        { native: "No", roman: "No (نو)", meaning: "نہیں" },
-        { native: "¿Cómo estás?", roman: "¿Cómo estás? (کومو استاس؟)", meaning: "آپ کا کیا حال ہے؟" },
-        { native: "Estoy bien", roman: "Estoy bien (استوئے بیاں)", meaning: "میں ٹھیک ہوں" }
+        { native: "Merhaba", roman: "Merhaba (مہربا)", meaning: "ہیلو / سلام" },
+        { native: "Teşekkür ederim", roman: "Teşekkür ederim (تشکر ایدرم)", meaning: "شکریہ" },
+        { native: "Evet", roman: "Evet (ایوت)", meaning: "جی ہاں" },
+        { native: "Hayır", roman: "Hayır (ہائر)", meaning: "نہیں" },
+        { native: "Nasılsın?", roman: "Nasılsın? (ناصل سن؟)", meaning: "آپ کا کیا حال ہے؟" },
+        { native: "İyiyim", roman: "İyiyim (ای ایم)", meaning: "میں ٹھیک ہوں" }
       ],
       questions: [
-        { q: "ہسپانوی زبان میں 'سلام / ہیلو' کو کیا کہتے ہیں؟", o: ["Gracias", "Hola", "Sí", "No"], a: 1 },
-        { q: "ہسپانوی لفظ 'Gracias' کا صحیح ترجمہ منتخب کریں:", o: ["ہیلو", "شکریہ", "جی ہاں", "نہیں"], a: 1 },
-        { q: "ہسپانوی لفظ 'Sí' کا کیا مطلب ہے؟", o: ["نہیں", "شکریہ", "جی ہاں", "ہیلو"], a: 2 },
-        { q: "ہسپانوی زبان میں 'نہیں' کو کیا کہتے ہیں؟", o: ["Sí", "No", "Gracias", "Hola"], a: 1 },
-        { q: "ہسپانوی فقرے '¿Cómo estás?' کا کیا مطلب ہے؟", o: ["آپ کہاں جا رہے ہیں؟", "آپ کا نام کیا ہے؟", "آپ کا کیا حال ہے؟", "میں ٹھیک ہوں"], a: 2 },
-        { q: "اگر کوئی آپ سے پوچھے '¿Cómo estás?' تو ہسپانوی میں جواب کیا ہوگا؟", o: ["Estoy bien", "No", "Gracias", "Hola"], a: 0 }
+        { q: "ترکی زبان میں 'سلام / ہیلو' کو کیا کہتے ہیں؟", o: ["Teşekkür ederim", "Merhaba", "Evet", "Hayır"], a: 1 },
+        { q: "ترکی لفظ 'Teşekkür ederim' کا صحیح ترجمہ منتخب کریں:", o: ["ہیلو", "شکریہ", "جی ہاں", "نہیں"], a: 1 },
+        { q: "ترکی لفظ 'Evet' کا کیا مطلب ہے؟", o: ["نہیں", "شکریہ", "جی ہاں", "ہیلو"], a: 2 },
+        { q: "ترکی زبان میں 'نہیں' کو کیا کہتے ہیں؟", o: ["Evet", "Hayır", "Teşekkür ederim", "Merhaba"], a: 1 },
+        { q: "ترکی فقرے 'Nasılsın?' کا کیا مطلب ہے؟", o: ["آپ کہاں جا رہے ہیں؟", "آپ کا نام کیا ہے؟", "آپ کا کیا حال ہے؟", "میں ٹھیک ہوں"], a: 2 },
+        { q: "اگر کوئی آپ سے پوچھے 'Nasılsın?' تو ترکی میں جواب کیا ہوگا؟", o: ["İyiyim", "Hayır", "Teşekkür ederim", "Merhaba"], a: 0 }
       ]
     },
     normal: {
       words: [
-        { native: "¿Dónde está la biblioteca?", roman: "¿Dónde está la biblioteca?", meaning: "لائبریری کہاں ہے؟" }
+        { native: "Kütüphane nerede?", roman: "Kütüphane nerede?", meaning: "لائبریری کہاں ہے؟" }
       ],
       questions: [
-        { q: "Translate: '¿Dónde está la biblioteca?'", o: ["کتاب کہاں ہے؟", "لائبریری کہاں ہے؟", "سکول کہاں ہے؟", "وہاں لائبریری ہے"], a: 1 }
+        { q: "Translate: 'Kütüphane nerede?'", o: ["کتاب کہاں ہے؟", "لائبریری کہاں ہے؟", "سکول کہاں ہے؟", "وہاں لائبریری ہے"], a: 1 }
       ]
     },
     expert: {
       words: [
-        { native: "A la tercera va la vencida", roman: "A la tercera...", meaning: "تیسری بار کوشش کرنے سے کامیابی مل جاتی ہے (محاورہ)" }
+        { native: "Damlaya damlaya göl olur", roman: "Damlaya damlaya...", meaning: "قطرہ قطرہ دریا بنتا ہے (محاورہ)" }
       ],
       questions: [
-        { q: "ہسپانوی مقولے کا کیا مفہوم ہے؟", o: ["ہمیشہ سچ بولو", "تیسری بار کوشش کرنے سے کامیابی مل جاتی ہے", "وقت بہت قیمتی ہے", "محنت میں عظمت ہے"], a: 1 }
+        { q: "ترکی محاورے 'Damlaya damlaya göl olur' کا کیا مفہوم ہے؟", o: ["سچ بولو", "قطرہ قطرہ دریا بنتا ہے", "وقت سونا ہے", "محنت کرو"], a: 1 }
       ]
     },
     professional: {
       words: [
-        { native: "Acuerdo de entendimiento", roman: "Acuerdo de entendimiento", meaning: "مفاہمت کی یادداشت (MOU)" }
+        { native: "Mutabakat Zaptı", roman: "Mutabakat Zaptı", meaning: "مفاہمت کی یادداشت (MOU)" }
       ],
       questions: [
-        { q: "کاروباری ہسپانوی میں 'Acuerdo de entendimiento' سے کیا مراد ہے؟", o: ["ٹیکس آڈٹ", "مفاہمت کی یادداشت (MOU)", "سالانہ بجٹ", "تجارتی بل"], a: 1 }
+        { q: "کاروباری ترکی میں 'Mutabakat Zaptı' سے کیا مراد ہے؟", o: ["ٹیکس آڈٹ", "مفاہمت کی یادداشت (MOU)", "سالانہ بجٹ", "تجارتی بل"], a: 1 }
       ]
     }
   }
