@@ -104,7 +104,7 @@ body::after {
 
 /* Application Layout */
 .app-container {
-  display: flex;
+  display: block;
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -293,7 +293,7 @@ body.ltr .nav-button {
   flex-direction: column;
   gap: 2rem;
   max-width: 1400px;
-  width: calc(100% - 280px);
+  width: auto;
   transition: var(--transition-smooth);
 }
 
@@ -301,6 +301,7 @@ body.ltr .nav-button {
 body.ltr .main-content {
   margin-left: 280px;
   margin-right: 0;
+  width: auto;
 }
 
 /* Views Management */
@@ -1161,7 +1162,7 @@ h1.section-title {
   .main-content {
     margin-right: 80px;
     margin-left: 0;
-    width: calc(100% - 80px);
+    width: auto;
     padding: 1.5rem;
   }
   
@@ -1169,6 +1170,12 @@ h1.section-title {
   body.ltr .main-content {
     margin-left: 80px;
     margin-right: 0;
+    width: auto;
+  }
+  
+  /* Give cards more space on tablet/mobile */
+  .glass-card {
+    padding: 1.25rem;
   }
   
   .dashboard-grid {
@@ -1184,6 +1191,21 @@ h1.section-title {
   .chat-container {
     height: 550px;
   }
+  
+  /* Chat mobile improvements */
+  .chat-header {
+    padding: 1rem 1.25rem;
+  }
+  .chat-messages {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  .chat-input-area {
+    padding: 1rem 1.25rem;
+  }
+  .message {
+    max-width: 85%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1194,6 +1216,9 @@ h1.section-title {
     grid-template-columns: 1fr;
   }
   .main-content {
+    padding: 0.75rem;
+  }
+  .glass-card {
     padding: 1rem;
   }
   h1.section-title {
