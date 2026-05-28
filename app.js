@@ -852,7 +852,7 @@ function generateSimulatedAIResponse(query, info, wasFile) {
       return `Dear student! The <b>Quadratic Formula</b> is an essential topic in Karachi Board Math (Grades 9 and 10). Let's break it down:
         
         For any quadratic equation $ax^2 + bx + c = 0$, the roots can be solved using:
-        <div style="background:rgba(255,255,255,0.05); padding:1rem; border-radius:8px; text-align:center; font-size:1.2rem; margin:1rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);">
+        <div style="background:var(--bg-dark); padding:1rem; border-radius:8px; text-align:center; font-size:1.2rem; margin:1rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);">
           x = [-b ± √(b² - 4ac)] / 2a
         </div>
         
@@ -875,7 +875,7 @@ function generateSimulatedAIResponse(query, info, wasFile) {
       return `پیارے طالب علم! <b>دو درجی فارمولا (Quadratic Formula)</b> کراچی بورڈ کے ریاضی (جماعت نہم و دہم) کا ایک انتہائی اہم موضوع ہے۔ آئیے اسے بالکل آسان انداز میں سمجھتے ہیں:
         
         کسی بھی دو درجی مساوات $ax^2 + bx + c = 0$ کے حل کے لیے فارمولا درج ذیل ہے:
-        <div style="background:rgba(255,255,255,0.05); padding:1rem; border-radius:8px; text-align:center; font-size:1.2rem; margin:1rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);">
+        <div style="background:var(--bg-dark); padding:1rem; border-radius:8px; text-align:center; font-size:1.2rem; margin:1rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);">
           x = [-b ± √(b² - 4ac)] / 2a
         </div>
         
@@ -901,7 +901,7 @@ function generateSimulatedAIResponse(query, info, wasFile) {
     if (isEn) {
       return `Great Physics question! <b>Newton's Second Law of Motion</b> states that the force acting on an object is equal to its mass multiplied by its acceleration.
         
-        <div style="background:rgba(255,255,255,0.05); padding:1rem; border-radius:8px; text-align:center; font-size:1.3rem; margin:1rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);">
+        <div style="background:var(--bg-dark); padding:1rem; border-radius:8px; text-align:center; font-size:1.3rem; margin:1rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);">
           F = m × a
         </div>
         
@@ -919,7 +919,7 @@ function generateSimulatedAIResponse(query, info, wasFile) {
     } else {
       return `آپ کا طبیعیات (Physics) کا سوال مجھے بہت پسند آیا! <b>نیوٹن کا حرکت کا دوسرا قانون (Newton's Second Law of Motion)</b> ہمیں بتاتا ہے کہ کسی جسم پر لگنے والی قوت اس کے ماس اور اس میں پیدا ہونے والے ایکسیلیریشن کے ضرب کے برابر ہوتی ہے۔
         
-        <div style="background:rgba(255,255,255,0.05); padding:1rem; border-radius:8px; text-align:center; font-size:1.3rem; margin:1rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);">
+        <div style="background:var(--bg-dark); padding:1rem; border-radius:8px; text-align:center; font-size:1.3rem; margin:1rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);">
           F = m × a
         </div>
         
@@ -1046,7 +1046,7 @@ function rateExplanation(btn, rating, msgId) {
   }
   
   toastDiv.innerHTML = `
-    <div class="message-bubble ur-text" style="background:rgba(139,92,246,0.1); border:1px dashed var(--primary); font-size:0.85rem; padding:0.6rem 1rem; border-radius:20px; text-align:center;">
+    <div class="message-bubble ur-text" style="background:rgba(21,128,61,0.05); border:1px dashed var(--primary); font-size:0.85rem; padding:0.6rem 1rem; border-radius:20px; text-align:center;">
       <i class="fa-solid fa-graduation-cap"></i> <b>${currentAppLanguage === 'en' ? 'AI Teacher Response:' : 'اے آئی استاد کا جواب:'}</b> ${responseText}
     </div>
   `;
