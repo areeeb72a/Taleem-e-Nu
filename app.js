@@ -25,6 +25,7 @@ let currentAppLanguage = 'ur';
 const translations = {
   ur: {
     "txt-brand-name": "تعلیمِ نو اے آئی",
+    "txt-mobile-brand": "تعلیمِ نو اے آئی",
     "nav-lbl-home": "ہوم ڈیش بورڈ",
     "nav-lbl-academic": "کراچی بورڈ معاون",
     "nav-lbl-lang": "زبان سیکھنے کا مرکز",
@@ -129,6 +130,7 @@ const translations = {
   },
   en: {
     "txt-brand-name": "Taleem-e-Nau AI",
+    "txt-mobile-brand": "Taleem-e-Nau AI",
     "nav-lbl-home": "Home Dashboard",
     "nav-lbl-academic": "Academic Assistant",
     "nav-lbl-lang": "Language Center",
@@ -578,11 +580,42 @@ function switchView(viewId) {
   
   currentView = viewId;
   
+  // Auto-close sidebar on mobile after clicking a link
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar && sidebar.classList.contains('active')) {
+    toggleSidebar();
+  }
+  
   // Close any open quiz or lessons when switching away
   if (viewId !== 'language-view') {
     exitLanguageStage();
     quitAssessment();
     exitResultsToMap();
+  }
+}
+
+// Mobile Sidebar Toggle (Slide In/Out Drawer)
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  
+  if (sidebar && overlay) {
+    sidebar.classList.toggle('active');
+    
+    // Toggle overlay visibility
+    if (sidebar.classList.contains('active')) {
+      overlay.style.display = 'block';
+      setTimeout(() => {
+        overlay.classList.add('active');
+      }, 10);
+    } else {
+      overlay.classList.remove('active');
+      setTimeout(() => {
+        if (!sidebar.classList.contains('active')) {
+          overlay.style.display = 'none';
+        }
+      }, 300);
+    }
   }
 }
 

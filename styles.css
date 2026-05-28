@@ -140,6 +140,36 @@ body.ltr .sidebar {
   box-shadow: 10px 0 30px rgba(0,0,0,0.5);
 }
 
+/* Sidebar Close Button (Hidden on Desktop, Visible on Mobile Menu Open) */
+.sidebar-close-btn {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-white);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  z-index: 110;
+}
+
+body.ltr .sidebar-close-btn {
+  left: auto;
+  right: 1.5rem;
+}
+
+.sidebar-close-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -1139,38 +1169,167 @@ h1.section-title {
   100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
 }
 
+/* Sidebar Overlay (Mobile Menu Backdrop) */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 5, 10, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+}
+
+/* Mobile Header (Hidden on Desktop) */
+.mobile-header {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: rgba(8, 9, 18, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  width: 100%;
+}
+
+.menu-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-white);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.menu-toggle-btn:hover {
+  background: rgba(144, 101, 255, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 10px rgba(144, 101, 255, 0.2);
+}
+
+.mobile-brand {
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--text-white), var(--text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-ur);
+}
+
+body.ltr .mobile-brand {
+  font-family: var(--font-en);
+}
+
 /* Responsive Web Layout Design */
 @media (max-width: 1024px) {
+  /* Show Mobile Header */
+  .mobile-header {
+    display: flex;
+  }
+
+  /* Make sidebar a slide-in drawer on mobile */
   .sidebar {
-    width: 80px;
-    padding: 2rem 0.5rem;
-    align-items: center;
+    width: 280px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transform: translateX(100%);
+    z-index: 100;
+    box-shadow: none;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 1.5rem 1.5rem 1.5rem;
+    border-left: 1px solid var(--border-color);
+    border-right: none;
   }
-  .brand-name, .sidebar-footer, .nav-button span, .lang-toggle-container {
-    display: none;
+
+  .sidebar.active {
+    transform: translateX(0);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.6);
   }
+
+  /* LTR mobile drawer positioning */
+  body.ltr .sidebar {
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+    border-right: 1px solid var(--border-color);
+    border-left: none;
+  }
+
+  body.ltr .sidebar.active {
+    transform: translateX(0);
+    box-shadow: 10px 0 30px rgba(0,0,0,0.6);
+  }
+
+  /* Make close button visible inside active mobile drawer */
+  .sidebar-close-btn {
+    display: flex;
+  }
+
   .brand {
-    justify-content: center;
-    margin-bottom: 2.5rem;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
   }
+  
+  .brand-name, .sidebar-footer, .nav-button span, .lang-toggle-container {
+    display: block; /* Show them in the full drawer! */
+  }
+
+  .lang-toggle-container {
+    display: flex; /* keep flex behavior */
+  }
+
   .nav-button {
-    justify-content: center;
-    padding: 1rem;
+    justify-content: flex-start;
+    padding: 1rem 1.25rem;
+    text-align: right;
+  }
+
+  body.ltr .nav-button {
+    text-align: left;
+  }
+
+  .nav-button span {
+    display: inline;
   }
   
-  /* Responsive margins for RTL layout */
+  /* Main content occupies full width on mobile screens now! */
   .main-content {
-    margin-right: 80px;
+    margin-right: 0;
     margin-left: 0;
-    width: auto;
-    padding: 1.5rem;
+    width: 100%;
+    padding: 1.25rem;
+    padding-top: 1.5rem;
   }
   
-  /* Responsive margins for LTR layout */
   body.ltr .main-content {
-    margin-left: 80px;
+    margin-left: 0;
     margin-right: 0;
-    width: auto;
+    width: 100%;
   }
   
   /* Give cards more space on tablet/mobile */
