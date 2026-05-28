@@ -352,11 +352,17 @@ const languageData = {
         { native: "Hello", roman: "ہیلو", meaning: "سلام / آداب" },
         { native: "Thank you", roman: "تھینک یو", meaning: "آپ کا شکریہ" },
         { native: "Yes", roman: "یس", meaning: "جی ہاں" },
-        { native: "No", roman: "نو", meaning: "نہیں" }
+        { native: "No", roman: "نو", meaning: "نہیں" },
+        { native: "How are you?", roman: "ہاؤ آر یو؟", meaning: "آپ کا کیا حال ہے؟" },
+        { native: "I am fine", roman: "آئی ایم فائن", meaning: "میں ٹھیک ہوں" }
       ],
       questions: [
         { q: "What is the meaning of 'Thank you' in Urdu?", o: ["خوش آمدید", "نہیں", "آپ کا شکریہ", "جی ہاں"], a: 2 },
-        { q: "How do you say 'سلام' in English?", o: ["No", "Hello", "Thank you", "Yes"], a: 1 }
+        { q: "How do you say 'سلام' in English?", o: ["No", "Hello", "Thank you", "Yes"], a: 1 },
+        { q: "What is the Urdu meaning of 'Yes'?", o: ["جی ہاں", "نہیں", "شکریہ", "ہیلو"], a: 0 },
+        { q: "What is the English word for 'نہیں'?", o: ["Yes", "Hello", "No", "Thank you"], a: 2 },
+        { q: "How do you translate 'How are you?' in Urdu?", o: ["آپ کا کیا حال ہے؟", "میرا نام کیا ہے؟", "آپ کہاں ہیں؟", "میں ٹھیک ہوں"], a: 0 },
+        { q: "If someone asks 'How are you?', what is a suitable reply?", o: ["I am fine", "No", "Thank you", "Hello"], a: 0 }
       ]
     },
     normal: {
@@ -383,38 +389,147 @@ const languageData = {
         { q: "In corporate English, what is 'Synergy'?", o: ["باہمی تصادم", "باہمی تعاون اور ہم آہنگی", "مالی بجٹ", "ٹیکس آڈٹ"], a: 1 }
       ]
     }
-  }
-};
-
-// Add fallback/placeholders for missing Chinese, French, Spanish to prevent crash
-['chinese', 'french', 'spanish'].forEach(lang => {
-  languageData[lang] = {
-    title: lang.charAt(0).toUpperCase() + lang.slice(1),
-    culturalNote: `This language is highly expressive. Its core stages cover alphabets, dynamic structures, and business contexts.`,
+  },
+  chinese: {
+    title: "چینی زبان (Chinese)",
+    culturalNote: "چینی زبان (مینڈارن) دنیا میں سب سے زیادہ بولی جانے والی زبان ہے۔ یہ ٹونز (Tones) پر مبنی ہے، یعنی ایک ہی لفظ کی مختلف ٹونز سے اس کا مطلب تبدیل ہو جاتا ہے۔",
     basic: {
       words: [
-        { native: "Ni Hao / Bonjour / Hola", roman: "نی ہاؤ / بونجور / ہولا", meaning: "ہیلو / سلام" },
-        { native: "Xie Xie / Merci / Gracias", roman: "شیے شیے / میرسی / گراسیاس", meaning: "شکریہ" }
+        { native: "你好", roman: "Nǐ hǎo (نی ہاؤ)", meaning: "ہیلو / سلام" },
+        { native: "谢谢", roman: "Xièxie (شیے شیے)", meaning: "شکریہ" },
+        { native: "是", roman: "Shì (شِی)", meaning: "جی ہاں" },
+        { native: "不", roman: "Bù (بُو)", meaning: "نہیں" },
+        { native: "你好吗？", roman: "Nǐ hǎo ma? (نی ہاؤ ما؟)", meaning: "آپ کا کیا حال ہے؟" },
+        { native: "我很好", roman: "Wǒ hěn hǎo (وو ہین ہاؤ)", meaning: "میں ٹھیک ہوں" }
       ],
       questions: [
-        { q: `How do you say 'Hello' in this language?`, o: ["Ni Hao / Bonjour / Hola", "Xie Xie / Merci", "Zai Jian / Au Revoir", "Bu Ke Qi / De Rien"], a: 0 },
-        { q: `How do you say 'Thank you' in this language?`, o: ["Zai Jian / Au Revoir", "Ni Hao / Bonjour", "Xie Xie / Merci / Gracias", "Bu Ke Qi / De Rien"], a: 2 }
+        { q: "چینی زبان میں 'سلام / ہیلو' کو کیا کہتے ہیں؟", o: ["谢谢", "你好", "是", "不"], a: 1 },
+        { q: "لفظ '谢谢' کا اردو میں کیا ترجمہ ہے؟", o: ["ہیلو", "شکریہ", "جی ہاں", "نہیں"], a: 1 },
+        { q: "چینی لفظ '是' کا مطلب بتائیں:", o: ["نہیں", "شکریہ", "جی ہاں", "ہیلو"], a: 2 },
+        { q: "چینی زبان میں 'نہیں' کو کیا کہتے ہیں؟", o: ["是", "不", "谢谢", "你好吗"], a: 1 },
+        { q: "چینی فقرے '你好吗？' کا کیا مطلب ہے؟", o: ["آپ کہاں جا رہے ہیں؟", "آپ کا نام کیا ہے؟", "آپ کا کیا حال ہے؟", "میں ٹھیک ہوں"], a: 2 },
+        { q: "اگر کوئی پوچھے '你好吗؟'، تو چینی میں جواب کیا ہوگا؟", o: ["我很好", "不", "谢谢", "你好"], a: 0 }
       ]
     },
     normal: {
-      words: [{ native: "Excuse me", roman: "ایکسکیوز می", meaning: "معاف کیجیے گا" }],
-      questions: [{ q: "What is the translation for 'Excuse me'?", o: ["ہیلو", "شکریہ", "معاف کیجیے گا", "خدا حافظ"], a: 2 }]
+      words: [
+        { native: "图书馆在哪里？", roman: "Túshūguǎn zài nǎlǐ?", meaning: "لائبریری کہاں ہے؟" }
+      ],
+      questions: [
+        { q: "Translate: '图书馆在哪里？'", o: ["سکول کہاں ہے؟", "کتاب کہاں ہے؟", "لائبریری کہاں ہے؟", "وہاں کتاب ہے"], a: 2 }
+      ]
     },
     expert: {
-      words: [{ native: "A piece of cake", roman: "ا پیس آف کیک", meaning: "بہت آسان کام" }],
-      questions: [{ q: "What does 'A piece of cake' mean in idiomatic terms?", o: ["کیک کا ٹکڑا", "بہت آسان کام", "کپ کیک", "سخت محنت"], a: 1 }]
+      words: [
+        { native: "画蛇添足", roman: "Huàshétiānzú", meaning: "ضرورت سے زیادہ کام کر کے بگاڑنا (محاورہ)" }
+      ],
+      questions: [
+        { q: "چینی محاورے '画蛇添足' کا کیا مفہوم ہے؟", o: ["سانپ کاٹنا", "ضرورت سے زیادہ کام کر کے بگاڑنا", "سخت محنت کرنا", "کاہلی کرنا"], a: 1 }
+      ]
     },
     professional: {
-      words: [{ native: "Memorandum of Understanding", roman: "ایم او یو", meaning: "مفاہمت کی یادداشت (معاہدہ)" }],
-      questions: [{ q: "What is an 'MOU' in professional language?", o: ["بجٹ دستاویز", "تجارتی بل", "مفاہمت کی یادداشت", "لیبر قوانین"], a: 2 }]
+      words: [
+        { native: "谅解备忘录", roman: "Liàngjiě bèiwànglù", meaning: "مفاہمت کی یادداشت (MOU)" }
+      ],
+      questions: [
+        { q: "کاروباری چینی میں '谅解备忘录' کا کیا مطلب ہے؟", o: ["بجٹ بل", "مفاہمت کی یادداشت (MOU)", "ٹیکس دستاویز", "تجارتی بل"], a: 1 }
+      ]
     }
-  };
-});
+  },
+  french: {
+    title: "فرانسیسی زبان (French)",
+    culturalNote: "فرانسیسی دنیا کی سب سے زیادہ رومانی اور سفارتی زبانوں میں سے ایک ہے۔ اس کی ادائیگی میں ناک سے نکلنے والی آوازیں (nasal sounds) اور خاموش حروف (silent letters) انتہائی اہم ہیں۔",
+    basic: {
+      words: [
+        { native: "Bonjour", roman: "Bonjour (بونجور)", meaning: "ہیلو / سلام" },
+        { native: "Merci", roman: "Merci (میرسی)", meaning: "شکریہ" },
+        { native: "Oui", roman: "Oui (وی)", meaning: "جی ہاں" },
+        { native: "Non", roman: "Non (نوں)", meaning: "نہیں" },
+        { native: "Comment ça va?", roman: "Comment ça va? (کوماں سا وا؟)", meaning: "آپ کا کیا حال ہے؟" },
+        { native: "Ça va bien", roman: "Ça va bien (سا وا بیاں)", meaning: "میں ٹھیک ہوں" }
+      ],
+      questions: [
+        { q: "فرانسیسی میں 'سلام / ہیلو' کہنے کے لیے کون سا لفظ بولا جاتا ہے؟", o: ["Merci", "Bonjour", "Oui", "Non"], a: 1 },
+        { q: "فرانسیسی لفظ 'Merci' کا کیا مطلب ہے؟", o: ["ہیلو", "شکریہ", "جی ہاں", "نہیں"], a: 1 },
+        { q: "فرانسیسی لفظ 'Oui' کا ترجمہ منتخب کریں:", o: ["نہیں", "شکریہ", "جی ہاں", "ہیلو"], a: 2 },
+        { q: "فرانسیسی زبان میں 'نہیں' کو کیا کہتے ہیں؟", o: ["Oui", "Non", "Merci", "Bonjour"], a: 1 },
+        { q: "فرانسیسی فقرے 'Comment ça va?' کا کیا مطلب ہے؟", o: ["آپ کہاں ہیں؟", "آپ کا نام کیا ہے؟", "آپ کا کیا حال ہے؟", "میں ٹھیک ہوں"], a: 2 },
+        { q: "اگر کوئی آپ سے پوچھے 'Comment ça va?' تو مناسب جواب کیا ہوگا؟", o: ["Ça va bien", "Non", "Merci", "Bonjour"], a: 0 }
+      ]
+    },
+    normal: {
+      words: [
+        { native: "Où est la bibliothèque?", roman: "Où est la bibliothèque?", meaning: "لائبریری کہاں ہے؟" }
+      ],
+      questions: [
+        { q: "Translate: 'Où est la bibliothèque?'", o: ["کتاب کہاں ہے؟", "سکول کہاں ہے؟", "لائبریری کہاں ہے؟", "وہاں لائبریری ہے"], a: 2 }
+      ]
+    },
+    expert: {
+      words: [
+        { native: "Quand on a pas ce qu'on aime, il faut aimer ce qu'on a", roman: "Quand on a pas...", meaning: "جو میسر ہے اس پر راضی رہنا سیکھیں (محاورہ)" }
+      ],
+      questions: [
+        { q: "فرانسیسی مقولے کا صحیح مفہوم کیا ہے؟", o: ["لالچ بری بلا ہے", "جو میسر ہے اس پر راضی رہنا سیکھیں", "صبر کا پھل میٹھا ہے", "علم بڑی دولت ہے"], a: 1 }
+      ]
+    },
+    professional: {
+      words: [
+        { native: "Protocole d'accord", roman: "Protocole d'accord", meaning: "مفاہمت کی یادداشت (MOU)" }
+      ],
+      questions: [
+        { q: "فرانسیسی کاروباری زبان میں 'Protocole d'accord' سے کیا مراد ہے؟", o: ["تجارتی معاہدہ", "بجٹ منظوری", "مفاہمت کی یادداشت (MOU)", "ٹیکس چوری"], a: 2 }
+      ]
+    }
+  },
+  spanish: {
+    title: "ہسپانوی زبان (Spanish)",
+    culturalNote: "ہسپانوی دنیا کی کثیر مقاصد اور آسانی سے سیکھی جانے والی زبان ہے۔ یہ صوتی (phonetic) زبان ہے، یعنی جیسا لکھا جاتا ہے ویسا ہی پڑھا جاتا ہے۔",
+    basic: {
+      words: [
+        { native: "Hola", roman: "Hola (ہولا)", meaning: "ہیلو / سلام" },
+        { native: "Gracias", roman: "Gracias (گراسیاس)", meaning: "شکریہ" },
+        { native: "Sí", roman: "Sí (سی)", meaning: "جی ہاں" },
+        { native: "No", roman: "No (نو)", meaning: "نہیں" },
+        { native: "¿Cómo estás?", roman: "¿Cómo estás? (کومو استاس؟)", meaning: "آپ کا کیا حال ہے؟" },
+        { native: "Estoy bien", roman: "Estoy bien (استوئے بیاں)", meaning: "میں ٹھیک ہوں" }
+      ],
+      questions: [
+        { q: "ہسپانوی زبان میں 'سلام / ہیلو' کو کیا کہتے ہیں؟", o: ["Gracias", "Hola", "Sí", "No"], a: 1 },
+        { q: "ہسپانوی لفظ 'Gracias' کا صحیح ترجمہ منتخب کریں:", o: ["ہیلو", "شکریہ", "جی ہاں", "نہیں"], a: 1 },
+        { q: "ہسپانوی لفظ 'Sí' کا کیا مطلب ہے؟", o: ["نہیں", "شکریہ", "جی ہاں", "ہیلو"], a: 2 },
+        { q: "ہسپانوی زبان میں 'نہیں' کو کیا کہتے ہیں؟", o: ["Sí", "No", "Gracias", "Hola"], a: 1 },
+        { q: "ہسپانوی فقرے '¿Cómo estás?' کا کیا مطلب ہے؟", o: ["آپ کہاں جا رہے ہیں؟", "آپ کا نام کیا ہے؟", "آپ کا کیا حال ہے؟", "میں ٹھیک ہوں"], a: 2 },
+        { q: "اگر کوئی آپ سے پوچھے '¿Cómo estás?' تو ہسپانوی میں جواب کیا ہوگا؟", o: ["Estoy bien", "No", "Gracias", "Hola"], a: 0 }
+      ]
+    },
+    normal: {
+      words: [
+        { native: "¿Dónde está la biblioteca?", roman: "¿Dónde está la biblioteca?", meaning: "لائبریری کہاں ہے؟" }
+      ],
+      questions: [
+        { q: "Translate: '¿Dónde está la biblioteca?'", o: ["کتاب کہاں ہے؟", "لائبریری کہاں ہے؟", "سکول کہاں ہے؟", "وہاں لائبریری ہے"], a: 1 }
+      ]
+    },
+    expert: {
+      words: [
+        { native: "A la tercera va la vencida", roman: "A la tercera...", meaning: "تیسری بار کوشش کرنے سے کامیابی مل جاتی ہے (محاورہ)" }
+      ],
+      questions: [
+        { q: "ہسپانوی مقولے کا کیا مفہوم ہے؟", o: ["ہمیشہ سچ بولو", "تیسری بار کوشش کرنے سے کامیابی مل جاتی ہے", "وقت بہت قیمتی ہے", "محنت میں عظمت ہے"], a: 1 }
+      ]
+    },
+    professional: {
+      words: [
+        { native: "Acuerdo de entendimiento", roman: "Acuerdo de entendimiento", meaning: "مفاہمت کی یادداشت (MOU)" }
+      ],
+      questions: [
+        { q: "کاروباری ہسپانوی میں 'Acuerdo de entendimiento' سے کیا مراد ہے؟", o: ["ٹیکس آڈٹ", "مفاہمت کی یادداشت (MOU)", "سالانہ بجٹ", "تجارتی بل"], a: 1 }
+      ]
+    }
+  }
+};
+
 
 // --- GLOBAL EVENT LISTENERS & INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
@@ -921,6 +1036,12 @@ function updateLanguageProgress() {
   updateStageUI('normal', progress.normal);
   updateStageUI('expert', progress.expert);
   updateStageUI('professional', progress.professional);
+  
+  // Dynamic refresh: if lesson workspace is active, reload active stage content
+  const lessonSection = document.getElementById("lesson-workspace");
+  if (lessonSection && lessonSection.style.display === "flex") {
+    startLanguageStage(activeStage);
+  }
 }
 
 function updateStageUI(stageName, isUnlocked) {
