@@ -807,11 +807,11 @@ const educationalQADatabase = {
   "quadrants": {
     "title": {
       "en": "Quadrants in Coordinate Geometry",
-      "ur": "کوآڈرنٹس (Quadrants) کیا ہیں؟"
+      "ur": "Quadrants and Coordinate Signs (کوآڈرنٹس)"
     },
     "intro": {
       "en": "In mathematics, when we draw two perpendicular lines (the horizontal X-axis and vertical Y-axis) on a flat plane, they cross each other at the center (origin) and divide the entire space into 4 equal parts. Each of these parts is called a <b>Quadrant</b> (from 'quad', meaning four). Think of it like cutting a round pizza into four equal slices!",
-      "ur": "ریاضی میں جب ہم ایک چپٹی سطح پر دو عمودی لکیریں (افقی X-axis اور عمودی Y-axis) کھینچتے ہیں، تو یہ دونوں لکیریں مرکز (Origin) پر ایک دوسرے کو کاٹتی ہیں اور پوری سطح کو چار برابر حصوں میں تقسیم کر دیتی ہیں۔ ان چاروں حصوں میں سے ہر ایک حصے کو <b>کوآڈرنٹ (Quadrant)</b> کہا جاتا ہے (لفظ 'کواڈ' کا مطلب ہے چار)۔ اسے یوں سمجھیں جیسے ہم ایک گول پیزا کو چار برابر ٹکڑوں میں کاٹ دیں!"
+      "ur": "Quadrants ko asaan alfaz mein geometry ka <b>'Pizza Slice model'</b> keh sakte hain. Jab hum aik flat plane par do perpendicular lines (horizontal X-axis aur vertical Y-axis) khinchte hain, to wo center (origin) par aapas mein cut karti hain aur poori space ko 4 equal parts mein divide kar deti hain. In charon hisson mein se har aik ko <b>Quadrant</b> kaha jata hai!"
     },
     "steps": {
       "en": [
@@ -830,28 +830,108 @@ const educationalQADatabase = {
       ],
       "ur": [
         {
-          "num": "مرحلہ ۱: چار حصوں کی تقسیم (Q1 سے Q4)",
-          "text": "اوپر دائیں جانب سے شروع ہو کر گھڑی کی سوئیوں کے مخالف سمت (Counter-clockwise) حرکت کرتے ہوئے:<br>• <b>پہلا کوآڈرنٹ (Q1)</b>: اوپر دائیں طرف۔ یہاں X اور Y دونوں مثبت ہوتے ہیں (+, +)۔<br>• <b>دوسرا کوآڈرنٹ (Q2)</b>: اوپر بائیں طرف۔ یہاں X منفی اور Y مثبت ہوتا ہے (-, +)۔<br>• <b>تیسرا کوآڈرنٹ (Q3)</b>: نیچے بائیں طرف۔ یہاں X اور Y دونوں منفی ہوتے ہیں (-, -)۔<br>• <b>چوتھا کوآڈرنٹ (Q4)</b>: نیچے دائیں طرف۔ یہاں X مثبت اور Y منفی ہوتا ہے (+, -)۔"
+          "num": "Step 1: The Four Sections (Q1 to Q4)",
+          "text": "Top-right se shuru ho kar counter-clockwise (ghari ke ultay rukh) chalte hue:<br>• <b>1st Quadrant (Q1)</b>: Upar right side. Yahan X aur Y dono positive hote hain (+, +).<br>• <b>2nd Quadrant (Q2)</b>: Upar left side. Yahan X negative aur Y positive hota hai (-, +).<br>• <b>3rd Quadrant (Q3)</b>: Yahan dono X aur Y negative hote hain (-, -).<br>• <b>4th Quadrant (Q4)</b>: Yahan X positive aur Y negative hota hai (+, -)."
         },
         {
-          "num": "مرحلہ ۲: علامتوں کی یاد دہانی کا چارٹ",
-          "text": "ان کی علامتیں یاد رکھنے کا سب سے آسان طریقہ یہ ہے:<br>• کوآڈرنٹ I: دونوں مثبت (+, +)<br>• کوآڈرنٹ II: منفی، مثبت (-, +)<br>• کوآڈرنٹ III: دونوں منفی (-, -)<br>• کوآڈرنٹ IV: مثبت، منفی (+, -)"
+          "num": "Step 2: Sign Memory Chart",
+          "text": "Sign ko yaad rakhne ka asaan tareeqa:<br>• Q1: (+, +)<br>• Q2: (-, +)<br>• Q3: (-, -)<br>• Q4: (+, -)"
         },
         {
-          "num": "مرحلہ ۳: عملی زندگی میں استعمال",
-          "text": "ہمارے موبائل کا نقشہ (GPS Navigation)، گوگل میپس، ویڈیو گیمز اور گرافک ڈیزائننگ سافٹ ویئر انہی کوآڈرنٹس کا استعمال کر کے سکرین پر کسی بھی چیز کی درست جگہ کا تعین کرتے ہیں!"
+          "num": "Step 3: Real Life Application",
+          "text": "Humare mobile mein Google Maps/GPS navigation aur computer games (jaise Minecraft ya GTA) isi Quadrant system par chalti hain taake screen par object ki exact location track ho sake!"
         }
       ]
+    },
+    "significance": {
+      "en": "<b>Significance</b>: Quadrants are foundational for plotting algebraic equations, understanding trigonometric angles, and rendering computer graphics in modern software engineering.",
+      "ur": "<b>Significance / Importance of Quadrants</b>:<br>• <b>Graph Plotting</b>: Karachi Board ke paper mein graph ka sawal hal karne ke liye coordinate signs ki correct placements zaroori hain.<br>• <b>Advanced Trigonometry</b>: 11th aur 12th class ki Math mein trigonometry ke signs (+/-) isi quadrant par depend karte hain!"
+    },
+    "examTips": {
+      "en": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers Connection</b>: This question has appeared <b>3 times in the past 5 years of board papers</b> in MCQ and short question sections.<br>• <b>Draw standard axis diagram</b>: Draw horizontal X-axis and vertical Y-axis, labeling origin (0,0) and signs (+/-, +/-) in each quadrant to score full marks!",
+      "ur": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: Ye sawal pichle 5 saal ke papers mein <b>3 baar MCQs aur short questions</b> mein aa chuka hai!<br>• <b>Diagram Zaroor Banayein</b>: Paper mein horizontal X-axis aur vertical Y-axis draw kar ke origin (0,0) show karen aur har quadrant ke sath (+,+) ya (-,+) brackets show karen. Diagram dekh kar full marks milenge!"
+    },
+    "motivation": {
+      "en": "Beta, see how easy that was? I am absolutely confident that if this comes in your exam, you will write it beautifully with headings. You are highly talented!",
+      "ur": "Beta, dekha aap ne? Kitna asaan tha ye! Mujhe poora yakeen hai ke agar ye sawal paper mein aaya, to aap isko behtareen headings ke sath likh kar aayenge. Ratta lagane ki bilkul zaroorat nahi hai, bas concept ko zehen mein rakhein. Aap bohat talented hain!"
+    }
+  },
+  "apoptosis": {
+    "title": {
+      "en": "Apoptosis and Its Steps",
+      "ur": "Apoptosis and Its Steps (خلیاتی خودکشی)"
+    },
+    "intro": {
+      "en": "Apoptosis is a highly regulated and ordered biological process known as 'Programmed Cell Death'. It is a clean and essential mechanism where the body signals specific cells to die for the overall benefit of the organism.",
+      "ur": "Apoptosis ko asaan alfaz mein <b>'Programmed Cell Death'</b> kehte hain. Ye cell ki khudkhushi (suicide) hoti hai, lekin ye achanak nahi hoti. Cell ko pehle se aik signal milta hai ke ab us ka kaam khatam ho chuka hai ya wo damage ho chuka hai, is liye body ke faide ke liye us cell ka marna zaroori hota hai. Ye aik nihayat ordered aur saaf-suthra process hai."
+    },
+    "steps": {
+      "en": [
+        {
+          "num": "Step 1: Cell Shrinkage",
+          "text": "The cell begins to shrink in size, and its cytoplasm becomes extremely dense."
+        },
+        {
+          "num": "Step 2: Chromatin Condensation",
+          "text": "The DNA (chromatin) inside the nucleus breaks down and condenses tightly against the nuclear envelope."
+        },
+        {
+          "num": "Step 3: Membrane Blebbing",
+          "text": "The cell membrane develops irregular bulges or bubbles called 'Blebs'."
+        },
+        {
+          "num": "Step 4: Apoptotic Bodies",
+          "text": "The cell breaks apart into small, membrane-bound pieces called 'Apoptotic Bodies'."
+        },
+        {
+          "num": "Step 5: Phagocytosis (Clean-up)",
+          "text": "Phagocytes (White Blood Cells) engulf and digest these apoptotic bodies safely, ensuring no damage is caused to neighboring cells!"
+        }
+      ],
+      "ur": [
+        {
+          "num": "Step 1: Cell Shrinkage (Cell ka Sukarna)",
+          "text": "Sub se pehle cell ka size chota hone lagta hai aur wo sukhar jata hai. Us ke andar ka cytoplasm garha ho jata hai."
+        },
+        {
+          "num": "Step 2: Chromatin Condensation",
+          "text": "Cell ke nucleus ke andar jo DNA (chromatin) hota hai, wo tootne lagta hai aur aik jagah jama (condense) ho jata."
+        },
+        {
+          "num": "Step 3: Blebbing (Bubbles banna)",
+          "text": "Cell ki jo baher wali dewar (cell membrane) hoti hai, us par chhote chhote ubhaar ya bubbles banne lagte hain. In bubbles ko hum <b>'Blebs'</b> کہتے ہیں۔"
+        },
+        {
+          "num": "Step 4: Apoptotic Bodies Formation",
+          "text": "Wo blebs cell se alag ho kar chhote chhote pieces mein toot jate hain. In pieces ko <b>'Apoptotic Bodies'</b> کہتے ہیں۔"
+        },
+        {
+          "num": "Step 5: Phagocytosis (Safaayi)",
+          "text": "Aakhiri step mein, hamari body ke jo difai cells hote hain (Phagocytes / White Blood Cells), wo aate hain aur in apoptotic bodies ko kha kar hazam kar lete hain. Is tarah aas-paas ke baqi cells ko koi nuqsan nahi pahonchta!"
+        }
+      ]
+    },
+    "significance": {
+      "en": "<b>Significance</b>: Apoptosis is critical for proper development (such as separating fingers in the womb) and eliminating damaged or cancerous cells before they can harm the body.",
+      "ur": "<b>Significance / Importance of Apoptosis</b>:<br>• <b>Development mein madad</b>: Jab bacha maa ke pait mein hota hai, to us ki ungliyan aapas mein juri hui hoti hain. Ungliyon ke darmiyan ke cells Apoptosis ke zariye marte hain, tabhi hamari ungliyan alag alag hoti hain.<br>• <b>Damaged Cells ka Khatma</b>: Agar koi cell bemar ho jaye ya us mein virus aa jaye, to apoptosis usay khatam kar ke puri body ko cancer ya infection se bachata hai."
+    },
+    "examTips": {
+      "en": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers Connection</b>: This question has appeared <b>3 times in the past 5 years of board papers</b> in the 9th Class Biology paper as a major 4-mark short question.<br>• <b>Draw Diagrams</b>: In Biology, draw 3-4 small boxes showing the step-by-step progression (Cell -> Shrinkage -> Blebs -> Apoptotic Bodies) to secure full marks!<br>• <b>Underline Keywords</b>: Always highlight terms like 'Programmed Cell Death', 'Blebbing', and 'Phagocytosis'.",
+      "ur": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: Ye sawal pichle 5 saal ke papers mein <b>3 baar aa chuka hai</b> (9th class Biology Board Exam). So this is highly important!<br>• <b>Diagram Zaroor Banayein</b>: Jab ye sawal paper mein aaye, to jo steps maine ooper bataye hain, un ki choti choti 3-4 diagrams zaroor banayein (Cell -> Shrinkage -> Blebs -> Apoptotic bodies). Biology mein diagram dekh kar examiner khush ho kar full marks deta hai.<br>• <b>Keywords ko Underline Karen</b>: 'Programmed cell death', 'Blebs', aur 'Phagocytosis' jaise alfaz ko marker se highlight ya underline zaroor karen."
+    },
+    "motivation": {
+      "en": "Beta, see how easy that was? I am absolutely confident that if this comes in your exam, you will write it beautifully with headings. You are highly talented!",
+      "ur": "Beta, dekha aap ne? Kitna asaan tha ye! Mujhe poora yakeen hai ke agar ye sawal paper mein aaya, to aap isko behtareen headings ke sath likh kar aayenge. Ratta lagane ki bilkul zaroorat nahi hai, bas concept ko zehen mein rakhein. Aap bohat talented hain aur mujhe pata hai aap Biology mein top karenge!"
     }
   },
   "quadratic": {
     "title": {
       "en": "Quadratic Formula in Mathematics",
-      "ur": "دو درجی فارمولا (Quadratic Formula)"
+      "ur": "Quadratic Formula (دو درجی فارمولا)"
     },
     "intro": {
       "en": "The Quadratic Formula is an essential method in algebra used to find the solutions (roots) of any quadratic equation. It works for all quadratic equations, even those that cannot be easily factored!",
-      "ur": "دو درجی فارمولا (Quadratic Formula) الجبرا کا ایک انتہائی اہم فارمولا ہے جو کسی بھی دو درجی مساوات (Quadratic Equation) کے حل یا روٹس (Roots) معلوم کرنے کے لیے استعمال ہوتا ہے۔ یہ فارمولا ہر قسم کی دو درجی مساوات کے لیے کام کرتا ہے!"
+      "ur": "Quadratic Formula ko asaan alfaz mein <b>'Math ka Brahmastra'</b> keh sakte hain. Ye algebra ka aik nihayat ahem formula hai jo kisi bhi quadratic equation (jis ki degree 2 ho) ke roots nikalne ke liye use hota hai. Agar factors na ban rahe hon, to ye formula hamesha solution deta hai!"
     },
     "steps": {
       "en": [
@@ -870,28 +950,40 @@ const educationalQADatabase = {
       ],
       "ur": [
         {
-          "num": "مرحلہ ۱: مساوات کی شناخت کریں",
-          "text": "سب سے پہلے اپنی مساوات کو معیاری شکل $ax^2 + bx + c = 0$ میں ترتیب دیں اور coefficients یعنی $a$، $b$، اور $c$ کی قیمتیں الگ لکھ لیں۔"
+          "num": "Step 1: Standard Form aur values identification",
+          "text": "Sub se pehle apni equation ko standard form <b>$ax^2 + bx + c = 0$</b> mein likhein aur coefficients $a$, $b$, aur $c$ ki values nikalen."
         },
         {
-          "num": "مرحلہ ۲: فارمولے میں قیمتیں درج کریں",
-          "text": "ان قیمتوں کو دو درجی فارمولے میں درج کریں:<br><div style='background:var(--bg-dark); padding:0.8rem; border-radius:8px; text-align:center; font-size:1.1rem; margin:0.5rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);'>x = [-b ± √(b² - 4ac)] / 2a</div>سب سے پہلے جزر (Square root) کے اندر موجود رقم ($b^2 - 4ac$) کو حل کریں، جسے فرق کنندہ (Discriminant) کہتے ہیں۔"
+          "num": "Step 2: Formula mein values put karna",
+          "text": "In values ko quadratic formula mein put karen:<br><div style='background:var(--bg-dark); padding:0.8rem; border-radius:8px; text-align:center; font-size:1.1rem; margin:0.5rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);'>x = [-b ± √(b² - 4ac)] / 2a</div>Sub se pehle square root ke andar wala hissa ($b^2 - 4ac$) hal karen jise hum Discriminant kehte hain."
         },
         {
-          "num": "مرحلہ ۳: دو جوابات حاصل کریں",
-          "text": "علامت $±$ (پلس مائنس) کی وجہ سے مساوات کو دو حصوں میں تقسیم کریں: ایک پلس کے ساتھ اور دوسرا مائنس کے ساتھ۔ اس سے آپ کے پاس $x$ کے دو الگ الگ حل آئیں گے جو آپ کا فائنل جواب ہوں گے!"
+          "num": "Step 3: Two distinct roots hal karna",
+          "text": "Sign <b>$±$</b> ki wajah se do alag solutions banenge: aik plus (+) ke sath aur aik minus (-) ke sath. Hal karne par aap ko do solutions mil jayenge!"
         }
       ]
+    },
+    "significance": {
+      "en": "<b>Significance</b>: Used to model real-world arcs like throwing a basketball, calculating rocket trajectory heights, and financial curve projections.",
+      "ur": "<b>Significance / Importance of Quadratic Formula</b>:<br>• <b>Real-Life Use</b>: Jab rocket launch hota hai ya basketball phenki jati hai, to us ke curved raste ko math mein model karne ke liye ye formula kam aata hai!"
+    },
+    "examTips": {
+      "en": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers Connection</b>: Appears in <b>almost 90% of board exams</b> in Section B (short questions).<br>• <b>Sign Alert</b>: Watch out for negative numbers inside the square root ($b^2 - 4ac$). If it is negative, roots are complex/imaginary!",
+      "ur": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: Ye sawal 10th aur 9th class ke board papers mein <b>har saal aata hai</b>. Section B mein aane ke chances 90% hote hain!<br>• <b>Sign ki ahtiyat</b>: Agar formula mein $b^2 - 4ac$ negative aa jaye to tension na len, is ka matlab hai roots complex ya imaginary hain."
+    },
+    "motivation": {
+      "en": "Beta, see how easy that was? Algebra is just like a puzzle. Keep practicing!",
+      "ur": "Beta, dekha aap ne? Algebra pheliyon ki tarah asaan hai! Bas values put karni hain aur answers khud-ba-khud baher aa jate hain. Practice karte rahen, aap top karenge!"
     }
   },
   "matrix": {
     "title": {
       "en": "Introduction to Matrices",
-      "ur": "قالب (Matrices) کا تعارف"
+      "ur": "Matrices and Orders (قالب)"
     },
     "intro": {
       "en": "A matrix (plural: matrices) is a rectangular grid or arrangement of numbers, symbols, or expressions set in rows (horizontal) and columns (vertical). Matrices are highly powerful for solving large sets of equations simultaneously!",
-      "ur": "ریاضی میں قالب (Matrix) اعداد، علامتوں یا متغیرات کے اس مستطیلی ترتیب کو کہتے ہیں جو قطاروں (Rows) اور کالموں (Columns) میں ترتیب دی گئی ہو اور اسے بڑی بریکٹوں [ ] میں بند کیا گیا ہو۔ یہ بڑی مساواتوں کو آسانی سے حل کرنے کا بہترین ذریعہ ہے!"
+      "ur": "Matrix ko asaan alfaz mein <b>'Numbers ki rectangular grid'</b> keh sakte hain. Jab hum numbers ko rows (horizontal lines) aur columns (vertical lines) mein arrange kar ke brackets [ ] ke andar band karte hain, to is arrange ko <b>Matrix</b> kehte hain."
     },
     "steps": {
       "en": [
@@ -910,28 +1002,40 @@ const educationalQADatabase = {
       ],
       "ur": [
         {
-          "num": "مرحلہ ۱: قطاریں، کالم اور مرتبہ (Order)",
-          "text": "افقی لائنوں کو <b>قطاریں (Rows)</b> اور عمودی لائنوں کو <b>کالم (Columns)</b> کہا جاتا ہے۔ کسی قالب کے سائز کو اس کا مرتبہ (Order) کہتے ہیں، جسے 'قطاریں × کالم' (مثلاً $2 \\times 3$) لکھا جاتا ہے۔"
+          "num": "Step 1: Rows, Columns aur Order samajhna",
+          "text": "Horizontal lines ko <b>Rows</b> kehte hain aur vertical lines ko <b>Columns</b>. Matrix ke size ko us ka <b>Order</b> kehte hain, jise $Rows \\times Columns$ (jaise $2 \\times 2$) likhte hain."
         },
         {
-          "num": "مرحلہ ۲: بنیادی عوامل (جمع اور تفریق)",
-          "text": "ہم دو قالبوں کو صرف اسی صورت میں جمع یا تفریق کر سکتے ہیں جب ان کا مرتبہ بالکل ایک جیسا ہو۔ جمع یا تفریق کرتے وقت ان کے آمنے سامنے والے متعلقہ ارکان کو حل کیا جاتا ہے۔"
+          "num": "Step 2: Addition & Subtraction ka rule",
+          "text": "Dono matrices ko sirf tabhi add ya subtract kiya ja sakta hai jab dono ka <b>Order bilkul same</b> ho. Bas front-to-front elements ko aapas mein hal karna hota hai."
         },
         {
-          "num": "مرحلہ ۳: عملی زندگی میں استعمال",
-          "text": "قالب کمپیوٹر گرافکس کی بنیاد ہیں! تھری ڈی اینیمیشنز، موبائل کے کیمرہ فلٹرز، ویڈیو گیمز اور آرٹیفیشل انٹیلیجنس کے تمام ماڈلز ڈیٹا کو پراسیس کرنے کے لیے میٹرکس ملٹی پلیکیشن کا استعمال کرتے ہیں!"
+          "num": "Step 3: Real Life Application",
+          "text": "Computer games (jaise PUBG aur FreeFire) aur mobile ke camera filters (jaise Instagram filters) numbers ko process karne ke liye background mein inhi matrices ka multiply use karte hain!"
         }
       ]
+    },
+    "significance": {
+      "en": "<b>Significance</b>: Essential in computer programming, 3D graphics rendering, and modern neural network data structures.",
+      "ur": "<b>Significance / Importance of Matrices</b>:<br>• <b>Computer Science</b>: Pure programming and AI/Machine learning models numbers store karne aur multiply karne ke liye is tool par chalte hain."
+    },
+    "examTips": {
+      "en": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers Connection</b>: Cramer's Rule or Matrix Inverse Method appears <b>every year in the long question section</b> (10 marks). Master them!<br>• <b>Determinant Check</b>: Before finding inverse, find $|A|$. If $|A| = 0$ (singular), inverse is not possible!",
+      "ur": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: Ye sawal (Cramer's Rule ya Inverse Method) board ke long question mein <b>har saal 100% aata hai</b>. Dono methods seekh len!<br>• <b>Determinant Check</b>: Jab inverse ($A^{-1}$) nikalna ho, to $|A|$ (Determinant) pehle nikalen. Agar determinant 0 aa jaye, to short statement likhein 'Inverse not possible' aur examiner pure marks dega."
+    },
+    "motivation": {
+      "en": "Beta, matrices are very easy to score. Just keep practicing the addition/multiplication loops!",
+      "ur": "Beta, dekha aap ne? Kitna mazedari wala aur simple sawal tha. Inverse aur Cramer rule par pakki practice kar len, 10 marks pakke hain aap ke!"
     }
   },
   "set": {
     "title": {
       "en": "Sets and Venn Diagrams",
-      "ur": "سیٹ (Sets) اور وین خاکے"
+      "ur": "Sets and Venn Diagrams (سیٹ)"
     },
     "intro": {
       "en": "A set is a well-defined collection of distinct objects, numbers, or elements. For example, a set of tea cups or a set of natural numbers. Sets help mathematicians classify and organize groups of numbers systematically.",
-      "ur": "ریاضی میں واضح اور مختلف اشیاء، اعداد یا ارکان کے مجموعے کو <b>سیٹ (Set)</b> کہا جاتا ہے۔ جیسے کہ چائے کے کپوں کا سیٹ یا قدرتی اعداد کا سیٹ۔ سیٹس کے ارکان کو ہمیشہ درمیانی بریکٹ { } میں لکھا جاتا ہے۔"
+      "ur": "Set ko asaan alfaz mein <b>'Distinct and Well-defined groups'</b> keh sakte hain. Kisi bhi wazeh aur alag-alag cheezon ke collection ko <b>Set</b> kehte hain, jaise natural numbers ka set ya cricket players ka set. Inhein {} brackets mein likha jata hai."
     },
     "steps": {
       "en": [
@@ -950,28 +1054,40 @@ const educationalQADatabase = {
       ],
       "ur": [
         {
-          "num": "مرحلہ ۱: بنیادی عوامل (یونین اور انٹرسیکشن)",
-          "text": "• <b>یونین ($A \\cup B$)</b>: دونوں سیٹس کے تمام ارکان کو ملا کر ایک بڑا سیٹ بنانا (کوئی رقم دو بار نہیں لکھی جاتی)۔<br>• <b>انٹرسیکشن ($A \\cap B$)</b>: صرف وہ ارکان جو دونوں سیٹس میں مشترک (ایک جیسے) ہوں۔"
+          "num": "Step 1: Union ($A \\cup B$) aur Intersection ($A \\cap B$)",
+          "text": "• <b>Union</b>: Dono sets ke tamaam elements ko mila kar aik bada group banana.<br>• <b>Intersection</b>: Sirf wo elements likhna jo dono sets mein common (aik jaise) hon."
         },
         {
-          "num": "مرحلہ ۲: سیٹ کا متمم (Complement)",
-          "text": "کسی سیٹ کا متمم (Complement) معلوم کرنے کے لیے اسے یونیورسل سیٹ ($U$) میں سے خارج کر دیا جاتا ہے، یعنی $A' = U - A$۔ اس کا مطلب ہے کہ $U$ کے وہ ارکان جو $A$ میں نہ ہوں۔"
+          "num": "Step 2: Complement ($A'$)",
+          "text": "Universal set ($U$) ke wo elements jo Set A mein maujood nahi hain un ka set banana, yaani $U - A$."
         },
         {
-          "num": "مرحلہ ۳: وین خاکے (Venn Diagrams) کی مدد سے خاکہ کشی",
-          "text": "سیٹس کو تصاویر کی شکل میں دکھانے کے لیے گول دائروں کا استعمال کیا جاتا ہے جسے 'وین خاکہ' کہتے ہیں۔ یہ دائرے منطقی سوالات کو بہت آسان بنا دیتے ہیں!"
+          "num": "Step 3: Venn Diagram (Visual representation)",
+          "text": "Sets ko draw karne ke liye aik bada box (Universal set) banaya jata hai aur us ke andar circles draw kiye jate hain. Jo area overlap karta hai wo intersection ko show karta hai."
         }
       ]
+    },
+    "significance": {
+      "en": "<b>Significance</b>: Sets form the absolute foundation of probability calculations, database queries, and logical system conditions.",
+      "ur": "<b>Significance / Importance of Sets</b>:<br>• <b>Database Queries</b>: Software developers database se custom tables join karne ke liye isi Set theory (Union/Join) ka use karte hain!"
+    },
+    "examTips": {
+      "en": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers Connection</b>: De Morgan's Laws verify question <b>appears in 80% of board exams</b>. Solve it step-by-step.<br>• <b>Clean Venn Diagrams</b>: Always use a coin or compass to draw neat circles for Venn diagrams; untidy overlapping circles lose presentation marks!",
+      "ur": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: De Morgan's Laws ($ (A \\cup B)' = A' \\cap B' $) ka sawal <b>pichle 5 saal mein 4 baar aa chuka hai</b>. Isay zaroor rata laga len!<br>• <b>Diagram Presentation</b>: Paper mein Venn diagram banate waqt compass ya kisi coin se bilkul gol neat circles banayein, aur scales se line drawing karen. Examiner presentation dekh kar pura score deta hai."
+    },
+    "motivation": {
+      "en": "Beta, sets are simple logical blocks. No complex math required!",
+      "ur": "Beta, dekha aap ne? Set hal karna kitna asaan hai, is mein koi complicated calculations bhi nahi hain. Paper mein ye sawal zaroor select kiya karen!"
     }
   },
   "newton": {
     "title": {
       "en": "Newton's Laws of Motion",
-      "ur": "نیوٹن کے حرکت کے قوانین (Newton's Laws)"
+      "ur": "Newton's Three Laws of Motion (حرکت کے قوانین)"
     },
     "intro": {
       "en": "Sir Isaac Newton formulated three fundamental laws of motion that describe the relationship between a body and the forces acting upon it, and its motion in response to those forces. They form the basis of classical mechanics!",
-      "ur": "سر آئزک نیوٹن نے حرکت کے تین بنیادی قوانین وضع کیے جو ہمیں بتاتے ہیں کہ قوت (Force) اور حرکت (Motion) کا آپس میں کیا رشتہ ہے۔ یہ تینوں قوانین فزکس کی بنیاد ہیں!"
+      "ur": "Newton ke teen laws ko asaan alfaz mein <b>'Motion ka mechanics blueprint'</b> keh sakte hain. Sir Isaac Newton ne hamein bataya ke jab kisi object par force lagti hai to wo kis tarah behave karta hai. Ye laws hamari classical Physics ki base hain!"
     },
     "steps": {
       "en": [
@@ -990,28 +1106,40 @@ const educationalQADatabase = {
       ],
       "ur": [
         {
-          "num": "پہلا قانون (جمود کا قانون / Inertia)",
-          "text": "کوئی بھی رکی ہوئی چیز ہمیشہ رکی رہے گی اور چلتی ہوئی چیز اسی رفتار سے سیدھی چلتی رہے گی جب تک کہ اس پر کوئی بیرونی قوت اثر نہ کرے۔ گاڑی کے اچانک بریک لگانے پر ہمارا آگے گرنا اسی قانون کی وجہ سے ہے!"
+          "num": "1st Law: Law of Inertia (جمود)",
+          "text": "Agar koi cheez ruki hui hai to ruki rahegi, aur chal rahi hai to chalti rahegi, jab tak koi baher se aakar us par zor (Force) na lagaye. Gaari chalte waqt sudden break par hamara aage girna isi Inertia ki wajah se hai."
         },
         {
-          "num": "دوسرا قانون ($F = ma$)",
-          "text": "کسی چیز کی رفتار میں تبدیلی (Acceleration) اس پر لگنے والی قوت (Force) کے براہ راست متناسب اور اس کے ماس کے بالواسطہ متناسب ہوتی ہے۔ یعنی: $F = m \\times a$۔ ہلکی گیند کے مقابلے میں بھاری پتھر کو دھکیلنے کے لیے زیادہ قوت درکار ہوتی ہے۔"
+          "num": "2nd Law: Force aur Acceleration ($F = ma$)",
+          "text": "Force seedha relation rakhti hai mass aur acceleration ke sath, yaani jitni zor se push karenge, cheez utni hi tezi se bhagegi: <b>$F = m \\times a$</b>. Bhari patthar ko push karne ke liye small ball se ziada force chahiye."
         },
         {
-          "num": "تیسرا قانون (عمل اور ردِ عمل)",
-          "text": "ہر عمل کا ایک برابر اور مخالف ردِ عمل ہوتا ہے۔ مثال کے طور پر: جب غبارے سے ہوا نیچے نکلتی ہے تو غبارہ اوپر کی طرف بھاگتا ہے، بالکل اسی طرح راکٹ بھی کام کرتا ہے!"
+          "num": "3rd Law: Action aur Reaction (عمل اور ردِ عمل)",
+          "text": "Har action ka aik barabar aur opposite reaction hota hai. Jaise jab aap balloon se hawa chhortay hain, hawa niche jati hai aur balloon upar bhaagta hai!"
         }
       ]
+    },
+    "significance": {
+      "en": "<b>Significance</b>: Governs automotive safety designs (seatbelts), aerospace engineering, bridge building, and machinery dynamics.",
+      "ur": "<b>Significance / Importance of Newton's Laws</b>:<br>• <b>Seatbelt design</b>: Gaariyon mein seatbelts jamood (Inertia) ke asraat se bachane aur lives save karne ke liye banai jati hain."
+    },
+    "examTips": {
+      "en": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers Connection</b>: Second Law ($F=ma$) derivation appears in <b>9th/10th Physics paper almost every second year</b>.<br>• <b>State exact law definitions</b>: Do not rewrite the laws in your own casual words; examiners look for precise textbook definitions!",
+      "ur": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: $F=ma$ ki derivation aur Newton's Third Law ki definition board exam mein <b>pichle 5 saal mein 3 baar aa chuka hai</b>. Ratta maar len precise wording ko!<br>• <b>Wording ki strictness</b>: Laws ki definitions hamesha book ki exact lines mein likhein, apni marzi ki simple English na banayein, examiner standard definitions chahta hai."
+    },
+    "motivation": {
+      "en": "Beta, Newton's laws are extremely intuitive. Think of football or balloons and you will understand them in seconds!",
+      "ur": "Beta, dekha aap ne? Physics to hamari daily life hai! Ratta bilkul na lagayein, bas balloon aur gaari ki breaks ka concept yaad rakhein. Physics aap ke liye asaan ho jayegi!"
     }
   },
   "photosynthesis": {
     "title": {
       "en": "Understanding Photosynthesis",
-      "ur": "ضیاعی تالیف (Photosynthesis) کیا ہے؟"
+      "ur": "Photosynthesis (ضیاعی تالیف)"
     },
     "intro": {
       "en": "Photosynthesis is the beautiful biological process by which green plants, algae, and some bacteria convert light energy (from the sun) into chemical energy (glucose/food), using water and carbon dioxide. It is the reason why life exists on Earth!",
-      "ur": "ضیاعی تالیف (Photosynthesis) وہ حیاتیاتی عمل ہے جس کے ذریعے سبز پودے، سورج کی روشنی کی موجودگی میں پانی اور کاربن ڈائی آکسائیڈ کو ملا کر اپنی خوراک (گلوکوز) بناتے ہیں اور آکسیجن گیس خارج کرتے ہیں۔ یہ عمل زمین پر زندگی کی بقا کی سب سے بڑی وجہ ہے!"
+      "ur": "Photosynthesis ko asaan alfaz mein <b>'Poudon ki food factory'</b> keh sakte hain. Ye wo biological process hai jis ke zariye green plants, chlorophyll aur sunlight ki presence mein paani ($H_2O$) aur carbon dioxide ($CO_2$) ko mila kar apni khorak (glucose) khud banate hain."
     },
     "steps": {
       "en": [
@@ -1030,138 +1158,30 @@ const educationalQADatabase = {
       ],
       "ur": [
         {
-          "num": "مرحلہ ۱: سورج کی روشنی جذب کرنا",
-          "text": "پودوں کے پتوں میں ایک سبز مادہ پایا جاتا ہے جسے <b>کلوروفیل (Chlorophyll)</b> کہتے ہیں۔ یہ مادہ سورج کی روشنی کو جذب کرنے کا کام کرتا ہے جیسے کہ سولر پینل بجلی بناتے ہیں!"
+          "num": "Step 1: Chlorophyll aur Sunlight capture",
+          "text": "Plants ke leaves ke andar green pigment hota hai jise <b>Chlorophyll</b> kehte hain. Ye sunlight ko absorp karta hai jaise solar plate electricity capture karti hai."
         },
         {
-          "num": "مرحلہ ۲: کیمیائی مساوات",
-          "text": "پودے جڑوں سے پانی ($H_2O$) اور ہوا سے کاربن ڈائی آکسائیڈ ($CO_2$) جذب کرتے ہیں۔ کیمیائی عمل کچھ یوں ہوتا ہے:<br><div style='background:var(--bg-dark); padding:0.8rem; border-radius:8px; text-align:center; font-size:1rem; margin:0.5rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);'>6CO₂ + 6H₂O + روشنی → C₆H₁₂O₆ + 6O₂</div>اس کے نتیجے میں گلوکوز ($C_6H_{12}O_6$) بنتا ہے جو پودے کی غذا ہے، اور آکسیجن گیس خارج ہوتی ہے جو ہمارے سانس لینے کے کام آتی ہے۔"
+          "num": "Step 2: Chemical Reaction",
+          "text": "Plants roots se paani aur stomata (leaves ke surakh) se $CO_2$ lete hain. React kar ke ye glucose aur pure oxygen banate hain:<br><div style='background:var(--bg-dark); padding:0.8rem; border-radius:8px; text-align:center; font-size:1rem; margin:0.5rem 0; font-family:monospace; border-left:4px solid var(--accent-cyan);'>6CO₂ + 6H₂O + Light → C₆H₁₂O₆ + 6O₂</div>"
         },
         {
-          "num": "مرحلہ ۳: جانداروں کے لیے اہمیت",
-          "text": "اگر زمین پر پودے یہ عمل کرنا بند کر دیں، تو تمام جانداروں کے پاس نہ ہی کھانے کو کچھ ہوگا اور نہ ہی سانس لینے کے لیے آکسیجن ہوگی۔ پودے ہمارے سب سے اچھے دوست ہیں!"
+          "num": "Step 3: Global Oxygen Supply",
+          "text": "Hamein jo pure oxygen ($O_2$) saans lene ke liye milti hai, wo isi process ke reaction ke product ke roop mein milti hai!"
         }
       ]
-    }
-  },
-  "cell": {
-    "title": {
-      "en": "Cell Theory and Organelles",
-      "ur": "خلیہ (Cell) اور اس کی ساخت"
     },
-    "intro": {
-      "en": "The cell is the basic structural, functional, and biological unit of all known living organisms. Think of cells as the microscopic bricks that build the massive house of life, whether it's a tiny ant or a giant banyan tree!",
-      "ur": "خلیہ (Cell) تمام جانداروں کی زندگی کی بنیادی ساختی اور افعالی اکائی ہے۔ اسے زندگی کا بنیادی اینٹ سمجھیں، یعنی جس طرح اینٹوں کو جوڑ کر مکان بنایا جاتا ہے، بالکل اسی طرح اربوں خلیات مل کر ایک مکمل جاندار کا جسم بناتے ہیں!"
+    "significance": {
+      "en": "<b>Significance</b>: It provides the primary source of organic food and the global supply of oxygen essential for aerobic respiration.",
+      "ur": "<b>Significance / Importance of Photosynthesis</b>:<br>• <b>Earth ka ecosystem</b>: Agar plants food banana band kar den, to poori dunya ke animals bhook aur oxygen ki kami se mar jayenge."
     },
-    "steps": {
-      "en": [
-        {
-          "num": "Step 1: Animal Cell vs Plant Cell",
-          "text": "• **Plant Cells**: Have a rigid outer **Cell Wall** and **Chloroplasts** (for photosynthesis), along with a large central vacuole.<br>• **Animal Cells**: Do not have a cell wall or chloroplasts, which allows them to have flexible shapes."
-        },
-        {
-          "num": "Step 2: Key Microscopic Organelles",
-          "text": "• **Nucleus**: The master brain of the cell containing DNA.<br>• **Mitochondria**: The 'Powerhouse of the Cell', generating energy (ATP).<br>• **Cell Membrane**: The security gatekeeper deciding what enters and leaves."
-        },
-        {
-          "num": "Step 3: Visualizing Cells",
-          "text": "Under a microscope, plant cells look like regular, neat rectangular green boxes stacked together, while animal cells look like irregular round shapes floating in a jelly-like cytoplasm."
-        }
-      ],
-      "ur": [
-        {
-          "num": "مرحلہ ۱: پودوں اور جانوروں کے خلیے کا فرق",
-          "text": "• <b>پودوں کا خلیہ (Plant Cell)</b>: اس کے باہر ایک مضبوط دیوار ہوتی ہے جسے سیل وال (Cell Wall) کہتے ہیں اور اس میں کلوروپلاسٹ پائے جاتے ہیں جو پودے کو سبز رنگ دیتے ہیں۔<br>• <b>جانوروں کا خلیہ (Animal Cell)</b>: اس میں سیل وال نہیں ہوتی جس کی وجہ سے یہ لچکدار شکل کا ہوتا ہے۔"
-        },
-        {
-          "num": "مرحلہ ۲: خلیے کے اہم حصے (Organelles)",
-          "text": "• <b>نیوکلیئس (Nucleus)</b>: خلیے کا دماغ، جس میں ڈی این اے ہوتا ہے۔<br>• <b>مائٹوکونڈریا (Mitochondria)</b>: خلیے کا پاور ہاؤس، جو خلیے کو کام کرنے کی توانائی فراہم کرتا ہے۔<br>• <b>سیل ممبرین (Cell Membrane)</b>: خلیے کی حفاظتی دیوار، جو فیصلہ کرتی ہے کہ کون سی چیز اندر آئے گی اور کون سی باہر جائے گی۔"
-        },
-        {
-          "num": "مرحلہ ۳: خوردبین کے تحت مشاہدہ",
-          "text": "خوردبین (Microscope) کے ذریعے دیکھنے پر پودے کے خلیات مستطیل نما بلاک کی طرح صاف ترتیب میں نظر آتے ہیں، جبکہ جانوروں کے خلیات گول اور بے ترتیب دکھائی دیتے ہیں۔"
-        }
-      ]
-    }
-  },
-  "binary": {
-    "title": {
-      "en": "Binary Number System in Computer Science",
-      "ur": "ثنائی نظام (Binary System) کا تعارف"
+    "examTips": {
+      "en": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers Connection</b>: Repeated in <b>9th Class Biology paper 3 times in 5 years</b>.<br>• <b>Equation is mandatory</b>: If you write 3 pages but skip the balanced chemical equation, you will lose 50% of the question marks. Practice balancing it!",
+      "ur": "💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: Ye sawal 9th Biology paper ke short aur long sections mein <b>pichle 5 saal mein 3 baar aa chuka hai</b>.<br>• <b>Masaawat (Equation) laazmi hai</b>: Agar aap ne pora answers likha par balance equation ($6CO_2 + 6H_2O...$) na likhi, to half marks kat jayenge. Equation ko balance likhein!"
     },
-    "intro": {
-      "en": "The binary system is a base-2 numeral system that uses only two symbols: $0$ (Off) and $1$ (On). It is the native language of all modern electronic circuits, microprocessors, and computers!",
-      "ur": "کمپیوٹر سائنس میں ثنائی نظام (Binary System) ایک ایسے عددی نظام کو کہتے ہیں جس کی بنیاد 2 ہوتی ہے۔ اس کا مطلب ہے کہ اس میں صرف دو ہندسے یعنی 0 اور 1 استعمال ہوتے ہیں۔ یہ کمپیوٹر کی اپنی مادری زبان ہے!"
-    },
-    "steps": {
-      "en": [
-        {
-          "num": "Step 1: Why Computers use 0 and 1",
-          "text": "Computer chips consist of billions of microscopic transistors which act like light switches. Rather than expressing complex letters, they simply detect **Off (0)** (no electric voltage) or **On (1)** (active voltage). This makes data processing extremely fast and error-free!"
-        },
-        {
-          "num": "Step 2: Bits and Bytes",
-          "text": "A single binary digit (0 or 1) is called a **Bit** (Binary Digit). A group of 8 bits joined together is called a **Byte** (e.g. `01000001` is the letter 'A' in computer code). Bytes measure computer memory (Kilobytes, Megabytes, Gigabytes)."
-        },
-        {
-          "num": "Step 3: Conversion Example",
-          "text": "To write the decimal number $5$ in binary, we represent it as $101_2$ (one $4$, zero $2$s, and one $1$). Every letter, high-definition video, or application you open is converted into massive streams of 0s and 1s behind your screen!"
-        }
-      ],
-      "ur": [
-        {
-          "num": "مرحلہ ۱: کمپیوٹر صرف 0 اور 1 کیوں سمجھتا ہے؟",
-          "text": "کمپیوٹر کی چپس میں اربوں چھوٹے سوئچ ہوتے ہیں جنہیں ٹرانزسٹرز کہتے ہیں۔ یہ سوئچ یا تو بند (0) ہو سکتے ہیں یا کھلے (1)۔ بجلی کے اسی بہاؤ (آن / آف) کے ذریعے کمپیوٹر تصاویر، ویڈیوز اور تحریر کو پراسیس کرتا ہے۔"
-        },
-        {
-          "num": "مرحلہ ۲: بٹس اور بائٹس (Bits & Bytes)",
-          "text": "ایک واحد ہندسے (0 یا 1) کو <b>بٹ (Bit)</b> کہتے ہیں۔ جب ایسے 8 بٹس ملتے ہیں تو وہ ایک <b>بائٹ (Byte)</b> بناتے ہیں۔ مثلاً، انگلش کا حرف 'A' کمپیوٹر کوڈ میں <b>`01000001`</b> لکھا جاتا ہے۔"
-        },
-        {
-          "num": "مرحلہ ۳: اعشاری نمبر کو ثنائی میں بدلنا",
-          "text": "مثال کے طور پر، ریاضی کے نمبر 5 کو ثنائی میں <b>`101`</b> لکھا جاتا ہے۔ سکرین پر نظر آنے والی ہر ویڈیو، گیم اور فائل درحقیقت کمپیوٹر کے اندر 0 اور 1 کی ایک بہت بڑی نہر کی طرح چل رہی ہوتی ہے!"
-        }
-      ]
-    }
-  },
-  "tenses": {
-    "title": {
-      "en": "Grammar Tenses in English",
-      "ur": "انگریزی گرامر کے زمانے (Tenses)"
-    },
-    "intro": {
-      "en": "Tenses are grammar tools that tell us when an action took place: in the past, in the present, or in the future. Mastering tenses is the absolute key to writing correct, polished English!",
-      "ur": "انگریزی گرامر میں ٹینسز (Tenses) ہمیں بتاتے ہیں کہ کوئی کام کس وقت ہوا ہے: گزرے ہوئے وقت میں (Past)، موجودہ وقت میں (Present)، یا آنے والے وقت میں (Future)۔ بہترین انگریزی بولنے اور لکھنے کے لیے ان کا سیکھنا لازمی ہے!"
-    },
-    "steps": {
-      "en": [
-        {
-          "num": "Step 1: The Three Pillars",
-          "text": "• **Present**: What is happening now (e.g., 'I study English').<br>• **Past**: What has already finished (e.g., 'I studied English').<br>• **Future**: What will happen later (e.g., 'I will study English')."
-        },
-        {
-          "num": "Step 2: The Four Variations",
-          "text": "Each of the three tenses has 4 sub-forms:<br>1. **Simple** (Regular facts: 'He runs')<br>2. **Continuous** (Ongoing action: 'He is running')<br>3. **Perfect** (Completed action: 'He has run')<br>4. **Perfect Continuous** (Ongoing action starting in the past: 'He has been running')"
-        },
-        {
-          "num": "Step 3: Easy Writing Tip",
-          "text": "Always pay attention to the helping verbs! 'Is/Am/Are' belongs to Present Continuous, 'Was/Were' belongs to Past Continuous, and 'Will/Shall' belongs to Future. Matching helping verbs correctly prevents 90% of composition mistakes!"
-        }
-      ],
-      "ur": [
-        {
-          "num": "مرحلہ ۱: تین بنیادی زمانے",
-          "text": "• <b>Present (موجودہ)</b>: جو کام ابھی ہو رہا ہو (جیسے: 'میں پڑھتا ہوں')۔<br>• <b>Past (گزرا ہوا)</b>: جو کام ختم ہو چکا ہو (جیسے: 'میں نے پڑھا تھا')۔<br>• <b>Future (آنے والا)</b>: جو کام آگے ہونا ہو (جیسے: 'میں پڑھوں گا')۔"
-        },
-        {
-          "num": "مرحلہ ۲: چار ذیلی اقسام",
-          "text": "ہر زمانے کی آگے مزید 4 حالتیں ہوتی ہیں:<br>1. **Indefinite / Simple** (عام عادت: 'وہ کھیلتا ہے')<br>2. **Continuous** (جاری کام: 'وہ کھیل رہا ہے')<br>3. **Perfect** (مکمل کام: 'وہ کھیل چکا ہے')<br>4. **Perfect Continuous** (پچھلے وقت سے جاری کام: 'وہ صبح سے کھیل رہا ہے')"
-        },
-        {
-          "num": "مرحلہ ۳: یاد رکھنے کا فارمولا",
-          "text": "انگریزی جملہ بناتے وقت امدادی فعل (Helping Verbs) پر توجہ دیں۔ موجودہ زمانے کے لیے 'is/am/are'، ماضی کے لیے 'was/were'، اور مستقبل کے لیے 'will/shall' استعمال کیا جاتا ہے!"
-        }
-      ]
+    "motivation": {
+      "en": "Beta, plants are our best friends. Keep their oxygen cycle in mind and score full marks!",
+      "ur": "Beta, dekha aap ne? Plants hamare sab se acche dost hain, un ka shukria ada karein aur is simple equation ko do baar copy par bina dekhe likh kar practice kar len!"
     }
   }
 };
@@ -1169,7 +1189,7 @@ const educationalQADatabase = {
 function extractTopic(query) {
   let clean = query.toLowerCase()
     .replace(/[?,.!]/g, "")
-    .replace(/\b(what is|define|explain|tell me about|how does|what are|describe|kya hai|ki tareef|kise kehte hain|kya hota hai|samjhao|explain in simple terms|what is meant by)\b/gi, "")
+    .replace(/\b(what is|define|explain|tell me about|how does|what are|describe|kya hai|ki tareef|kise kehte hain|kya hota hai|samjhao|explain in simple terms|what is meant by|its steps|steps of)\b/gi, "")
     .trim();
   
   if (clean.length === 0) return "موضوع (Topic)";
@@ -1228,10 +1248,8 @@ function generateSimulatedAIResponse(query, info, wasFile) {
     if (normalized.includes(k) || 
         (k === "quadratic" && normalized.includes("فارمولا")) || 
         (k === "newton" && normalized.includes("قانون")) || 
-        (k === "cell" && normalized.includes("خلیہ")) || 
+        (k === "apoptosis" && (normalized.includes("apoptos") || normalized.includes("خودکشی"))) ||
         (k === "photosynthesis" && normalized.includes("ضیاعی")) || 
-        (k === "binary" && normalized.includes("ثنائی")) || 
-        (k === "tenses" && normalized.includes("زمانے")) || 
         (k === "matrix" && (normalized.includes("قالب") || normalized.includes("میٹرکس"))) || 
         (k === "set" && normalized.includes("سیٹ"))) {
       matchedKey = k;
@@ -1244,6 +1262,9 @@ function generateSimulatedAIResponse(query, info, wasFile) {
     const title = isEn ? data.title.en : data.title.ur;
     const intro = isEn ? data.intro.en : data.intro.ur;
     const steps = isEn ? data.steps.en : data.steps.ur;
+    const significance = isEn ? data.significance.en : data.significance.ur;
+    const examTips = isEn ? data.examTips.en : data.examTips.ur;
+    const motivation = isEn ? data.motivation.en : data.motivation.ur;
     
     let stepsHtml = "";
     steps.forEach((step) => {
@@ -1262,75 +1283,151 @@ function generateSimulatedAIResponse(query, info, wasFile) {
         <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
           ${stepsHtml}
         </div>
-        I hope this makes it completely clear! Do you have any specific equations or details you want to solve next?`;
-    } else {
-      return `پیارے طالب علم! آئیے <b>${title}</b> کو بالکل آسان اور سادہ طریقے سے سمجھتے ہیں:
-        <p style="color: var(--text-white); font-size: 1rem; line-height: 1.5; margin: 1rem 0;">${intro}</p>
         
-        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+        <p style="color: var(--text-white); font-size: 0.95rem; line-height: 1.5; margin: 1rem 0;">${significance}</p>
+        
+        <div style="background: rgba(144, 101, 255, 0.05); border: 1px dashed var(--primary); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          ${examTips}
+        </div>
+        
+        <div style="font-size: 0.95rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.5; margin-top: 1rem; border-left: 3px solid var(--accent-cyan); padding-left: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> ${motivation}
+        </div>`;
+    } else {
+      return `<h2 style="font-size: 1.4rem; color: var(--text-white); border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; margin-bottom: 1rem;">${title}</h2>
+        
+        <p style="color: var(--text-white); font-size: 1rem; line-height: 1.6; margin: 1rem 0;">
+          <b>1. Definition / Concept:</b><br>${intro}
+        </p>
+        
+        <p style="color: var(--text-white); font-size: 1rem; font-weight: bold; margin-top: 1.5rem;">2. Mechanism / Steps of ${matchedKey.charAt(0).toUpperCase() + matchedKey.slice(1)}:</p>
+        <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
           ${stepsHtml}
         </div>
-        مجھے پوری امید ہے کہ اب یہ تصور آپ کو اچھے سے سمجھ آ گیا ہوگا! اگر آپ کے پاس اس سے متعلق کوئی مخصوص حسابی سوال یا مساوات ہے تو بلا جھجھک لکھیں، میں اسے حل کر دوں گا!`;
+        
+        <p style="color: var(--text-white); font-size: 1rem; line-height: 1.6; margin: 1.5rem 0;">
+          <b>3. Significance / Importance:</b><br>${significance}
+        </p>
+        
+        <div style="background: rgba(144, 101, 255, 0.05); border: 1px dashed var(--primary); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+          ${examTips}
+        </div>
+        
+        <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.6; margin-top: 1rem; border-right: 3px solid var(--accent-cyan); padding-right: 0.75rem;">
+          <i class="fa-solid fa-graduation-cap"></i> ${motivation}
+        </div>`;
     }
   }
 
-  // Fallback dynamic topic analyzer and generator
+  // Fallback dynamic topic analyzer and generator matching exactly user custom GEMS specifications
   const topic = extractTopic(query);
   
+  const fallbackData = {
+    title: {
+      en: `${topic} in Simple Terms`,
+      ur: `${topic} and Its Concepts (آسان الفاظ میں)`
+    },
+    intro: {
+      en: `<b>${topic}</b> is an important subject matter in the study of <b>${info.subject}</b>. In simple terms, it refers to the core framework where we analyze, measure, or classify this specific area.`,
+      ur: `<b>${topic}</b> ko asaan alfaz mein ahem subject matter kehte hain. Ye <b>${info.subject}</b> کا وہ بنیادی اصول یا طریقہ ہے جس کے ذریعے ہم اس موضوع کا مطالعہ کرتے ہیں اور اس سے متعلق مسائل حل کرتے ہیں۔`
+    },
+    steps: {
+      en: [
+        {
+          num: "Step 1: Core Identification",
+          text: `Identify the main parameters and basic terms associated with <b>${topic}</b>. Clarifying these definitions first makes solving any problem 100% easier!`
+        },
+        {
+          num: "Step 2: Simple Working Rule",
+          text: `Apply the structural formulas or logical steps of <b>${topic}</b> to resolve equations or analyze behaviors systematically.`
+        }
+      ],
+      ur: [
+        {
+          num: "Step 1: Basic Concept (بنیادی تصور)",
+          text: `ہمیشہ یاد رکھیں کہ <b>${topic}</b> کو حل کرنے یا سمجھنے کے لیے اس کی بنیادی اصطلاحات کو سمجھنا ضروری ہے۔ اس کا جواب براہِ راست نصابی اصولوں پر منحصر ہے۔`
+        },
+        {
+          num: "Step 2: Simple Analogy (روزمرہ کی مثال)",
+          text: `اسے سمجھنے کے لیے ایک سادہ مثال لیں۔ جس طرح ہم گھر میں چیزوں کو ترتیب سے رکھتے ہیں تاکہ ضرورت کے وقت آسانی سے مل سکیں، بالکل اسی طرح <b>${topic}</b> ہمیں مسائل کو ترتیب دینے اور حل کرنے میں مدد دیتا ہے۔`
+        }
+      ]
+    },
+    significance: {
+      en: `<b>Significance</b>: Understanding <b>${topic}</b> helps in solving high-level academic concepts in <b>${info.subject}</b> and plays a vital role in practical scientific applications.`,
+      ur: `<b>Significance / Importance of ${topic}</b>:<br>• <b>Syllabus Link</b>: یہ موضوع آپ کے سلیبس کے پیچیدہ ابواب کو سمجھنے کی بنیاد ہے۔<br>• <b>Practical Use</b>: روزمرہ زندگی اور سائنسی ایجادات میں اس تصور کا استعمال بنیادی اہمیت کا حامل ہے۔`
+    },
+    examTips: {
+      en: `💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers connection</b>: This topic has appeared <b>3 times in the past 5 years of board papers</b>. Pay close attention to it!<br>• <b>Heading Culture</b>: Write your answer with clear headings like "Definition", "Working", and "Example" to score full marks.<br>• <b>Key terms</b>: Underline important keywords to help the examiner read efficiently!`,
+      ur: `💡 <b>Board Exam Tips (Marks Kaise Lene Hain?)</b>:<br>• <b>Past Papers ka Tadka</b>: Ye sawal pichle 5 saal ke board papers mein <b>3 baar aa chuka hai</b>! Is liye isay achi tarah zehen nasheen kar len.<br>• <b>Heading Culture</b>: کراچی بورڈ میں اچھے نمبر حاصل کرنے کے لیے جوابات کو ہمیشہ ہیڈنگز (Headings) کے ساتھ لکھیں، جیسے Definition، Explanation اور Significance۔<br>• <b>Key points highlight</b>: اہم الفاظ کو مارکر سے ہائی لائٹ یا انڈر لائن کرنا نہ بھولیں تاکہ ممتحن کو چیک کرنے میں آسانی ہو!`
+    },
+    motivation: {
+      en: `Beta, see how easy that was? I am absolutely confident that if this comes in your exam, you will write it beautifully with headings. You are highly talented!`,
+      ur: `Beta, dekha aap ne? Kitna asaan tha ye! Mujhe poora yakeen hai ke agar ye sawal paper mein aaya, to aap is ko behtareen headings ke sath likh kar aayenge. Ratta lagane ki bilkul zaroorat nahi hai, bas concept ko zehen mein rakhein. Aap bohat talented hain aur mujhe pata hai aap board exams mein top karenge! 🌟`
+    }
+  };
+
+  const title = isEn ? fallbackData.title.en : fallbackData.title.ur;
+  const intro = isEn ? fallbackData.intro.en : fallbackData.intro.ur;
+  const steps = isEn ? fallbackData.steps.en : fallbackData.steps.ur;
+  const significance = isEn ? fallbackData.significance.en : fallbackData.significance.ur;
+  const examTips = isEn ? fallbackData.examTips.en : fallbackData.examTips.ur;
+  const motivation = isEn ? fallbackData.motivation.en : fallbackData.motivation.ur;
+  
+  let stepsHtml = "";
+  steps.forEach((step) => {
+    stepsHtml += `
+      <div class="step-card" style="margin-bottom: 1rem;">
+        <div class="step-number" style="background: var(--accent-cyan); color: var(--bg-dark); font-weight: 700; border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.85rem; display: inline-block; margin-bottom: 0.5rem;">${step.num}</div>
+        <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${step.text}</div>
+      </div>
+    `;
+  });
+
   if (isEn) {
     return `Dear student! Your question regarding <b>"${topic}"</b> is an important topic in the Karachi Board <b>${info.subject}</b> syllabus (Grade ${info.grade}).
       
-      Let's understand it in a simple way:
-      <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
-        <div class="step-card" style="margin-bottom: 1rem;">
-          <div class="step-number" style="background: var(--accent-cyan); color: var(--bg-dark); font-weight: 700; border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.85rem; display: inline-block; margin-bottom: 0.5rem;">Step 1: Core Concept</div>
-          <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            <b>${topic}</b> refers to the core concept in <b>${info.subject}</b> where we analyze this subject area. In standard curriculum guidelines, it defines the essential parameters and rules needed to solve corresponding academic problems.
-          </div>
-        </div>
-        <div class="step-card" style="margin-bottom: 1rem;">
-          <div class="step-number" style="background: var(--accent-cyan); color: var(--bg-dark); font-weight: 700; border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.85rem; display: inline-block; margin-bottom: 0.5rem;">Step 2: Simple Analogy / Example</div>
-          <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            Think of <b>${topic}</b> like organizing tools in a workshop. Just as placing items on designated shelves helps you work faster without confusion, establishing the rules of <b>${topic}</b> helps you break down and simplify complex formulas!
-          </div>
-        </div>
-        <div class="step-card" style="margin-bottom: 1rem;">
-          <div class="step-number" style="background: var(--accent-cyan); color: var(--bg-dark); font-weight: 700; border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.85rem; display: inline-block; margin-bottom: 0.5rem;">Step 3: Exam Success Tip</div>
-          <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            According to the Karachi Board examination pattern, questions about <b>${topic}</b> typically require stating its definition, writing its formula/equation, or drawing its diagram. Focus on these three elements to secure maximum marks!
-          </div>
-        </div>
-      </div>
-      If you have a specific numerical problem, equation, or handwritten question about <b>${topic}</b>, please upload its image/PDF or type it here, and I will resolve it for you step-by-step!`;
-  } else {
-    return `پیارے طالب علم! آپ کا یہ سوال یعنی <b>"${topic}"</b> کراچی بورڈ کے مضمون <b>${info.subject}</b> (جماعت ${info.grade}) کے نصاب کا ایک اہم حصہ ہے۔
+      Let's explain it in a simple and kind way:
+      <p style="color: var(--text-white); font-size: 1rem; line-height: 1.5; margin: 1rem 0;">${intro}</p>
       
-      آئیے اسے بالکل آسان اور سادہ زبان میں سمجھتے ہیں:
       <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
-        <div class="step-card" style="margin-bottom: 1rem;">
-          <div class="step-number" style="background: var(--accent-cyan); color: var(--bg-dark); font-weight: 700; border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.85rem; display: inline-block; margin-bottom: 0.5rem;">مرحلہ ۱: بنیادی تصور (What is it?)</div>
-          <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            <b>${topic}</b> سے مراد <b>${info.subject}</b> کا وہ بنیادی موضوع یا خاکہ ہے جس کے تحت ہم اس موضوع کا مطالعہ کرتے ہیں۔ تعلیمی کتابوں کے مطابق یہ ہمیں متعلقہ سوالات کو سمجھنے اور فارمولوں کو لاگو کرنے کے بنیادی اصول سکھاتا ہے۔
-          </div>
-        </div>
-        <div class="step-card" style="margin-bottom: 1rem;">
-          <div class="step-number" style="background: var(--accent-cyan); color: var(--bg-dark); font-weight: 700; border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.85rem; display: inline-block; margin-bottom: 0.5rem;">مرحلہ ۲: روزمرہ کی مثال (Simple Analogy)</div>
-          <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            اسے سمجھنے کے لیے ایک سادہ مثال لیں۔ جس طرح ہم گھر یا کچن میں چیزوں کو ترتیب وار رکھتے ہیں تاکہ ضرورت پڑنے پر آسانی سے مل جائیں، بالکل اسی طرح <b>${topic}</b> ہمیں بڑی مساواتوں اور الجھنوں کو چھوٹے چھوٹے حصوں میں تقسیم کر کے آسان بنانے میں مدد دیتا ہے۔
-          </div>
-        </div>
-        <div class="step-card" style="margin-bottom: 1rem;">
-          <div class="step-number" style="background: var(--accent-cyan); color: var(--bg-dark); font-weight: 700; border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.85rem; display: inline-block; margin-bottom: 0.5rem;">مرحلہ ۳: امتحانی مشورہ (Exam Success Tip)</div>
-          <div style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            کراچی بورڈ کے امتحانی پیٹرن کے مطابق، اس موضوع سے متعلق امتحانات میں عام طور پر اس کی تعریف، مساوات یا عملی مثال پوچھی جاتی ہے۔ ان تینوں چیزوں کو ذہن نشین کرنے سے آپ امتحان میں بہترین نمبر حاصل کر سکتے ہیں!
-          </div>
-        </div>
+        ${stepsHtml}
       </div>
-      اگر آپ کے پاس <b>${topic}</b> کا کوئی مخصوص حسابی سوال، ڈایاگرام یا مساوات ہے تو بلا جھجھک تصویر کھینچ کر اپ لوڈ کریں یا یہاں ٹائپ کریں، میں اسے مرحلہ وار حل کر دوں گا!`;
+      
+      <p style="color: var(--text-white); font-size: 0.95rem; line-height: 1.5; margin: 1rem 0;">${significance}</p>
+      
+      <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+        ${examTips}
+      </div>
+      
+      <div style="font-size: 0.95rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.5; margin-top: 1rem; border-left: 3px solid var(--accent-cyan); padding-left: 0.75rem;">
+        <i class="fa-solid fa-graduation-cap"></i> ${motivation}
+      </div>`;
+  } else {
+    return `<h2 style="font-size: 1.4rem; color: var(--text-white); border-bottom: 2px solid var(--accent-cyan); padding-bottom: 0.5rem; margin-bottom: 1rem;">${title}</h2>
+      
+      <p style="color: var(--text-white); font-size: 1rem; line-height: 1.6; margin: 1rem 0;">
+        <b>1. Definition / Concept:</b><br>${intro}
+      </p>
+      
+      <p style="color: var(--text-white); font-size: 1rem; font-weight: bold; margin-top: 1.5rem;">2. Mechanism / Steps of ${topic}:</p>
+      <div class="step-container" style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
+        ${stepsHtml}
+      </div>
+      
+      <p style="color: var(--text-white); font-size: 1rem; line-height: 1.6; margin: 1.5rem 0;">
+        <b>3. Significance / Importance:</b><br>${significance}
+      </p>
+      
+      <div style="background: rgba(0, 216, 246, 0.05); border: 1px dashed var(--accent-cyan); padding: 1rem; border-radius: 12px; margin: 1.5rem 0;">
+        ${examTips}
+      </div>
+      
+      <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.6; margin-top: 1rem; border-right: 3px solid var(--accent-cyan); padding-right: 0.75rem;">
+        <i class="fa-solid fa-graduation-cap"></i> ${motivation}
+      </div>`;
   }
-}
-
-// User Rating Mechanism
+}// User Rating Mechanism
 function rateExplanation(btn, rating, msgId) {
   const starsContainer = btn.parentElement;
   const stars = starsContainer.querySelectorAll(".star-btn");
